@@ -1,6 +1,7 @@
 'use client';
 
 import '@/ComponentCss/Hamburger.css'
+import Link from 'next/link';
 import { useState } from 'react';
 
 const Hamburger = () => {
@@ -26,9 +27,9 @@ const Hamburger = () => {
                 
                 <div className='hamburger-content-list'>
                     <div className='hamburger-content-list-item'>This is content 1.</div>
-                    <p className='hamburger-content-list-item'>This is content 1.</p>
-                    <p className='hamburger-content-list-item'>This is content 1.</p>
-                    <p className='hamburger-content-list-item'>This is content 1.</p>
+                    <Link href="/" className='hamburger-content-list-item'>This is content 1.</Link>
+                    <Link href="/Blogs/sample1" className='hamburger-content-list-item'>This is content 1.</Link>
+                    <Link href="/Blogs/sample2" className='hamburger-content-list-item'>This is content 1.</Link>
                 </div>
                 
             </div>

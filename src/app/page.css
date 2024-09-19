@@ -6,6 +6,11 @@
 }
 .headline{
     color: tomato;
+    font-size: 2rem;
+}
+.sub-headline{
+    margin: 15px 0px;
+    color: tomato;
     font-size: 1.5rem;
 }
 .underline{
