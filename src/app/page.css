@@ -1,0 +1,19 @@
+.bold{
+    font-weight: bold;
+}
+.content-p{
+    margin: 15px 0px;
+}
+.headline{
+    color: tomato;
+    font-size: 1.5rem;
+}
+.underline{
+    text-decoration: underline;
+}
+.ul{
+    list-style: circle;
+}
+.ul li{
+    margin-left: 20px;
+}

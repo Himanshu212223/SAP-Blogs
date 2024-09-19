@@ -1,0 +1,23 @@
+.logo{
+    font-weight: bolder;
+    font-size: larger;
+    color: tomato;
+}
+.navBar{
+    background-color: #000814;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    padding: 0px 40px;
+    justify-content: space-between;
+}
+.tools i{
+    font-size: larger;
+    margin: 0px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.tools i:hover{
+    color: tomato;
+    transition: all 0.2s ease-in-out;
+}

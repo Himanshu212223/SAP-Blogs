@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --custombg : #212529;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--custombg);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: #888; */
+  background: tomato;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.contents{
+  display: none ;
+}
+.mainPage{
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  margin: 20px 0px;
+  /* background-color: tan; */
+}
+.left{
+  width: 20vw;
+  min-height: 70vh;
+  border-right: 1px solid tomato;
+  overflow-y: scroll;
+  /* background-color: turquoise; */
+}
+.right{
+  width: 77vw;
+  min-height: 70vh;
+  margin: 0 1.5vw;
+  /* background-color: tomato; */
+}
+
+@media only screen and (min-width: 300px) and (max-width: 768px){ 
+  .contents{
+    display: inherit;
+    padding: 0px 5px;
+    font-size: larger;
+  }
+  .left{
+    width: 100%;
+    min-height: 10vh;
+    z-index: 3 ;
+    top: 0;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    overflow-y: hidden;
+  }
+  .mainPage{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px;
+  }
+  .right{
+    width: 100%;
+  }
+}

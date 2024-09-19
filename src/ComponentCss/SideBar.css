@@ -1,0 +1,52 @@
+.fiori{
+    margin: 10px 0;
+    font-size: larger;
+    font-weight: bold;
+    border: 1px solid transparent;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 1px solid white;
+}
+.fiori-container:hover .fiori{
+    color: tomato;
+    border-bottom: 1px solid tomato;
+}
+.fiori-items-hidden{
+    display: none;
+    transition: all 0.2s ease-in-out;
+}
+.fiori-items-visible{
+    display: flex;
+    flex-flow: column;
+}
+.side-bar-item{
+    margin: 5px 10px;
+    font-size: larger;
+    /* font-weight: bold; */
+    border: 1px solid transparent;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.side-bar-item:hover{
+    color: tomato;
+    border: 1px solid tomato;
+    transition: all 0.2s ease-in-out;
+}
+.sideBar{
+    padding: 0px 50px;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 768px){ 
+    .sideBar{
+        display: none;
+    }
+    .fiori{
+        display: none;
+    }
+    .fiori-items-visible p{
+        display: none;
+    }
+}
