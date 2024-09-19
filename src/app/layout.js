@@ -3,6 +3,7 @@ import "./globals.css";
 import NavBar from "@/Components/NavBar";
 import SideBar from "@/Components/SideBar";
 import Hamburger from "@/Components/Hamburger";
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,7 +42,7 @@ export default function RootLayout({ children }) {
 
         </div>
 
-        <script src="https://kit.fontawesome.com/9fa326583e.js" crossOrigin="anonymous"></script>
+        <Script src="https://kit.fontawesome.com/9fa326583e.js" crossOrigin="anonymous"></Script>
       </body>
     </html>
   );
