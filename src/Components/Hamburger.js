@@ -27,9 +27,9 @@ const Hamburger = () => {
                 
                 <div className='hamburger-content-list'>
                     <div className='hamburger-content-list-item'>This is content 1.</div>
-                    <Link href="/" className='hamburger-content-list-item'>This is content 1.</Link>
-                    <Link href="/Blogs/sample1" className='hamburger-content-list-item'>This is content 1.</Link>
-                    <Link href="/Blogs/sample2" className='hamburger-content-list-item'>This is content 1.</Link>
+                    <Link href="/" className='hamburger-content-list-item' onClick={handleHamburger} >This is content 1.</Link>
+                    <Link href="/Blogs/sample1" className='hamburger-content-list-item' onClick={handleHamburger} >This is content 1.</Link>
+                    <Link href="/Blogs/sample2" className='hamburger-content-list-item'onClick={handleHamburger} >This is content 1.</Link>
                 </div>
                 
             </div>
