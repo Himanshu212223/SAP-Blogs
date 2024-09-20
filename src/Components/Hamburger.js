@@ -27,7 +27,8 @@ const Hamburger = () => {
 
                 <div className='hamburger-content'>
                     <p className='hamburger-item main-topic'>Fiori</p>
-                    <Link href='/Blogs/sample1' className='hamburger-item topic' onClick={handleHamburger} >Fiori</Link>
+                    <Link href='/Blogs/sample1' className='hamburger-item topic' onClick={handleHamburger} >Sam</Link>
+                    <Link href='/Blogs/sample2' className='hamburger-item topic' onClick={handleHamburger} >Sample 2</Link>
                 </div>
 
             </div>

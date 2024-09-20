@@ -23,9 +23,12 @@
     margin-left: 5px;
 }
 .hamburger-content{
-    background-color: tan;
+    /* background-color: tan; */
+    /* overflow-y: scroll; */
     margin: 10vh 10vw;
-    overflow-y: scroll;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
 }
 .hamburger-hidden{
     height: 100vh;
@@ -52,6 +55,27 @@
 .hamburger-item:hover{
     color: tomato;
 }
+.main-topic{
+    color: tomato;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: large;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+.topic{
+    color: white;
+    padding: 5px 10px;
+    font-size: large;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+.topic:hover{
+    padding: 5px 10px;
+    border: 1px solid tomato;
+}
+
+
 
 @media only screen and (min-width: 200px) and (max-width: 768px) {
     .hamburger{
