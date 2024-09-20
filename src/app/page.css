@@ -3,6 +3,7 @@
 }
 .content-p{
     margin: 15px 0px;
+    color: white;
 }
 .headline{
     color: tomato;
@@ -21,4 +22,5 @@
 }
 .ul li{
     margin-left: 20px;
+    color: white;
 }

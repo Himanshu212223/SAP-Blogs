@@ -24,21 +24,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <NavBar/>
-        <div className="mainPage">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <NavBar />
+        <Hamburger />
 
-          <section className="left">
+        <div className="main-page">
+
+          <div className="left">
             <SideBar />
-            <Hamburger />
-            <p className="contents">Contents</p>
-          </section>
-          
-          <section className="right">
+          </div>
+
+          <div className="right">
             {children}
-          </section>
+          </div>
 
         </div>
 

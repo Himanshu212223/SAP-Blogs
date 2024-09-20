@@ -1,65 +1,63 @@
 .close{
+    color: black;
+    font-weight: bold;
+    font-size: x-large;
     position: absolute;
-    right: 20px;
-    top: 20px;
-    cursor: pointer;
-    font-weight: bolder;
-    font-size: larger;
-    transition: all 0.3s ease-in-out;
+    top: 10px;
+    right: 10px;
 }
 .close:hover{
-    color: tomato;
-    transition: all 0.3s ease-in-out;
+    color: tomato ;
 }
-.hamburger-icon{
-    font-size: x-large;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+.hamburger{
+    display: none;    
 }
-.hamburger-icon:hover{
-    color: tomato;
-    transition: all 0.3s ease-in-out;
+.hamburger-bar{
+    font-size: large;
+    margin: 10px 10px;
+    color: white;
 }
-.hamburger-content-visible{
+.hamburger-bar span{
+    color: white;
+    font-size: medium;
+    margin-left: 5px;
+}
+.hamburger-content{
+    background-color: tan;
+    margin: 10vh 10vw;
+    overflow-y: scroll;
+}
+.hamburger-hidden{
     height: 100vh;
-    width: 80vw;
-    background-color: #495057;
+    width: 0%;
     position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 0.5s ease-in-out;
-    z-index: 5 ;
-}
-.hamburger-content-hidden{
-    height: 100vh;
-    width: 80vw;
-    background-color: #495057;
-    position: absolute;
-    top: 0;
+    top: 0px;
     left: -100%;
-    transition: all 0.5s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease-in-out;
 }
-.hamburger-content-list{
-    margin: 50px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: start;
+.hamburger-visible{
+    height: 100vh;
+    width: 90vw;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background-color: #495057;
+    transition: all 0.3s ease-in-out;
 }
-.hamburger-content-list-item{
-    margin: 10px 0px;
+.hamburger-item{
+    color: black;
     cursor: pointer;
 }
-.hamburger-content-list-item:hover{
+.hamburger-item:hover{
     color: tomato;
 }
-.hambuerger-list{
-    display: none;
-}
 
-
-@media only screen and (min-width: 300px) and (max-width: 768px){
-    .hambuerger-list{
+@media only screen and (min-width: 200px) and (max-width: 768px) {
+    .hamburger{
         display: inherit;
-    }   
+        position: sticky;
+        top: 0px;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
 }

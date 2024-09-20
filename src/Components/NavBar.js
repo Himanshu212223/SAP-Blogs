@@ -7,8 +7,8 @@ const NavBar = () => {
             <p className='logo'>Build</p>   
             
             <div className='tools'>
-            <i className="fa-brands fa-github"></i>
-            <i className="fa-brands fa-instagram"></i>
+            <a href='https://github.com/Himanshu212223' target='_blank' className="fa-brands fa-github link"></a>
+            <a href='https://instagram.com/_him.anshu' target='_blank' className="fa-brands fa-instagram link"></a>
             </div>
 
         </nav>

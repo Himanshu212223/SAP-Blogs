@@ -11,8 +11,9 @@
     padding: 0px 40px;
     justify-content: space-between;
 }
-.tools i{
+.tools .link{
     font-size: larger;
+    color: white;
     margin: 0px 10px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;

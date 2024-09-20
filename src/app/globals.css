@@ -49,53 +49,33 @@ body {
 }
 
 
-.contents{
-  display: none ;
-}
-.mainPage{
-  height: 80vh;
-  width: 100vw;
+.main-page{
   display: flex;
-  margin: 20px 0px;
-  /* background-color: tan; */
+  width: 100vw;
 }
 .left{
+  /* background-color: tan; */
   width: 20vw;
-  min-height: 70vh;
+  margin: 20px 0px;
   border-right: 1px solid tomato;
-  overflow-y: scroll;
-  /* background-color: turquoise; */
 }
 .right{
-  width: 77vw;
-  min-height: 70vh;
-  margin: 0 1.5vw;
   /* background-color: tomato; */
+  width: 80vw;
+  margin: 20px 0px;
+  padding: 0px 20px;
+  border-left: 1px solid tomato;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 768px){ 
-  .contents{
-    display: inherit;
-    padding: 0px 5px;
-    font-size: larger;
-  }
+
+
+
+@media only screen and (min-width: 200px) and (max-width: 768px) {
   .left{
-    width: 100%;
-    min-height: 10vh;
-    z-index: 3 ;
-    top: 0;
-    display: flex;
-    align-items: center;
-    padding: 0px 20px;
-    overflow-y: hidden;
-  }
-  .mainPage{
-    display: flex;
-    flex-direction: column;
-    margin: 0px 0px;
+    display: none;
   }
   .right{
-    width: 100%;
-    padding: 20px 20px;
+    border: none;
+    width: 100vw;
   }
 }
