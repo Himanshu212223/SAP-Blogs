@@ -7,11 +7,11 @@ const sample1 = () => {
 
             <pre className="language-js line-numbers">
                 <code className="language-js">
-                    console.log("hello world");
+                    console.log(&quot;hello world&quot;);
                 </code>
             </pre>
             <pre className="language-ts line-numbers">
-                <code className="language-ts">console.log("hello world")</code>
+                <code className="language-ts">console.log(&quot;hello world&quot;)</code>
             </pre>
             <PrismLoader />
         </>
