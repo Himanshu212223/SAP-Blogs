@@ -38,11 +38,11 @@ const sample1 = () => {
                 </code>
 
                 <code className="language-js">
-                "type": "sap.ui.model.json.JSONModel",
+                &ldquo;type&ldquo;: &ldquo;sap.ui.model.json.JSONModel&ldquo;,
                 </code>
 
                 <code className="language-js">
-                "uri": "model/SampleModel.json"
+                &ldquo;uri&ldquo;: &ldquo;model/SampleModel.json&ldquo;
                 </code>
 
                 <code className="language-js">
@@ -68,7 +68,7 @@ const sample1 = () => {
                 </code>
 
                 <code className="language-js">
-                "type": "sap.ui.model.resource.ResourceModel",
+                &ldquo;type&ldquo;: &ldquo;sap.ui.model.resource.ResourceModel&ldquo;,
                 </code>
 
                 <code className="language-js">
@@ -76,7 +76,7 @@ const sample1 = () => {
                 </code>
 
                 <code className="language-js">
-                "bundleName": "basic.sap.i18n.i18n"
+                &ldquo;bundleName&ldquo;: &ldquo;basic.sap.i18n.i18n&ldquo;
                 </code>
 
                 <code className="language-js">
@@ -92,11 +92,11 @@ const sample1 = () => {
                 </code>
 
                 <code className="language-js">
-                "type": "sap.ui.model.json.JSONModel",
+                &ldquo;type&ldquo;: &ldquo;sap.ui.model.json.JSONModel&ldquo;,
                 </code>
 
                 <code className="language-js">
-                "uri": "model/SampleModel.json"
+                &ldquo;uri&ldquo;: &ldquo;model/SampleModel.json&ldquo;
                 </code>
 
                 <code className="language-js">
