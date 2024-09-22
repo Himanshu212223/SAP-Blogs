@@ -37,7 +37,30 @@ export default function Home() {
       <p className='content-p'>
         SAP CAPM (Cloud Application Programming Model) is a development framework provided by SAP to simplify the creation of business applications in the cloud. It helps developers build enterprise-grade applications quickly and efficiently, leveraging the capabilities of the SAP Business Technology Platform (BTP).
       </p>
-      
+
+      <p className='content-p bold underline'>Key features of CAPM:</p>
+
+      <ul className='ul'>
+        <li>
+          Domain-driven Design: CAPM encourages a model-driven approach, allowing you to focus on business logic rather than low-level programming.
+        </li>
+        <li>
+          Multi-language Support: It supports multiple programming languages, primarily Node.js and Java, enabling developers to use familiar environments.
+        </li>
+        <li>
+          Consistent APIs: CAPM provides a unified set of APIs for building and consuming services, streamlining the development process.
+        </li>
+        <li>
+          Integration with SAP Services: The model integrates seamlessly with various SAP services, including database services and application services.
+        </li>
+        <li>
+          Support for Cloud and On-Premise: CAPM can be used to develop applications that run in the cloud or on-premise, providing flexibility depending on business needs.
+        </li>
+        <li>
+          Open Standards: The framework uses open standards like OData and CDS (Core Data Services), promoting interoperability and ease of integration.
+        </li>
+      </ul>
+
     </div>
   );
 }

@@ -20,15 +20,14 @@ const Hamburger = () => {
     return (
         <div className='hamburger'>
             <i className="fa-solid fa-bars hamburger-bar" onClick={handleHamburger}><span>Content</span></i>
-            
+
             <div className={hamburger ? "hamburger-visible" : 'hamburger-hidden'}>
 
                 <i className="fa-solid fa-x close" onClick={handleHamburger}></i>
 
                 <div className='hamburger-content'>
                     <p className='hamburger-item main-topic'>Fiori</p>
-                    <Link href='/Blogs/sample1' className='hamburger-item topic' onClick={handleHamburger} >Connect to JSON Model</Link>
-                    <Link href='/Blogs/sample2' className='hamburger-item topic' onClick={handleHamburger} >Sample 2</Link>
+                    <Link href='/Blogs/ConnectToJsonModel' className='hamburger-item topic' onClick={handleHamburger} >Connect to JSON Model</Link>
                 </div>
 
             </div>

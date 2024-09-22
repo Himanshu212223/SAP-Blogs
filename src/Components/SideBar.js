@@ -31,12 +31,7 @@ const SideBar = () => {
                     
                     <div className='fiori-items-visible'>
                         <Link className='side-bar-item' href="/Blogs/sample1">Fiori</Link>
-                        <Link className='side-bar-item' href="/Blogs/sample2">Fiori</Link>
-                        <Link href="/" className='side-bar-item' >Fiori</Link>
-                        <p className='side-bar-item' >Fiori</p>
-                        <p className='side-bar-item' >Fiori</p>
-                        <p className='side-bar-item' >Fiori</p>
-                        <p className='side-bar-item' >Fiori</p>
+                        <Link className='side-bar-item' href="/Blogs/ConnectToJsonModel">Connect to JSON Model</Link>
                     </div>
                 
                 </div>

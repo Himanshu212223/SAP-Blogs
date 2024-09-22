@@ -67,6 +67,40 @@ body {
   border-left: 1px solid tomato;
 }
 
+/* CSS for blogs pages */
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.headline{
+  color: tomato;
+  font-size: 2rem;
+  padding: 5px 0px;
+}
+
+.heading{
+  color: deepskyblue;
+  font-size: x-large;
+  padding: 5px 0px;
+}
+
+.list{
+  color: white;
+  padding-left: 10px;
+  padding-top: 20px;
+}
+
+.paragraph{
+  color: white;
+  padding: 5px 0px;
+}
+
+.tomato{
+  color: tomato;
+  font-weight: bold;
+}
+
 
 @media only screen and (min-width: 200px) and (max-width: 768px) {
   .left{
