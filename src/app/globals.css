@@ -101,6 +101,15 @@ body {
   font-weight: bold;
 }
 
+.skyblue{
+  color: deepskyblue;
+}
+
+.green{
+  color: greenyellow;
+}
+
+
 
 @media only screen and (min-width: 200px) and (max-width: 768px) {
   .left{

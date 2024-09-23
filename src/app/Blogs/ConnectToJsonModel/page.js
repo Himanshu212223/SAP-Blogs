@@ -24,7 +24,7 @@ const sample1 = () => {
                 </li>
             </ul>
 
-            <Image src="/resources/createModel.png" width={200} height={200} alt="Picture of the author"  />
+            <Image src="/resources/createModel.png" width={200} height={200} alt="Picture of the author" />
 
             <ul>
                 <li className="list">
@@ -34,19 +34,19 @@ const sample1 = () => {
 
             <pre className="flex-column">
                 <code className="language-js">
-                &#x22;DataModel&#x22;&#x3a;&#x7b;
+                    &#x22;DataModel&#x22;&#x3a;&#x7b;
                 </code>
 
                 <code className="language-js">
-                &ldquo;type&ldquo;: &ldquo;sap.ui.model.json.JSONModel&ldquo;,
+                    &#x22;type&#x22;: &#x22;sap.ui.model.json.JSONModel&#x22;,
                 </code>
 
                 <code className="language-js">
-                &ldquo;uri&ldquo;: &ldquo;model/SampleModel.json&ldquo;
+                    &#x22;uri&#x22;: &#x22;model/SampleModel.json&#x22;
                 </code>
 
                 <code className="language-js">
-                &#x7d;
+                    &#x7d;
                 </code>
             </pre>
 
@@ -55,56 +55,101 @@ const sample1 = () => {
             </p>
 
             <p className="paragraph">
-                So, now your models section will look like this - 
+                So, now your models section will look like this -
             </p>
 
             <pre className="flex-column">
                 <code className="language-js">
-                &#x22;models&#x22;&#x3a;&#x7b;
+                    &#x22;models&#x22;&#x3a;&#x7b;
                 </code>
 
                 <code className="language-js">
-                &#x22;i18n&#x22;&#x3a;&#x7b;
+                    &#x22;i18n&#x22;&#x3a;&#x7b;
                 </code>
 
                 <code className="language-js">
-                &ldquo;type&ldquo;: &ldquo;sap.ui.model.resource.ResourceModel&ldquo;,
+                    &#x22;type&#x22;: &#x22;sap.ui.model.resource.ResourceModel&#x22;,
                 </code>
 
                 <code className="language-js">
-                &#x22;settings&#x22;&#x3a;&#x7b;
+                    &#x22;settings&#x22;&#x3a;&#x7b;
                 </code>
 
                 <code className="language-js">
-                &ldquo;bundleName&ldquo;: &ldquo;basic.sap.i18n.i18n&ldquo;
+                    &#x22;bundleName&#x22;: &#x22;basic.sap.i18n.i18n&#x22;
                 </code>
 
                 <code className="language-js">
-                &#x7d;
+                    &#x7d;
                 </code>
 
                 <code className="language-js">
-                &#x7d;&#x2c;
+                    &#x7d;&#x2c;
                 </code>
 
                 <code className="language-js">
-                &#x22;DataModel&#x22;&#x3a;&#x7b;
+                    &#x22;DataModel&#x22;&#x3a;&#x7b;
                 </code>
 
                 <code className="language-js">
-                &ldquo;type&ldquo;: &ldquo;sap.ui.model.json.JSONModel&ldquo;,
+                    &#x22;type&#x22;: &#x22;sap.ui.model.json.JSONModel&#x22;,
                 </code>
 
                 <code className="language-js">
-                &ldquo;uri&ldquo;: &ldquo;model/SampleModel.json&ldquo;
+                    &#x22;uri&#x22;: &#x22;model/SampleModel.json&#x22;
                 </code>
 
                 <code className="language-js">
-                &#x7d;
+                    &#x7d;
                 </code>
 
                 <code className="language-js">
-                &#x7d;&#x2c;
+                    &#x7d;&#x2c;
+                </code>
+            </pre>
+
+            <p className="paragraph green">
+                Hence, the JSON Model is now connected with Fiori UI5 Application.
+            </p>
+
+            <h3 className="heading">Lets use this in JSON Model in Application</h3>
+
+            <p className="paragraph">
+                Lets first create an input field on our View and some button to submit (store the input data into Model) and then fetch the same stored data from Model.
+            </p>
+
+            <ul>
+                <li className="list">
+                    1. Add the below code in your view.
+                </li>
+            </ul>
+
+            <pre className="flex-column">
+                {/* <VBox >
+                <Input id="textInput" type="Text" placeholder="Enter a Text." />
+                <Button id="submitButton" press="submitData" text="Submit" />
+
+                <Button id="fetchData" press="fetchData" text="Fetch Model Data" />
+                <Text id="showModelData" />
+                </VBox> */}
+                <code className="language-xml">
+                    &#x3c;&#x56;&#x42;&#x6f;&#x78;&#x20;&#x3e;
+                </code>
+                <code>
+                    &nbsp;&nbsp;&#x3c;&#x49;&#x6e;&#x70;&#x75;&#x74;&#x20;&#x69;&#x64;&#x3d;&#x22;&#x74;&#x65;&#x78;&#x74;&#x49;&#x6e;&#x70;&#x75;&#x74;&#x22;&#x20;&#x74;&#x79;&#x70;&#x65;&#x3d;&#x22;&#x54;&#x65;&#x78;&#x74;&#x22;&#x20;&#x70;&#x6c;&#x61;&#x63;&#x65;&#x68;&#x6f;&#x6c;&#x64;&#x65;&#x72;&#x3d;&#x22;&#x45;&#x6e;&#x74;&#x65;&#x72;&#x20;&#x61;&#x20;&#x54;&#x65;&#x78;&#x74;&#x2e;&#x22;&#x20;&#x2f;&#x3e;
+                </code>
+                <code>
+                    &nbsp;&nbsp;&#x3c;&#x42;&#x75;&#x74;&#x74;&#x6f;&#x6e;&#x20;&#x69;&#x64;&#x3d;&#x22;&#x73;&#x75;&#x62;&#x6d;&#x69;&#x74;&#x42;&#x75;&#x74;&#x74;&#x6f;&#x6e;&#x22;&#x20;&#x70;&#x72;&#x65;&#x73;&#x73;&#x3d;&#x22;&#x73;&#x75;&#x62;&#x6d;&#x69;&#x74;&#x44;&#x61;&#x74;&#x61;&#x22;&#x20;&#x74;&#x65;&#x78;&#x74;&#x3d;&#x22;&#x53;&#x75;&#x62;&#x6d;&#x69;&#x74;&#x22;&#x20;&#x2f;&#x3e;
+                </code>
+                <br />
+                <code>
+                    &nbsp;&nbsp;&#x3c;&#x42;&#x75;&#x74;&#x74;&#x6f;&#x6e;&#x20;&#x69;&#x64;&#x3d;&#x22;&#x66;&#x65;&#x74;&#x63;&#x68;&#x44;&#x61;&#x74;&#x61;&#x22;&#x20;&#x70;&#x72;&#x65;&#x73;&#x73;&#x3d;&#x22;&#x66;&#x65;&#x74;&#x63;&#x68;&#x44;&#x61;&#x74;&#x61;&#x22;&#x20;&#x74;&#x65;&#x78;&#x74;&#x3d;&#x22;&#x46;&#x65;&#x74;&#x63;&#x68;&#x20;&#x4d;&#x6f;&#x64;&#x65;&#x6c;&#x20;&#x44;&#x61;&#x74;&#x61;&#x22;&#x20;&#x2f;&#x3e;
+                </code>
+                <code>
+                    &nbsp;&nbsp;&#x3c;&#x54;&#x65;&#x78;&#x74;&#x20;&#x69;&#x64;&#x3d;&#x22;&#x73;&#x68;&#x6f;&#x77;&#x4d;&#x6f;&#x64;&#x65;&#x6c;&#x44;&#x61;&#x74;&#x61;&#x22;&#x20;&#x2f;&#x3e;
+                </code>
+                <code>
+                    &#x3c;&#x2f;&#x56;&#x42;&#x6f;&#x78;&#x3e;
                 </code>
             </pre>
 
