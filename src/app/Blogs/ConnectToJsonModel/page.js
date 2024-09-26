@@ -112,7 +112,7 @@ const sample1 = () => {
                 Hence, the JSON Model is now connected with Fiori UI5 Application.
             </p>
 
-            <h3 className="heading">Lets use this in JSON Model in Application</h3>
+            <h3 className="heading">Lets use this JSON Model in Fiori UI5 Application</h3>
 
             <p className="paragraph">
                 Lets first create an input field on our View and some button to submit (store the input data into Model) and then fetch the same stored data from Model.
@@ -120,7 +120,7 @@ const sample1 = () => {
 
             <ul>
                 <li className="list">
-                    1. Add the below code in your view.
+                    1. Add the below code in your <span className="tomato"> view xml </span> file.
                 </li>
             </ul>
 
@@ -151,7 +151,95 @@ const sample1 = () => {
                 <code>
                     &#x3c;&#x2f;&#x56;&#x42;&#x6f;&#x78;&#x3e;
                 </code>
+
             </pre>
+
+            <ul>
+                <li className="list">
+                    2. Add the below code in your <span className="tomato"> controller </span> file.
+                </li>
+            </ul>
+
+            <pre className="flex-column">
+
+                {/* onInit: function () {
+
+                },
+
+                submitData : function(){
+                    let inputText = this.byId("textInput").getValue();
+
+                    let modelContent = 
+                        {
+                            "userInput" : inputText
+                        }
+
+                    this.getOwnerComponent().getModel("DataModel").setData(modelContent, "userInput");
+                    debugger
+                },
+
+                fetchData : function () {
+                    let dataModel = this.getOwnerComponent().getModel("DataModel").getData();
+                    let {userInput} = dataModel;
+                    
+                    this.byId("showModelData").setText(userInput)
+                    debugger
+                }
+
+
+                }); */}
+
+                <code className="language-js">
+                    &#x6f;&#x6e;&#x49;&#x6e;&#x69;&#x74;&#x3a;&#x20;&#x66;&#x75;&#x6e;&#x63;&#x74;&#x69;&#x6f;&#x6e;&#x20;&#x28;&#x29;&#x20;&#x7b;
+                </code>
+                <code className="language-js">
+                    &#x7d;&#x2c;
+                </code>
+                <br />
+                <code className="language-js">
+                    &#x73;&#x75;&#x62;&#x6d;&#x69;&#x74;&#x44;&#x61;&#x74;&#x61;&#x20;&#x3a;&#x20;&#x66;&#x75;&#x6e;&#x63;&#x74;&#x69;&#x6f;&#x6e;&#x28;&#x29;&#x7b;
+                </code>
+                <code className="language-js">
+                    &nbsp;&#x6c;&#x65;&#x74;&#x20;&#x69;&#x6e;&#x70;&#x75;&#x74;&#x54;&#x65;&#x78;&#x74;&#x20;&#x3d;&#x20;&#x74;&#x68;&#x69;&#x73;&#x2e;&#x62;&#x79;&#x49;&#x64;&#x28;&#x22;&#x74;&#x65;&#x78;&#x74;&#x49;&#x6e;&#x70;&#x75;&#x74;&#x22;&#x29;&#x2e;&#x67;&#x65;&#x74;&#x56;&#x61;&#x6c;&#x75;&#x65;&#x28;&#x29;&#x3b;
+                </code>
+                <code className="language-js">
+                    &nbsp;&#x6c;&#x65;&#x74;&#x20;&#x6d;&#x6f;&#x64;&#x65;&#x6c;&#x43;&#x6f;&#x6e;&#x74;&#x65;&#x6e;&#x74;&#x20;&#x3d;&#x20;&#x7b;
+                </code>
+                <code className="language-js">
+                    &nbsp;&nbsp;&#x22;&#x75;&#x73;&#x65;&#x72;&#x49;&#x6e;&#x70;&#x75;&#x74;&#x22;&#x20;&#x3a;&#x20;&#x69;&#x6e;&#x70;&#x75;&#x74;&#x54;&#x65;&#x78;&#x74;
+                </code>
+                <code className="language-js">
+                    &nbsp;&#x7d;
+                </code>
+                <code className="language-js">
+                    &nbsp;&#x74;&#x68;&#x69;&#x73;&#x2e;&#x67;&#x65;&#x74;&#x4f;&#x77;&#x6e;&#x65;&#x72;&#x43;&#x6f;&#x6d;&#x70;&#x6f;&#x6e;&#x65;&#x6e;&#x74;&#x28;&#x29;&#x2e;&#x67;&#x65;&#x74;&#x4d;&#x6f;&#x64;&#x65;&#x6c;&#x28;&#x22;&#x44;&#x61;&#x74;&#x61;&#x4d;&#x6f;&#x64;&#x65;&#x6c;&#x22;&#x29;&#x2e;&#x73;&#x65;&#x74;&#x44;&#x61;&#x74;&#x61;&#x28;&#x6d;&#x6f;&#x64;&#x65;&#x6c;&#x43;&#x6f;&#x6e;&#x74;&#x65;&#x6e;&#x74;&#x2c;&#x20;&#x22;&#x75;&#x73;&#x65;&#x72;&#x49;&#x6e;&#x70;&#x75;&#x74;&#x22;&#x29;&#x3b;
+                </code>
+                <code className="language-js">
+                    &#x7d;&#x2c;
+                </code>
+                <br />
+                <code className="language-js">
+                    &#x66;&#x65;&#x74;&#x63;&#x68;&#x44;&#x61;&#x74;&#x61;&#x20;&#x3a;&#x20;&#x66;&#x75;&#x6e;&#x63;&#x74;&#x69;&#x6f;&#x6e;&#x20;&#x28;&#x29;&#x20;&#x7b;
+                </code>
+                <code className="language-js">
+                    &nbsp;&#x6c;&#x65;&#x74;&#x20;&#x64;&#x61;&#x74;&#x61;&#x4d;&#x6f;&#x64;&#x65;&#x6c;&#x20;&#x3d;&#x20;&#x74;&#x68;&#x69;&#x73;&#x2e;&#x67;&#x65;&#x74;&#x4f;&#x77;&#x6e;&#x65;&#x72;&#x43;&#x6f;&#x6d;&#x70;&#x6f;&#x6e;&#x65;&#x6e;&#x74;&#x28;&#x29;&#x2e;&#x67;&#x65;&#x74;&#x4d;&#x6f;&#x64;&#x65;&#x6c;&#x28;&#x22;&#x44;&#x61;&#x74;&#x61;&#x4d;&#x6f;&#x64;&#x65;&#x6c;&#x22;&#x29;&#x2e;&#x67;&#x65;&#x74;&#x44;&#x61;&#x74;&#x61;&#x28;&#x29;&#x3b;
+                </code>
+                <code className="language-js">
+                    &nbsp;&#x6c;&#x65;&#x74;&#x20;&#x7b;&#x75;&#x73;&#x65;&#x72;&#x49;&#x6e;&#x70;&#x75;&#x74;&#x7d;&#x20;&#x3d;&#x20;&#x64;&#x61;&#x74;&#x61;&#x4d;&#x6f;&#x64;&#x65;&#x6c;&#x3b;
+                </code>
+                <code className="language-js">
+                    &nbsp;&#x74;&#x68;&#x69;&#x73;&#x2e;&#x62;&#x79;&#x49;&#x64;&#x28;&#x22;&#x73;&#x68;&#x6f;&#x77;&#x4d;&#x6f;&#x64;&#x65;&#x6c;&#x44;&#x61;&#x74;&#x61;&#x22;&#x29;&#x2e;&#x73;&#x65;&#x74;&#x54;&#x65;&#x78;&#x74;&#x28;&#x75;&#x73;&#x65;&#x72;&#x49;&#x6e;&#x70;&#x75;&#x74;&#x29;&#x3b;
+                </code>
+                <code className="language-js">
+                    &#x7d;
+                </code>
+
+
+            </pre>
+
+            <p className="paragraph">
+                And, it is done. You can use this JSON Model in your Fiori UI5 Application.
+            </p>
 
             <PrismLoader />
         </div>
