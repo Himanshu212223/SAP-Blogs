@@ -64,14 +64,15 @@
     border-radius: 10px;
     border: 1px solid transparent;
 }
-.topic{
+.hamburger-item-topic{
     color: white;
     padding: 5px 10px;
     font-size: large;
     border-radius: 10px;
     border: 1px solid transparent;
 }
-.topic:hover{
+.hamburger-item-topic:hover{
+    color: tomato;
     padding: 5px 10px;
     border: 1px solid tomato;
 }

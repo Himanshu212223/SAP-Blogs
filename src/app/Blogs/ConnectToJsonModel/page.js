@@ -6,13 +6,13 @@ const sample1 = () => {
         <div className="indexing">
             <h1 className="headline">Connect Fiori Application to JSON Model</h1>
 
-            <h3 className="heading">Objective</h3>
+            {/* <h3 className="heading">Objective</h3> */}
 
             <p className="paragraph">
                 We will try to connect our Fiori Application to JSON Model.
             </p>
 
-            <h3 className="heading">Procedure</h3>
+            <h3 className="heading">Steps to follow</h3>
 
             <p className="paragraph">
                 To connect our Fiori UI5 application with JSON Model, we need to first create JSON file in our model.

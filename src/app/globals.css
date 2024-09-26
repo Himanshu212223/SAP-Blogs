@@ -40,7 +40,7 @@ body {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   /* background: #888; */
-  background: tomato;
+  background: black;
 }
 
 /* Handle on hover */
@@ -74,25 +74,28 @@ body {
 }
 
 .headline{
-  color: tomato;
+  color: white;
   font-size: 2rem;
   padding: 5px 0px;
+  font-weight: bold;
 }
 
 .heading{
-  color: deepskyblue;
+  /* color: deepskyblue; */
+  color: white;
+  font-weight: bold;
   font-size: x-large;
   padding: 5px 0px;
 }
 
 .list{
-  color: white;
+  color: rgb(211, 211, 211);
   padding-left: 10px;
   padding-top: 20px;
 }
 
 .paragraph{
-  color: white;
+  color: rgb(211, 211, 211);
   padding: 5px 0px;
 }
 

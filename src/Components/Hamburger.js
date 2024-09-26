@@ -27,7 +27,7 @@ const Hamburger = () => {
 
                 <div className='hamburger-content'>
                     <p className='hamburger-item main-topic'>Fiori</p>
-                    <Link href='/Blogs/ConnectToJsonModel' className='hamburger-item topic' onClick={handleHamburger} >Connect to JSON Model</Link>
+                    <Link href='/Blogs/ConnectToJsonModel' className='hamburger-item-topic' onClick={handleHamburger} >Connect to JSON Model</Link>
                 </div>
 
             </div>
