@@ -88,6 +88,14 @@ body {
   padding: 5px 0px;
 }
 
+.hyper-link{
+  color: skyblue;
+  text-decoration: underline;
+}
+.hyper-link:hover{
+  color: deeppink;
+}
+
 .list{
   color: rgb(211, 211, 211);
   padding-left: 10px;

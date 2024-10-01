@@ -6,7 +6,7 @@ import Image from "next/image";
 const sample1 = () => {
     return (
         <div className="indexing">
-            <h1 className="headline">Connect Fiori Application to JSON Model</h1>
+            <h1 className="headline">Configure JSON Model with Fiori UI5 Application</h1>
 
 
             <p className="paragraph">

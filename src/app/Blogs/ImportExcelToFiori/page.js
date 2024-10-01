@@ -2,6 +2,7 @@ import PrismLoader from "@/Components/prism-loader";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import Image from "next/image";
+import Link from "next/link";
 
 const importExcelToFiori = () => {
     return (
@@ -20,6 +21,10 @@ const importExcelToFiori = () => {
             <Image src="/resources/importExcelToFiori/chooseFile.png" width={800} height={200} alt="Choose File" />
             <br />
             <Image src="/resources/importExcelToFiori/displayInFiori.png" width={800} height={200} alt="Display in Fiori Table" />
+
+            <p className="paragraph">
+                To Connect JSON Model with Fiori UI5 Application, follow the blog at <Link className='hyper-link' href="/Blogs/ConnectToJsonModel">Configure JSON Model in Fiori UI5 App.</Link>.
+            </p>
 
             <h3 className="heading">Steps to follow</h3>
 
