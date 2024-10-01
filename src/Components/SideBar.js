@@ -31,7 +31,7 @@ const SideBar = () => {
                     
                     <div className='fiori-items-visible'>
                         <Link className='side-bar-item' href="/Blogs/ImportExcelToFiori">Import Excel To Fiori</Link>
-                        <Link className='side-bar-item' href="/Blogs/ConnectToJsonModel">Connect to JSON Model</Link>
+                        <Link className='side-bar-item' href="/Blogs/ConnectToJsonModel">Configure JSON Model with Fiori UI5 Application</Link>
                     </div>
                 
                 </div>

@@ -28,7 +28,7 @@ const Hamburger = () => {
                 <div className='hamburger-content'>
                     <p className='hamburger-item main-topic'>Fiori</p>
                     <Link href='/Blogs/ImportExcelToFiori' className='hamburger-item-topic' onClick={handleHamburger} >Import Excel To Fiori</Link>
-                    <Link href='/Blogs/ConnectToJsonModel' className='hamburger-item-topic' onClick={handleHamburger} >Connect to JSON Model</Link>
+                    <Link href='/Blogs/ConnectToJsonModel' className='hamburger-item-topic' onClick={handleHamburger} >Configure JSON Model with Fiori UI5 Application</Link>
                 </div>
 
             </div>
