@@ -30,6 +30,7 @@ const SideBar = () => {
                     {/* <div className={fiori ? 'fiori-items-visible' : 'fiori-items-hidden'}> */}
                     
                     <div className='fiori-items-visible'>
+                        <Link className='side-bar-item' href="/Blogs/ImportExcelToFiori">Import Excel To Fiori</Link>
                         <Link className='side-bar-item' href="/Blogs/ConnectToJsonModel">Connect to JSON Model</Link>
                     </div>
                 

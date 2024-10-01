@@ -71,7 +71,7 @@ const sample1 = () => {
             </SyntaxHighlighter>
 
 
-            <p className="paragraph green">
+            <p className="paragraph deepPink">
                 Hence, the JSON Model is now connected with Fiori UI5 Application.
             </p>
 
