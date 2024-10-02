@@ -7,7 +7,7 @@
   --foreground: #171717;
   /* --custombg : #212529; */
   /* --custombg : #424a52; */
-  --custombg : #343a40;
+  --custombg : #f8f9fa;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -76,7 +76,7 @@ body {
 }
 
 .headline{
-  color: white;
+  color: #212529;
   font-size: 2rem;
   padding: 5px 0px;
   font-weight: bold;

@@ -6,11 +6,15 @@
     padding: 0 10px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid white; */
+    color: #495057;
+    border-bottom: 1px solid #495057;
 }
 .fiori-container:hover .fiori{
-    color: tomato;
-    border-bottom: 1px solid tomato;
+    /* color: tomato;
+    border-bottom: 1px solid tomato; */
+    color: black;
+    border-bottom: 1px solid black;
 }
 .fiori-items-hidden{
     display: none;
@@ -23,13 +27,12 @@
 .search{
     background-color: rgb(30, 30, 30);
     padding: 5px 10px;
-    border: none;
     outline: none;
     margin-bottom: 20px;
-    border-radius: 10px;
     width: 100%;
     color: white;
-    /* border-bottom: 1px solid white; */
+    border: none;
+    border-radius: 10px;
 }
 .side-bar-item{
     margin: 5px 10px;
@@ -39,11 +42,14 @@
     padding: 10px 10px;
     border-radius: 10px;
     cursor: pointer;
+    color: #6c757d;
     transition: all 0.2s ease-in-out;
 }
 .side-bar-item:hover{
-    color: tomato;
-    border: 1px solid tomato;
+    /* color: tomato;
+    border: 1px solid tomato; */
+    color: black;
+    border: 1px solid black;
     transition: all 0.2s ease-in-out;
 }
 .sideBar{

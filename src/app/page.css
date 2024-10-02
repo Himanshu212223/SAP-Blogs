@@ -3,15 +3,24 @@
 }
 .content-p{
     margin: 15px 0px;
-    color: white;
+    color: #495057;
 }
 .headline{
-    color: tomato;
+    color: #212529;
     font-size: 2rem;
+}
+.heading{
+    color: #343a40;
+}
+.list{
+    color: #343a40;
+}
+.paragraph{
+    color: #343a40;
 }
 .sub-headline{
     margin: 15px 0px;
-    color: tomato;
+    color: #343a40;
     font-size: 1.5rem;
 }
 .underline{
@@ -22,5 +31,5 @@
 }
 .ul li{
     margin-left: 20px;
-    color: white;
+    color: #495057;
 }
