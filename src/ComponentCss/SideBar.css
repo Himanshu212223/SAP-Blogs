@@ -6,15 +6,16 @@
     padding: 0 10px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    /* border-bottom: 1px solid white; */
-    color: #495057;
-    border-bottom: 1px solid #495057;
+    color: white;
+    border-bottom: 1px solid white;
+    /* color: #495057;
+    border-bottom: 1px solid #495057; */
 }
 .fiori-container:hover .fiori{
-    /* color: tomato;
-    border-bottom: 1px solid tomato; */
-    color: black;
-    border-bottom: 1px solid black;
+    color: tomato;
+    border-bottom: 1px solid tomato;
+    /* color: black;
+    border-bottom: 1px solid black; */
 }
 .fiori-items-hidden{
     display: none;
@@ -42,14 +43,15 @@
     padding: 10px 10px;
     border-radius: 10px;
     cursor: pointer;
-    color: #6c757d;
+    /* color: #6c757d; */
+    color: #adb5bd;
     transition: all 0.2s ease-in-out;
 }
 .side-bar-item:hover{
-    /* color: tomato;
-    border: 1px solid tomato; */
-    color: black;
-    border: 1px solid black;
+    color: tomato;
+    border: 1px solid tomato;
+    /* color: black;
+    border: 1px solid black; */
     transition: all 0.2s ease-in-out;
 }
 .sideBar{

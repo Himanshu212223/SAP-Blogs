@@ -3,24 +3,30 @@
 }
 .content-p{
     margin: 15px 0px;
-    color: #495057;
+    /* color: #495057; */
+    color: #dee2e6;
 }
 .headline{
-    color: #212529;
+    /* color: #212529; */
+    color: tomato;
     font-size: 2rem;
 }
 .heading{
-    color: #343a40;
+    /* color: #343a40; */
+    color: tomato;
 }
 .list{
-    color: #343a40;
+    /* color: #343a40; */
+    color: #dee2e6;
 }
 .paragraph{
-    color: #343a40;
+    /* color: #343a40; */
+    color: #dee2e6;
 }
 .sub-headline{
+    /* color: #343a40; */
+    color: tomato;
     margin: 15px 0px;
-    color: #343a40;
     font-size: 1.5rem;
 }
 .underline{
@@ -31,5 +37,6 @@
 }
 .ul li{
     margin-left: 20px;
-    color: #495057;
+    /* color: #495057; */
+    color: #dee2e6;
 }
