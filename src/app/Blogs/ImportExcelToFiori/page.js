@@ -223,7 +223,7 @@ importExcel: async function (file) {
             </SyntaxHighlighter>
 
 
-            <p className="paragraph deepPink">
+            <p className="deepPink">
                 Now, we are able to Uplod the content of Excel into JSON Model for Fiori UI5 Application. 
             </p>
         </div>

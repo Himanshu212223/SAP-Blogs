@@ -129,7 +129,7 @@ fetchData : function () {
                 }
             </SyntaxHighlighter>
 
-            <p className="paragraph">
+            <p className="deepPink">
                 And, it is done. You can use this JSON Model in your Fiori UI5 Application.
             </p>
 
