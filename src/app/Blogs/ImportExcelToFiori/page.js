@@ -142,7 +142,7 @@ importExcel: async function (file) {
                 }
             </SyntaxHighlighter>
 
-            <p className="paragraph">
+            <p className="paragraph">1
                 4. Now, Lets create a Table in <span className="tomato">View.xml</span> and Bind the JSON Model with the Table. 
             </p>
 
