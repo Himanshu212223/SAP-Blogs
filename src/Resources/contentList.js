@@ -1,5 +1,9 @@
 export const fiori = [
     {
+        title : "Connect Destination with Fiori UI5",
+        link : '/Blogs/ConnectDestinationWithFiori' 
+    },
+    {
         title : "Import Excel To Fiori",
         link : '/Blogs/ImportExcelToFiori' 
     },
@@ -10,9 +14,5 @@ export const fiori = [
     {
         title : "Configure JSON Model with Fiori UI5 Application",
         link : '/Blogs/ConnectToJsonModel' 
-    },
-    {
-        title : "Connect Destination with Fiori UI5",
-        link : '/Blogs/ConnectDestinationWithFiori' 
     }
 ] ;
