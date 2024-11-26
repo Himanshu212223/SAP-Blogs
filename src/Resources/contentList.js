@@ -4,6 +4,10 @@ export const fiori = [
         link : '/Blogs/ConnectDestinationWithFiori' 
     },
     {
+        title : "Import JSON To Fiori",
+        link : '/Blogs/ImportJsonFile' 
+    },
+    {
         title : "Import Excel To Fiori",
         link : '/Blogs/ImportExcelToFiori' 
     },
