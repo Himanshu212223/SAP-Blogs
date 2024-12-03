@@ -12,6 +12,10 @@ export const fiori = [
         link : '/Blogs/ImportExcelToFiori' 
     },
     {
+        title : "Routing & Navigation",
+        link : '/Blogs/Routing' 
+    },
+    {
         title : "Configure JSON Model in UI5 Dynamically",
         link : '/Blogs/ConnectToJsonModelDynamically' 
     },
