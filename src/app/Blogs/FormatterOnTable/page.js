@@ -23,7 +23,7 @@ const sample1 = () => {
 
             {/* STEPS to FOLLOW */}
 
-            <h3 className="heading">Steps to follow to create Search Bar</h3>
+            <h3 className="heading">Steps to follow -</h3>
 
             <p className="paragraph">
                 1. Firstly, goto your <span className="tomato">view.xml</span> file and create the Table. 
