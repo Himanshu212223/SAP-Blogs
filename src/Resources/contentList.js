@@ -12,6 +12,14 @@ export const fiori = [
         link : '/Blogs/ImportExcelToFiori' 
     },
     {
+        title : "Formatter on Table",
+        link : '/Blogs/FormatterOnTable' 
+    },
+    {
+        title : "Search and Sort on Table",
+        link : '/Blogs/SearchAndSort' 
+    },
+    {
         title : "Routing using Base Controller",
         link : '/Blogs/RoutingUsingBaseController' 
     },

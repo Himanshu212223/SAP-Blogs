@@ -125,6 +125,11 @@ body {
   font-weight: bold;
 }
 
+.hyperlink{
+  color: #c77dff;
+  text-decoration: underline;
+}
+
 
 
 @media only screen and (min-width: 200px) and (max-width: 768px) {
