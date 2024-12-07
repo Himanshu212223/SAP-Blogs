@@ -82,6 +82,7 @@ body {
   font-size: 2rem;
   padding: 5px 0px;
   font-weight: bold;
+  margin-top: 50px;
 }
 
 .heading{
@@ -104,6 +105,7 @@ body {
   color: rgb(211, 211, 211);
   padding-left: 10px;
   padding-top: 20px;
+  margin-bottom: 10px;
 }
 
 .paragraph{
