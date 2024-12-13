@@ -1,5 +1,9 @@
 export const fiori = [
     {
+        title : "Logged In User Details",
+        link : '/Blogs/LoggedInUserDetails' 
+    },
+    {
         title : "Connect Destination with Fiori UI5",
         link : '/Blogs/ConnectDestinationWithFiori' 
     },
