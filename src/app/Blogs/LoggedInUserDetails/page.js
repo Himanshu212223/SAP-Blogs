@@ -1,8 +1,9 @@
 import PrismLoader from "@/Components/prism-loader";
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { Light, Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import Image from "next/image";
 import '@/app/page.css';
+import Link from "next/link";
 
 const sample1 = () => {
 
@@ -95,6 +96,15 @@ const sample1 = () => {
             <p className="list">
                 2. Now, go to <span className="tomato">View.xml</span> file and add the below line of code to create a Table View.
             </p>
+
+
+
+            <p className="list">
+                Don't foget to map Configure the JSON Model with the UI5 app. Here, we have configured UserModel.json.
+            </p>
+            <Link href={"/Blogs/ConnectToJsonModel"} className="hyperlink">Configure JSON Model</Link>
+
+
 
             <SyntaxHighlighter language="xml" style={atomDark}>
                 {
@@ -268,12 +278,6 @@ getLoginUserDetails: function () {
             
             <p className="list">
                 So, the <span className="javascript">controller.js</span> file will look like below-
-            </p>
-
-
-
-            <p className="list bold pinky">
-                And it is done. You can use this to Navigate from One View to Another View.
             </p>
 
 
