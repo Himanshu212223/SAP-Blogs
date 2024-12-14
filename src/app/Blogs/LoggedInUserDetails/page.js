@@ -100,7 +100,7 @@ const sample1 = () => {
 
 
             <p className="list">
-                Don't foget to map Configure the JSON Model with the UI5 app. Here, we have configured UserModel.json.
+                Don&apos;t foget to map Configure the JSON Model with the UI5 app. Here, we have configured UserModel.json.
             </p>
             <Link href={"/Blogs/ConnectToJsonModel"} className="hyperlink">Configure JSON Model</Link>
 
