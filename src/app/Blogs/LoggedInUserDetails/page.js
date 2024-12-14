@@ -9,8 +9,7 @@ const sample1 = () => {
 
 
 
-    return (
-        
+    return (     
         <div className="indexing">
             <h1 className="headline">Logged in User Details in Fiori UI5.</h1>
 
