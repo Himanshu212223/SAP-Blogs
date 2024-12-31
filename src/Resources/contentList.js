@@ -40,3 +40,13 @@ export const fiori = [
         link : '/Blogs/ConnectToJsonModel' 
     }
 ] ;
+
+
+
+
+export const capm = [
+    {
+        title : "Logged In User Details",
+        link : '/Blogs/LoggedInUserDetails' 
+    }
+] ;

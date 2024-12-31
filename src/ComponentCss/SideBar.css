@@ -1,3 +1,30 @@
+.capm{
+    margin: 10px 0;
+    font-size: larger;
+    font-weight: bold;
+    border: 1px solid transparent;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: white;
+    border-bottom: 1px solid white;
+    /* color: #495057;
+    border-bottom: 1px solid #495057; */
+}
+.capm-container:hover .capm{
+    color: tomato;
+    border-bottom: 1px solid tomato;
+    /* color: black;
+    border-bottom: 1px solid black; */
+}
+.capm-items-hidden{
+    display: none;
+    transition: all 0.2s ease-in-out;
+}
+.capm-items-visible{
+    display: flex;
+    flex-flow: column;
+}
 .fiori{
     margin: 10px 0;
     font-size: larger;

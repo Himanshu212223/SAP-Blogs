@@ -3,13 +3,19 @@
 import '@/ComponentCss/Hamburger.css'
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import {fiori} from '@/Resources/contentList.js'
+import {fiori, capm} from '@/Resources/contentList.js'
 
 const Hamburger = () => {
 
     const [hamburger, setHamburger] = useState(false);
+    
     const [fetchedFioriTopics, setFetchedFioriTopics] = useState({}) ;
     const [fioriTopics, setFioriTopics] = useState([]);
+    const [fioriVisibility, setFioriVisibility] = useState(false) ;
+
+    const [fetchCapmTopics, setCapmFetchTopics] = useState([]) ;
+    const [capmTopics, setCapmTopics] = useState([]) ;
+    const [capmVisibility, setCAPMVisibility] = useState(false) ;
 
     const handleHamburger = () => {
         if (hamburger) {
@@ -24,6 +30,8 @@ const Hamburger = () => {
     useEffect(() => {
       setFetchedFioriTopics(fiori);
       setFioriTopics(fiori);
+      setCapmFetchTopics(capm) ;
+      setCapmTopics(capm) ;
     }, []);
     
 
@@ -60,6 +68,16 @@ const Hamburger = () => {
                 <input className='search' placeholder='Search' onChange={handleSearch} />
 
                     <p className='hamburger-item main-topic'>Fiori</p>
+                    {/* <Link href='/Blogs/ImportExcelToFiori' className='hamburger-item-topic' onClick={handleHamburger} >Import Excel To Fiori</Link>
+                    <Link href='/Blogs/ConnectToJsonModel' className='hamburger-item-topic' onClick={handleHamburger} >Configure JSON Model with Fiori UI5 Application</Link> */}
+                    {
+                        fioriTopics && fioriTopics.map((element) => {
+                            return <Link key={element.link} className='hamburger-item-topic' href={element.link} onClick={handleHamburger} >{element.title}</Link>    
+                        })
+                    }
+
+
+                    <p className='hamburger-item main-topic'>CAPM</p>
                     {/* <Link href='/Blogs/ImportExcelToFiori' className='hamburger-item-topic' onClick={handleHamburger} >Import Excel To Fiori</Link>
                     <Link href='/Blogs/ConnectToJsonModel' className='hamburger-item-topic' onClick={handleHamburger} >Configure JSON Model with Fiori UI5 Application</Link> */}
                     {
