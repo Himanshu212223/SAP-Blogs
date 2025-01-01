@@ -126,7 +126,10 @@ body {
   color: deeppink;
   font-weight: bold;
 }
-
+.lightGreen{
+  color: #b9fbc0;
+  font-weight: bold;
+}
 .hyperlink{
   color: #48cae4;
   text-decoration: underline;

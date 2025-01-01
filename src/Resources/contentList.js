@@ -46,7 +46,7 @@ export const fiori = [
 
 export const capm = [
     {
-        title : "Logged In User Details",
-        link : '/Blogs/LoggedInUserDetails' 
+        title : "Create a Blank CAPM",
+        link : '/Blogs/CAPM/CreateBlankCAPM' 
     }
 ] ;
