@@ -4,6 +4,10 @@ export const fiori = [
         link : '/Blogs/Fiori/LoggedInUserDetails' 
     },
     {
+        title : "Connect Destination with Fiori UI5 using Fetch",
+        link : '/Blogs/Fiori/ConnectDestinationWithFioriUsingFetch' 
+    },
+    {
         title : "Connect Destination with Fiori UI5",
         link : '/Blogs/Fiori/ConnectDestinationWithFiori' 
     },
@@ -45,6 +49,10 @@ export const fiori = [
 
 
 export const capm = [
+    {
+        title : "CDS Commands to Create & Deploy App",
+        link : '/Blogs/CAPM/CDScommandsToCreateandDeployApp' 
+    },
     {
         title : "Create a Blank CAPM",
         link : '/Blogs/CAPM/CreateBlankCAPM' 
