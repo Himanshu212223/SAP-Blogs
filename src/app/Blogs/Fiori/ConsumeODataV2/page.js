@@ -71,7 +71,10 @@ const sample1 = () => {
 
 
             <p className="paragraph">
-                <span className="tomato">For example if the CAP endpoint url is</span> - https://trial-subaccount-productmanagement-srv.cfapps.us10.hana.ondemand.com/odata/v2/api/products/ProductDetails
+                <span className="tomato">For example if the CAP endpoint url is</span>
+			</p> 
+			<p  className="paragraph"> 
+				 - https://trial-subaccount-productmanagement-srv.cfapps.us10.hana.ondemand.com/odata/v2/api/products/ProductDetails
 			</p> 
             <p className="paragraph">
 			 	<span className="tomato">So, On Destination we are using </span> -  https://trial-subaccount-productmanagement-srv.cfapps.us10.hana.ondemand.com
