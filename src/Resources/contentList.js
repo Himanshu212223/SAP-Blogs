@@ -20,6 +20,10 @@ export const fiori = [
         link : '/Blogs/Fiori/ImportExcelToFiori' 
     },
     {
+        title : "Consume oData V2 on UI5",
+        link : '/Blogs/Fiori/ConsumeODataV2' 
+    },
+    {
         title : "Formatter on Table",
         link : '/Blogs/Fiori/FormatterOnTable' 
     },
