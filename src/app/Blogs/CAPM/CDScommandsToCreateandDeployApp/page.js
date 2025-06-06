@@ -84,7 +84,7 @@ const page = () => {
             </p>
 
             <SyntaxHighlighter language="javascript" style={atomDark}>
-                {` cds deploy  `}
+                {` cds deploy --to sqlite:./db.sqlite `}
             </SyntaxHighlighter>
 
 
