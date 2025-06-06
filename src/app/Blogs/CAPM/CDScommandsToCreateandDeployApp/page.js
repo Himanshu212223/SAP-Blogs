@@ -80,7 +80,7 @@ const page = () => {
 
 
             <p className="paragraph">
-                Use the below line of command to deploy it.
+                OR Use the below line of command to deploy it.
             </p>
 
             <SyntaxHighlighter language="javascript" style={atomDark}>
