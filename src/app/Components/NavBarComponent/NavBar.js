@@ -3,6 +3,7 @@
 import { useContext } from 'react';
 import './NavBar.css'
 import MyContext from '@/app/BlogContextProvider/MyContext';
+import Link from 'next/link';
 
 const NavBar = () => {
 
@@ -20,9 +21,9 @@ const NavBar = () => {
 
     return(
         <nav className="navbar">
-            <span className='logo'>my<span className='REF'>REF</span></span>
+            <Link href={"/"} className='logo'>my<span className='REF'>REF</span></Link>
             <div className='icons'>
-                <i className="fa-brands fa-github git-icon" aria-hidden="true"></i>
+                <a href='https://github.com/Himanshu212223' className="fa-brands fa-github git-icon" aria-hidden="true"></a>
                 <span className='hamburger-icon' onClick={handleHamburger} ><i className="fa-solid fa-bars hamburger" aria-hidden="true" onClick={handleHamburger} ></i></span>
             </div>
         </nav>

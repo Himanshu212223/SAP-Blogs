@@ -57,6 +57,18 @@ const ContentList = () => {
     }
 
 
+    //  To Manage Hamburger
+    const handleHamburger = () => {
+        if(hamburger === 'contentList'){
+            setHamburger('showContentList');
+        }
+        else{
+            setHamburger('contentList');
+            console.log(hamburger)
+        }
+    }
+
+
     return (
         <aside className={hamburger}>
 
@@ -69,7 +81,7 @@ const ContentList = () => {
             <h3 className='list-topic-header'>Fiori</h3>
             <div className='topic-content'>
                 {displayFiori.map(eachElement => {
-                    return <Link key={eachElement.title} href={eachElement.link} className='contentList-item' >{eachElement.title}</Link>
+                    return <Link key={eachElement.title} href={eachElement.link} className='contentList-item' onClick={handleHamburger} >{eachElement.title}</Link>
                 })}
             </div>
             
@@ -78,7 +90,7 @@ const ContentList = () => {
             <h3 className='list-topic-header'>CAPM</h3>
             <div className='topic-content'>
                 {displayCapm.map(eachElement => {
-                    return <Link key={eachElement.title} href={eachElement.link} className='contentList-item' >{eachElement.title}</Link>
+                    return <Link key={eachElement.title} href={eachElement.link} className='contentList-item'  onClick={handleHamburger} >{eachElement.title}</Link>
                 })}
             </div>
         </aside>
