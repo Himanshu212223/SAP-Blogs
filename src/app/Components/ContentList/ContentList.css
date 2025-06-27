@@ -1,0 +1,131 @@
+.contentList {
+  border-right: 1px solid var(--bg-grey);
+  /* background-color: teal; */
+  width: 25%;
+  min-height: 80vh;
+  padding: 10px 10px;
+  padding-left: 0px;
+  box-sizing: border-box;
+}
+
+/* Should be save as above */
+.showContentList {
+  border-right: 1px solid var(--bg-grey);
+  /* background-color: teal; */
+  width: 25%;
+  min-height: 80vh;
+  padding: 10px 10px;
+  padding-left: 0px;
+  box-sizing: border-box;
+}
+
+.search {
+  width: 100%;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid var(--bg-grey);
+  border-radius: 10px;
+}
+
+.search:hover {
+  border: 1px solid var(--font-highlight);
+}
+
+.list-topic-header {
+  font-size: 2rem;
+  margin-top: 20px;
+  background-color: transparent;
+}
+
+.topic-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: transparent;
+  /* margin-top: 20px; */
+  /* background-color: tomato; */
+}
+
+.contentList-item {
+  text-decoration: none;
+  padding: 10px 5px;
+  background-color: transparent;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  /* border-radius: 10px; */
+  /* background-color: teal; */
+}
+
+.contentList-item:hover {
+  color: var(--font-highlight);
+  border-left: 2px solid var(--font-highlight);
+  transition: all 0.3s ease-in-out;
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .contentList {
+    background-color: var(--bg-tile);
+    width: 90%;
+    min-height: 100vh;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    position: fixed;
+    right: -100%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .showContentList {
+    background-color: var(--bg-tile);
+    width: 100vw;
+    min-height: 100vh;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    position: fixed;
+    right: 0%;
+    overflow: scroll;
+    transition: all 0.3s ease-in-out;
+  }
+  .topic-content {
+    overflow: scroll;
+    height: 40vh;
+  }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .contentList {
+    background-color: var(--bg-tile);
+    width: 90%;
+    min-height: 100vh;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    position: fixed;
+    right: -100%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .showContentList {
+    background-color: var(--bg-tile);
+    width: 100vw;
+    min-height: 100vh;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    position: fixed;
+    right: 0%;
+    transition: all 0.3s ease-in-out;
+  }
+  .topic-content {
+    overflow: scroll;
+    height: 40vh;
+  }
+}

@@ -1,0 +1,18 @@
+.Home{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: aqua; */
+}
+
+.headline{
+    font-size: 3rem;
+}
+
+.highlight-heading{
+    font-weight: bold;
+    color: var(--font-highlight);
+}

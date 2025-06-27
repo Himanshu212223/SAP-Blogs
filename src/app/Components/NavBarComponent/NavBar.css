@@ -1,0 +1,92 @@
+.navbar {
+  height: 10vh;
+  padding: 0 15vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-dark);
+  z-index: 10;
+}
+
+.logo {
+  color: var(--font-light);
+  font-size: x-large;
+}
+
+.REF {
+  color: var(--font-highlight);
+  font-weight: 600;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.git-icon {
+  font-size: large;
+  cursor: pointer;
+  padding: 5px 5px;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.git-icon:hover {
+  color: var(--font-highlight);
+  border: 2px solid var(--font-highlight);
+  transition: all 0.2s ease-in-out;
+}
+
+.hamburger-icon {
+  display: none;
+}
+
+.hamburger {
+  font-size: large;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.hamburger:hover {
+  color: var(--font-highlight);
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .navbar {
+    padding: 0 10vw;
+  }
+  .hamburger-icon {
+    display: inherit;
+  }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .navbar {
+    padding: 0 20px;
+  }
+  .hamburger-icon {
+    display: inherit;
+  }
+}
