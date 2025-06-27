@@ -48,7 +48,7 @@ const page = () => {
 
                 <h2>Step 2 - Create Controller file for the View</h2>
 
-
+                <p>Adding new line for commit.</p>
 
                 <p>And it is done !!!</p>
 
