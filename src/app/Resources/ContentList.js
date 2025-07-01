@@ -20,6 +20,10 @@ export const fiori = [
         link : '/Blogs/Fiori/ImportExcelToFiori' 
     },
     {
+        title : "Consume oData V4 on UI5",
+        link : '/Blogs/Fiori/ConsumeODataV4' 
+    },
+    {
         title : "Consume oData V2 on UI5",
         link : '/Blogs/Fiori/ConsumeODataV2' 
     },
