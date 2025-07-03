@@ -3,7 +3,7 @@
   --bg-tile: #1b263b;
   --font-light: #f8f9fa;
   --font-highlight: #02c39a;
-  --bg-grey : #343a40;
+  --bg-grey: #343a40;
 }
 
 * {
@@ -29,23 +29,25 @@
   /* background-color: tomato; */
 }
 
-.mainBody{
+.mainBody {
   /* min-height: 200vh; */
   width: 75%;
   /* background-color: tomato; */
   /* min-height: 100vh; */
 }
 
-
-
 @media (min-width: 481px) and (max-width: 767px) {
   .contentBody {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 0 5vw;
     gap: 10px;
     overflow: hidden;
     min-height: 90vh;
+  }
+  .mainBody {
+    width: 95%;
   }
 }
 
@@ -53,9 +55,13 @@
   .contentBody {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 0 5vw;
     gap: 10px;
     overflow: hidden;
     min-height: 90vh;
+  }
+  .mainBody {
+    width: 95%;
   }
 }
