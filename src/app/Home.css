@@ -16,3 +16,13 @@
     font-weight: bold;
     color: var(--font-highlight);
 }
+
+.home-tagline{
+    letter-spacing: 1px;
+    margin: 10px 0;
+}
+
+.description{
+    letter-spacing: 1px;
+    line-height: 30px;
+}
