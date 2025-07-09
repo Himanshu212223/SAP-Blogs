@@ -1,6 +1,15 @@
+# SAP Blog Page
+
+You can preview or visit the Blog page through [https://sap-blogs-ipsm.vercel.app/](https://sap-blogs-ipsm.vercel.app/)
+
+This blog page features SAP Fiori and SAP CAPM topics with clear, easy-to-understand code examples that serve as a helpful reference for developing UI applications or backend services.
+
+
+## About the development of Blog Page
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+### Getting Started
 
 First, run the development server:
 
@@ -20,7 +29,7 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+### Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -28,6 +37,18 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+### Folder structure of the Blog Page App
+
+```
+SAP-Blogs
+|
+|- .next (created when we build Next App)
+|- node_modules
+|- public
+|   |- resources (contains all the images used on the blog page)
+|- src
+```
 
 ## Deploy on Vercel
 

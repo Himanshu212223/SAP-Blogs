@@ -4,20 +4,20 @@ export const fiori = [
         link : '/Blogs/Fiori/LoggedInUserDetails' 
     },
     {
-        title : "Connect Destination with Fiori UI5 using Fetch",
-        link : '/Blogs/Fiori/ConnectDestinationWithFioriUsingFetch' 
-    },
-    {
-        title : "Connect Destination with Fiori UI5",
-        link : '/Blogs/Fiori/ConnectDestinationWithFiori' 
-    },
-    {
         title : "Import JSON To Fiori",
         link : '/Blogs/Fiori/ImportJsonFile' 
     },
     {
         title : "Import Excel To Fiori",
         link : '/Blogs/Fiori/ImportExcelToFiori' 
+    },
+    {
+        title : "Connect Destination with Fiori UI5 using Fetch",
+        link : '/Blogs/Fiori/ConnectDestinationWithFioriUsingFetch' 
+    },
+    {
+        title : "Connect Destination with Fiori UI5",
+        link : '/Blogs/Fiori/ConnectDestinationWithFiori' 
     },
     {
         title : "Consume oData V4 on UI5",
