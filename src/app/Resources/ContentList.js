@@ -58,6 +58,10 @@ export const fiori = [
 
 export const capm = [
     {
+        title : "Create Destination through CAP App",
+        link : '/Blogs/CAPM/CreateDestinationThroughCAP' 
+    },
+    {
         title : "CDS Commands to Create & Deploy App",
         link : '/Blogs/CAPM/CDScommandsToCreateandDeployApp' 
     },
