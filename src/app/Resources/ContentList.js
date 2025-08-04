@@ -62,6 +62,10 @@ export const capm = [
         link : '/Blogs/CAPM/CreateDestinationThroughCAP' 
     },
     {
+        title : "CRUD Operation using actions",
+        link : '/Blogs/CAPM/CrudOperationUsingActions' 
+    },
+    {
         title : "CDS Commands to Create & Deploy App",
         link : '/Blogs/CAPM/CDScommandsToCreateandDeployApp' 
     },
