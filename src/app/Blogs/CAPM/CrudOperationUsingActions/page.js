@@ -132,6 +132,9 @@ service customServices {
 
                 <CodeBlock code={`
 const cds = require('@sap/cds');
+
+const LOGGER = cds.log('mycustom-service');
+
 const { Employees } = cds.entities;
 
 const customServices = (srv) => {
@@ -162,7 +165,8 @@ const customServices = (srv) => {
 
             // Step 2 - Validate the empId if exist or not.
             if (!empId) {
-                return request.error(500, "Internal Server Error");
+                LOGGER.error("empId is empty");
+                return request.error(400, "Invalid Payload");
             }
 
             //  Step 3 - Query the database to retrieve user details based on the empId.
@@ -170,13 +174,16 @@ const customServices = (srv) => {
 
             //  Step 4 - Check if employee details even exist on DB or not.
             if (userDetails.length == 0) {
+                LOGGER.error("User doesnot exist");
                 return request.error(400, 'User doesnot exist.');
-            }
+                }
 
             //  Step 5 - Return the employee details.
+            LOGGER.info("Provided User details on Response");
             return userDetails;
-        }
-        catch (error) {
+            }
+            catch (error) {
+            LOGGER.error(error);
             request.error(500, "Internal Server Error");
         }
     });
@@ -212,7 +219,8 @@ const customServices = (srv) => {
 
 
             if (!empId || !name || !location || !login) {
-                return request.error(400, "Input Fileds are missing.");
+                LOGGER.error("Invalid Payload");
+                return request.error(400, "Invalid Payload.");
             }
 
             //  Step 2 - Check if User already exist in DB based on empId.
@@ -220,6 +228,7 @@ const customServices = (srv) => {
 
 
             if (isUserAlreadyPresent.length != 0) {
+                LOGGER.error("User already exist in DB");
                 return request.error(409, ${markup1});
             }
 
@@ -230,14 +239,18 @@ const customServices = (srv) => {
 
             //  Step 4 - Adding the Employee into Employee Table on DB.
             const addEmployee = await cds.run(INSERT.into(Employees).entries(newEmployee));
+            
             if (addEmployee.error) {
+                LOGGER.error(addEmployee.error);
                 return request.error(500, ${markup2})
             }
 
             //  Step 5 - Return the required response.
+            LOGGER.info("Successfully created the User");
             return (201, ${markup3});
         }
         catch (error) {
+            LOGGER.error(error);
             request.error(500, ${markup4});
         }
 
@@ -272,10 +285,16 @@ const customServices = (srv) => {
             //  Step 1 - Extract the empId, name, location, login from the request payload and check if not null.
             const { empId, name, location } = request.data;
 
+            if(!empId || !name || !location){
+                LOGGER.error("Invalid Payload");
+                return request.error(400, "Invalid Payload");
+            }
+                
             //  Step 2 - Check if User already exist in DB based on empId.
             const userDetails = await cds.run(SELECT.from(Employees).where({ empId: empId }));
-
+                
             if (userDetails.length === 0) {
+                LOGGER.error("User doesnot exist in DB");
                 return request.error(404, "User does not exist.");
             }
 
@@ -287,6 +306,7 @@ const customServices = (srv) => {
             }
 
             if (name == undefined && location == undefined) {
+                LOGGER.error("Invalid Payload - neither name nor location is provided");
                 return request.error(400, 'Invalid Request, No input is provided to be updated.')
             }
 
@@ -302,10 +322,12 @@ const customServices = (srv) => {
             let updateDB = await cds.run(UPDATE(Employees).set({ name: updateEmployee.name, location: updateEmployee.location }).where({ empId: empId }));
 
             if (updateDB) {
+                LOGGER.info("Updated the User details on DB");
                 return (202, 'Employee Details are updated Successfully.')
             }
 
             //  Step 5 - Return the required response.
+            LOGGER.error("Failed to Update User Details.");
             return request.error(500, 'Something went wrong.')
 
         }
@@ -339,10 +361,16 @@ const customServices = (srv) => {
             //  Step 1 - Extract the empId from the request payload and check if not null.
             const { empId } = request.data;
 
+            if(!empId){
+                LOGGER.error("Invalid Payload");
+                return request.error(400, "Invalid Payload");
+            }
+
             //  Step 2 - Check if User already exist in DB based on empId.
             const isUserExist = await cds.run(SELECT.from(Employees).where({ empId: empId }));
 
             if (isUserExist == 0) {
+                LOGGER.error("User doesnot exist in DB");
                 return request.error(400, 'User Does not Exist.');
             }
 
@@ -351,11 +379,15 @@ const customServices = (srv) => {
 
             //  Step 4 - Return the required response.
             if (deleteUser) {
+                LOGGER.info("Successfully Deleted the User");
                 return (${markup5});
             }
+
+            LOGGER.error("Failed to Delete");
             return request.error(500, ${markup4});
         }
         catch (error) {
+            LOGGER.error(error);
             return request.error(500, ${markup4});
         }
     });
