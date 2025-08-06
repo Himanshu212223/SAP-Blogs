@@ -62,6 +62,10 @@ export const capm = [
         link : '/Blogs/CAPM/CreateDestinationThroughCAP' 
     },
     {
+        title : "CAP Product Management App",
+        link : '/Blogs/CAPM/CapProductManagementApp' 
+    },
+    {
         title : "CRUD Operation using actions",
         link : '/Blogs/CAPM/CrudOperationUsingActions' 
     },

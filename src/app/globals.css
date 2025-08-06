@@ -36,6 +36,15 @@
   /* min-height: 100vh; */
 }
 
+.tomato{
+  color: tomato;
+  font-weight: bold;
+}
+
+.aLink{
+  text-decoration: none;
+}
+
 @media (min-width: 481px) and (max-width: 767px) {
   .contentBody {
     display: flex;
