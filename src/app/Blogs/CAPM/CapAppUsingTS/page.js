@@ -81,7 +81,7 @@ const page = () => {
 
                 <p>What happens when you run it -</p>
                 <p>1. npm downloads all these packages and their dependencies.</p>
-                <p>2. Adds them to your package.json under "devDependencies".</p>
+                <p>2. Adds them to your package.json under devDependencies.</p>
                 <p>3. Creates or updates a package-lock.json file.</p>
                 <p>4. Installs them into your node_modules directory.</p>
 
@@ -124,12 +124,12 @@ declare module '@sap/cds' {
                 <h2>Step 5 - Update tsconfig.json File</h2>
 
                 <p>On the <span className='highlight'>tsconfig.json</span> file, update the below properties - </p>
-                <p><span className='highlight'>"target"</span> : "ES2020"</p>
-                <p><span className='highlight'>"module"</span> : "CommonJS"</p>
-                <p><span className='highlight'>"rootDir"</span> : "srv"</p>
-                <p><span className='highlight'>"outDir"</span> : "gen/srv"</p>
-                <p><span className='highlight'>"esModuleInterop"</span> : true</p>
-                <p>Also define the <span className='highlight'>"typeRoots"</span> and <span className='highlight'>"include"</span>.</p>
+                <p><span className='highlight'>target</span> : ES2020</p>
+                <p><span className='highlight'>module</span> : CommonJS</p>
+                <p><span className='highlight'>rootDir</span> : srv</p>
+                <p><span className='highlight'>outDir</span> : gen/srv</p>
+                <p><span className='highlight'>esModuleInterop</span> : true</p>
+                <p>Also define the <span className='highlight'>typeRoots</span> and <span className='highlight'>include</span>.</p>
 
                 <p>You can copy the below details and replace the content of <span className='highlight'>tsconfig.json</span> file</p>
 
