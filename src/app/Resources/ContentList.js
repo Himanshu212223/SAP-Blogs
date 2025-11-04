@@ -58,6 +58,10 @@ export const fiori = [
 
 export const capm = [
     {
+        title : "Create CAP Application using TypeScript",
+        link : '/Blogs/CAPM/CapAppUsingTS' 
+    },
+    {
         title : "Create Destination through CAP App",
         link : '/Blogs/CAPM/CreateDestinationThroughCAP' 
     },
