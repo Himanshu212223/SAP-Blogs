@@ -11,11 +11,6 @@ const CodeBlock = dynamic(() => import('@/app/Components/CodeBlock/CodeBlock'), 
 
 const page = () => {
 
-    const markup1 = '`Employee ${name} alrady exist.`' ;
-    const markup2 = "`Error Creating the User.`" ;
-    const markup3 = "`Successfully created ${name}`" ;
-    const markup4 = "`Internal Server Error.`" ;
-    const markup5 = "`Deleted User ${empId} Successfully.`" ;
 
     return (
         <main className='main'>
@@ -23,14 +18,13 @@ const page = () => {
 
             <div className='content'>
 
-                <p>We will try to understand the use of each file present on CAP (Cloud Application Programming) app and which also check the flow of execution.</p>
+                <p>We will try to understand the use of each file present on CAP (Cloud Application Programming) app and will also check the flow of execution.</p>
 
 
 
 
                 <h2>CAP App structure</h2>
 
-                <p>Use the below command to create a CAP Application - </p>
 
                 <CodeBlock code={
 `cap-app
@@ -154,7 +148,7 @@ uses HANA for data, returns response.
 
 
                 
-                <p>And it is done, You can deploy your app and use it. !!!</p>
+                <p>And it is done !!!</p>
 
 
             </div>
