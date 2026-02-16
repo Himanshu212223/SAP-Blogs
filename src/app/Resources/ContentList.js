@@ -58,6 +58,10 @@ export const fiori = [
 
 export const capm = [
     {
+        title : "Create Event using CAP App",
+        link : '/Blogs/CAPM/CreateEventUsingCAP' 
+    },
+    {
         title : "CAP File structure and Flow of Execution",
         link : '/Blogs/CAPM/FlowOfExecution' 
     },
