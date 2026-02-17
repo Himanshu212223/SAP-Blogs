@@ -132,8 +132,8 @@ Subscription Topic -  companyName/subaccountName/pocem/cap/topic`} language="jav
 `cd <project-Name>`} language="javascript" />
                 <CodeBlock code={
 `npm install
-@sap-cloud-sdk/resilience
-@sap-cloud-sdk/http-client`} language="javascript" />
+npm install @sap-cloud-sdk/resilience
+npm install @sap-cloud-sdk/http-client`} language="javascript" />
 
                 <p>These dependencies are needed to consume Destination on CAP App.</p>
 
