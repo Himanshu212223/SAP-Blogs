@@ -11,7 +11,7 @@ const CodeBlock = dynamic(() => import('@/app/Components/CodeBlock/CodeBlock'), 
 
 const page = () => {
 
-    const markup1 = "${namespace}" ;
+    const markup1 = "`Error - ${error.message}`" ;
     const markup2 = "`Event published to roche/sandbox2023/pocem/cap/hello/created`" ;
     const markup3 = "${default-url}" ;
     const markup4 = "${protocol}" ;
@@ -20,31 +20,30 @@ const page = () => {
 
     return (
         <main className='main'>
-            <h1>Create Event on SAP Event Mesh through CAP Application</h1>
+            <h1>Create Event on SAP Event Mesh using CAP Application when Event Mesh instance is on different Space</h1>
 
             <div className='content'>
 
-                <p>In this example, Our goal is to create events on SAP Event Mesh through CAP App.</p>
-
-                <p><span className='tomato'>NOTE :- This is only applicable when the Event Mesh Instance is present on the same cloud foundry space where CAP app will be deployed.</span></p>
+                <p>In this example, Our goal is to create events on SAP Event Mesh through CAP App using Event Mesh Destination.</p>
 
                 <p>We will be following below steps-</p>
 
                 <ul className='list'>
-                    <ol>1. Create Instance of Event Mesh</ol>
+                    <ol>1. Create Instance of Event Mesh on any Cloud Foundry Space</ol>
                     <ol>2. Create Queue and Subscription on Event Mesh</ol>
-                    <ol>3. Create CAP App to create Event on Event Mesh</ol>
-                    <ol>4. Add Event Mesh configuration on package.json file</ol>
-                    <ol>5. Define services of the app on srvice.cds file</ol>
-                    <ol>6. Define services custom logic on srvice.js file</ol>
-                    <ol>7. Add Hana, mta file, xsuaa and approuter file</ol>
-                    <ol>8. Check the Event Mesh Instance binding on mta.yaml file</ol>
-                    <ol>9. Check the xs-security.json file configuration</ol>
+                    <ol>3. Create Event Mesh Destination on Subaccount</ol>
+                    <ol>4. Create CAP App</ol>
+                    <ol>5. Add destination configuration on package.json file</ol>
+                    <ol>6. Define services of the app on srvice.cds file</ol>
+                    <ol>7. Define services custom logic on srvice.js file</ol>
+                    <ol>8. Add Hana, mta file, xsuaa and approuter file</ol>
+                    <ol>9. Check the Destination binding mta.yaml file</ol>
                 </ul>
 
-                <h2>Step 1 - Create Instance of Event Mesh</h2>
+                <h2>Step 1 - Create Instance of Event Mesh on any Cloud Foundry Space</h2>
 
-                <p>On SAP BTP Cockpit, go to the cf space on which you will be deploying your CAP Application.</p>
+                <p>On SAP BTP Cockpit, go to the cloud foundry space on which you wants to create Event Mesh Instance.</p>
+
                 <p>For our application, we are creating Event Mesh instance - <span className='highlight'>pocem</span></p>
                 <p>We are using emname - <span className='highlight'>pocem</span> and similar for namespace - <span className='highlight'>pocem</span></p>
 
@@ -93,13 +92,37 @@ const page = () => {
 
                 <h2>Step 2 - Create Queue and Subscription on Event Mesh</h2>
 
+                <p>You can follow the similar way like we created for our application - </p>
+
                 <CodeBlock code={
 `Queue name -  companyName/subaccountName/pocem/pocqueue
-Subscription Topic -  companyName/subaccountName/pocem/cap/hello/created`} language="javascript" />
+Subscription Topic -  companyName/subaccountName/pocem/cap/topic`} language="javascript" />
 
 
 
-                <h2>Step 3 - Create CAP App to create Event on Event Mesh</h2>
+                <h2>Step 3 - Create Event Mesh Destination on Subaccount</h2>
+                
+                <p>You can create <span className='highlight'>service key</span> on <span className='highlight'>event mesh instance</span> and use its credentials while creating the Destination.</p>
+
+                <p>You can refer below details -</p>
+
+                <p><span className='highlight'>Destination Name :- </span>Any Name (in our case, we are using - EVENT_MESH_DEST_POC13App)</p> 
+                <p><span className='highlight'>Type :- </span>HTTP</p> 
+                <p><span className='highlight'>URL :- </span>uri from event mesh instance service key + /messagingrest/v1/topics/ + topic name</p> 
+                <p>remember - replace / with %2f on topic name </p>
+                <p>since our topic was - companyName/subaccountName/pocem/cap/topic </p>
+                <p>after replacing / with %2f - companyName%2fsubaccountName%2fpocem%2fcap%2ftopic </p>
+                <CodeBlock code={
+                  `similarly, url will become something like - https://enterprise-messaging-pubsub.cfapps.eu10.hana.ondemand.com/messagingrest/v1/topics/companyName%2fsubaccountName%2fpocem%2fcap%2ftopic`} language="javascript" />
+                  <p><span className='highlight'>Authtication :- </span>OAuth2ClientCredentials</p> 
+                  <p><span className='highlight'>Proxy Type :- </span>Internet</p> 
+                  <p><span className='highlight'>client Id :- </span>client id from uaa section of event mesh instance service key</p> 
+                  <p><span className='highlight'>client secret :- </span>client secret from uaa section of event mesh instance service key</p> 
+                  <p><span className='highlight'>token service url :- </span>url from uaa section of event mesh instance service key + /oauth/token</p> 
+
+
+
+                <h2>Step 4 - Create CAP App</h2>
 
                 <p>Follow below commands to create CAP app - </p>
 
@@ -108,25 +131,29 @@ Subscription Topic -  companyName/subaccountName/pocem/cap/hello/created`} langu
                 <CodeBlock code={
 `cd <project-Name>`} language="javascript" />
                 <CodeBlock code={
-`npm install`} language="javascript" />
+`npm install
+@sap-cloud-sdk/resilience
+@sap-cloud-sdk/http-client`} language="javascript" />
+
+                <p>These dependencies are needed to consume Destination on CAP App.</p>
 
                 <p>In our case, the app name is poc13app</p>
 
 
 
 
-                <h2>Step 4 -  Add Event Mesh configuration on package.json file</h2>
+                <h2>Step 5 - Add destination configuration on package.json file</h2>
 
-                <p>In <span className='highlight'>package.json</span> file, add the below event mesh configuration after script or private key to connect connect with Event Mesh.</p>
+                <p>In <span className='highlight'>package.json</span> file, add the below destination configuration after script or private key to connect connect with destination.</p>
                 
                 <CodeBlock code={
 `"cds": {
   "requires": {
-    "messaging": {
-      "kind": "enterprise-messaging",
-      "publishPrefix": "$namespace/",
-      "subscribePrefix": "$namespace/",
-      "format": "cloudevents"
+    "DestinaionCall": {
+      "kind": "rest",
+      "credentials": {
+        "destination": "EVENT_MESH_DEST_POC13App"
+      }
     }
   }
 }`} language="javascript" />
@@ -154,67 +181,78 @@ Subscription Topic -  companyName/subaccountName/pocem/cap/hello/created`} langu
   "private": true,
   "cds": {
     "requires": {
-      "messaging": {
-        "kind": "enterprise-messaging",
-        "publishPrefix": "$namespace/",
-        "subscribePrefix": "$namespace/",
-        "format": "cloudevents"
+      "DestinaionCall": {
+        "kind": "rest",
+        "credentials": {
+          "destination": "EVENT_MESH_DEST_POC13App"
+        }
       }
     }
   }
 }`} language="javascript" />
 
 
-                <h2>Step 5 - Define services of the app on srvice.cds file</h2>
+                <h2>Step 6 - Define services of the app on srvice.cds file</h2>
 
                 <p>In your <span className='highlight'>srv</span> folder, create <span className='tomato'>service.cds</span> file and define the event and action on the serivce like below- </p>
                 
                 <CodeBlock code={
-`service PocService @(path: '/poc') {
-  // Declare an event and pin it to a concrete Event Mesh topic
-  @topic : 'cap/hello/created'
-  event HelloCreated : {
-    message : String;
-  };
-  // Simple action to trigger/publish the event
-  action fireHello(message : String) returns String;
+`service CustomSrv {
+    
+    function greet() returns String ;
+    action createMessage(message : String) returns String ;
 }`} language="javascript" />
 
 
 
-                  <h2>Step 6 - Define services custom logic on srvice.js file</h2>
+                  <h2>Step 7 - Define services custom logic on srvice.js file</h2>
 
                 <p>In your <span className='highlight'>srv</span> folder, create <span className='tomato'>service.file</span> file and define the custom logic like below- </p>
                 
                 <CodeBlock code={
 `const cds = require('@sap/cds');
-const PocService = async (srv) => {
-  
-  // Connect to CAP logical messaging service (Event Mesh behind the scenes)
-  const messaging = await cds.connect.to('messaging');
-  
-  srv.on('fireHello', async (req) => {
-    
-    const data = {
-      message: req.data.message,
-    };
+const {executeHttpRequest} = require('@sap-cloud-sdk/http-client');
+const CustomSrv = async (srv) => {
 
-    // Option A: publish to explicit topic (recommended when you control topic naming)
-    
-    await messaging.emit('cap/hello/created', data);
-    
-    // Option B: emit by modeled event name -> CAP resolves to @topic
-    // await this.emit('HelloCreated', data);
-    
-    return ${markup2};
-  });
-};
+    srv.on('greet', async (request) => {
+        return "working fine";
+    });
 
 
-module.exports = PocService ;`} language="javascript" />
+    srv.on('createMessage', async (request) => {
+        try {
+            const { message } = request.data;
+            if (!message) {
+                request.error('No message provided');
+            }
+
+            const payload = {
+                messages: message
+            };
+
+            const response = await executeHttpRequest(
+                {destinationName : 'EVENT_MESH_DEST_POC13App'},
+                {
+                    method : 'POST',
+                    url : '/messages',
+                    headers : {
+                        'Content-Type' : 'application/json',
+                        'x-qos' : '1'
+                    },
+                    data : message
+                }
+            );
+            return response?.data ?? { status: 'OK' };
+        }
+        catch (error) {
+            request.reject(400, ${markup1});
+        }
+    });
+}
+module.exports = CustomSrv;`} language="javascript" />
 
 
-              <h2>Step 7 - Add Hana, mta file, xsuaa and approuter file</h2>
+              <h2>Step 8 - Add Hana, mta file, xsuaa and approuter file</h2>
 
               <p>use the below command for the same -</p>
 
@@ -222,23 +260,22 @@ module.exports = PocService ;`} language="javascript" />
                   `cds add hana,mta,xsuaa,approuter --for production `} language="javascript" />
 
 
-              <h2>Step 8 - Check the Event Mesh Instance binding on mta.yaml file</h2>
+              <h2>Step 9 - Check the Destination binding mta.yaml file</h2>
               
-              <p>Make sure the Event Mesh Instance is defined properly on mta.yaml file under <span className='tomato'>resources</span> section to create proper binding like below - </p>
+              <p>Make sure the Destination service binding is defined properly on mta.yaml file under <span className='tomato'>resources</span> section to create proper binding like below - </p>
 
               <CodeBlock code={
-`- name: pocem
+`- name: poc13app-destination
     type: org.cloudfoundry.managed-service
     parameters:
-      service: enterprise-messaging
-      service-plan: default
-      service-name: pocem`} language="javascript" />
+      service: destination
+      service-plan: lite`} language="javascript" />
 
               
                 <p>And the same is defined under <span className='tomato'>modules requires</span> on mta.yaml file -</p>
 
       <CodeBlock code={
-        `- name: pocem`} language="javascript" />
+        `- name: poc13app-destination`} language="javascript" />
                 
                 <p><span className='tomato'>Note -</span> We are using name pocem because our event mesh instance has the name pocem</p>
 
@@ -273,7 +310,7 @@ modules:
     requires:
       - name: poc13app-auth
       - name: poc13app-db
-      - name: pocem
+      - name: poc13app-destination
   - name: poc13app-db-deployer
     type: hdb
     path: gen/db
@@ -323,75 +360,14 @@ resources:
     parameters:
       service: hana
       service-plan: hdi-shared
-  - name: pocem
+  - name: poc13app-destination
     type: org.cloudfoundry.managed-service
     parameters:
-      service: enterprise-messaging
-      service-plan: default
-      service-name: pocem`} language="text" />
+      service: destination
+      service-plan: lite`} language="text" />
 
 
-            <h2>Step 9 - Check the xs-security.json file configuration</h2>
-
-
-            <p>It gives permission for SAP Event Mesh and your CAP app to talk to each other securely.</p>
             
-            <p>Make sure it has the configuration like below - </p>
-
-
-              <CodeBlock code={
-`{
-  "scopes": [
-    {
-      "name": "$XSAPPNAME.emcallback",
-      "description": "Enterprise-Messaging Callback Access",
-      "grant-as-authority-to-apps": [
-        "$XSSERVICENAME(pocem)"
-      ]
-    },
-    {
-      "name": "$XSAPPNAME.emmanagement",
-      "description": "Enterprise-Messaging Management Access"
-    }
-  ],
-  "attributes": [],
-  "role-templates": [],
-  "authorities": [
-    "$XSAPPNAME.emmanagement",
-    "$XSAPPNAME.mtcallback"
-  ]
-}`} language="javascript" />
-
-            <h3>Explaination of above statement - </h3>
-            
-            <p>This below scope says - Event Mesh is allowed to call my application.</p>
-
-
-            <CodeBlock code={
-`{
-  "name": "$XSAPPNAME.emcallback",
-  "grant-as-authority-to-apps": [
-    "$XSSERVICENAME(pocem)"
-  ]
-}`} language="javascript" />
-
-
-<p>This below statement allows your CAP app to manage Event Mesh like Create queues, Create subscriptions, Manage messaging configuration</p>
-
-
-            <CodeBlock code={
-`{
-  "name": "$XSAPPNAME.emmanagement"
-  }`} language="javascript" />
-
-
-  <p>This below statement gives these permissions directly to your CAP application.</p>
-
-<CodeBlock code={
-`"authorities": [
-  "$XSAPPNAME.emmanagement",
-  "$XSAPPNAME.mtcallback"
-]`} language="javascript" />
             
 
             

@@ -58,6 +58,10 @@ export const fiori = [
 
 export const capm = [
     {
+        title : "Create Event in Event Mesh using CAP App when Event Mesh instance is on different Space",
+        link : '/Blogs/CAPM/CreateEventUsingCAPemDestination' 
+    },
+    {
         title : "Create Event using CAP App",
         link : '/Blogs/CAPM/CreateEventUsingCAP' 
     },
