@@ -3,86 +3,80 @@ export const fiori = [
         title : "All About Fiori UI5 Application",
         link : "/blogs/fiori/AboutUI5App",
         topic: "About UI5 App",
-        tag : "About UI5 App, Data Binding, Model, Client Side Model, Server Side Model, Element, Aggregatation, Control"
-    },
-    {
-        title : "Logged In User Details",
-        link : "/Blogs/Fiori/LoggedInUserDetails",
-        topic: "LoggedIn User",
-        tag : "Logged In User Details, LoggedIn User"
-    },
-    {
-        title : "Import JSON To Fiori",
-        link : "/Blogs/Fiori/ImportJsonFile",
-        topic: "Import JSON",
-        tag: "Import JSON To Fiori"
-    },
-    {
-        title : "Import Excel To Fiori",
-        link : "/Blogs/Fiori/ImportExcelToFiori",
-        topic: "Import Excel",
-        tag: "Import Excel To Fiori"
-    },
-    {
-        title : "Connect Destination with Fiori UI5 using Fetch",
-        link : "/Blogs/Fiori/ConnectDestinationWithFioriUsingFetch",
-        topic: "Fetch call Destination",
-        tag : "Connect Destination with Fiori UI5 using Fetch, Fetch call Destination"
-    },
-    {
-        title : "Connect Destination with Fiori UI5",
-        link : "/Blogs/Fiori/ConnectDestinationWithFiori",
-        topic: "AJAX call Destination",
-        tag: "Connect Destination with Fiori UI5, AJAX call Destination"
-    },
-    {
-        title : "Consume oData V4 on UI5",
-        link : "/Blogs/Fiori/ConsumeODataV4",
-        topic: "Consume ODataV4",
-        tag: "Consume oData V4 on UI5, Consume ODataV4"
-    },
-    {
-        title : "Consume oData V2 on UI5",
-        link : "/Blogs/Fiori/ConsumeODataV2",
-        topic: "Consume ODataV2",
-        tag: "Consume oData V2 on UI5, Consume ODataV2"
-    },
-    {
-        title : "Formatter on Table",
-        link : "/Blogs/Fiori/FormatterOnTable",
-        topic: "Formatter",
-        tag: "Formatter, Table, Formatter on Table"
-    },
-    {
-        title : "Search and Sort on Table",
-        link : "/Blogs/Fiori/SearchAndSort",
-        topic: "Search & Sort",
-        tag: "Filterning, Search and Sort on Table, Search & Sort"
-    },
-    {
-        title : "Routing using Base Controller",
-        link : "/Blogs/Fiori/RoutingUsingBaseController",
-        topic: "Routing",
-        tag: "Routing using Base Controller"
-    },
-    {
-        title : "Routing & Navigation",
-        link : "/Blogs/Fiori/Routing",
-        topic: "Routing",
-        tag: "Routing, Navigation"
-    },
-    {
-        title : "Configure JSON Model in UI5 Dynamically",
-        link : "/Blogs/Fiori/ConnectToJsonModelDynamically",
-        topic: "Dynamic DataBinding",
-        tag: "Configure JSON Model in UI5 Dynamically, Dynamic DataBinding"
+        tag : "About UI5 App, Data Binding, Model, Client Side Model, Server Side Model, Element, Aggregatation, Control, Property, Aggregation, One Way, One Time, Two Way"
     },
     {
         title : "Configure JSON Model with Fiori UI5 Application",
-        link : "/Blogs/Fiori/ConnectToJsonModel",
-        topic: "DataBinding",
+        link : "/blogs/fiori/DynamicJSONModel",
+        topic: "Dynamic JSON Model",
         tag: "Configure JSON Model with Fiori UI5 Application, DataBinding"
-    }
+    },
+    {
+        title : "Configure JSON Model in UI5 Manually",
+        link : "/blogs/fiori/ManualConfigJSONModel",
+        topic: "Manual Config JSON Model",
+        tag: "Configure JSON Model in UI5 Dynamically, Dynamic DataBinding"
+    },
+    {
+        title : "Data Binding",
+        link : "/blogs/fiori/DataBinding",
+        topic: "Data Binding",
+        tag: "Data Binding, Property, Element, Aggregation, One Way, One Time, Two Way"
+    },
+    {
+        title : "Routing And Navigation",
+        link : "/blogs/fiori/RoutingNavigation",
+        topic: "Routing Navigation",
+        tag : "Routing Navigation"
+    },
+    // {
+    //     title : "Import JSON To Fiori",
+    //     link : "/Blogs/Fiori/ImportJsonFile",
+    //     topic: "Import JSON",
+    //     tag: "Import JSON To Fiori"
+    // },
+    // {
+    //     title : "Import Excel To Fiori",
+    //     link : "/Blogs/Fiori/ImportExcelToFiori",
+    //     topic: "Import Excel",
+    //     tag: "Import Excel To Fiori"
+    // },
+    // {
+    //     title : "Connect Destination with Fiori UI5 using Fetch",
+    //     link : "/Blogs/Fiori/ConnectDestinationWithFioriUsingFetch",
+    //     topic: "Fetch call Destination",
+    //     tag : "Connect Destination with Fiori UI5 using Fetch, Fetch call Destination"
+    // },
+    // {
+    //     title : "Connect Destination with Fiori UI5",
+    //     link : "/Blogs/Fiori/ConnectDestinationWithFiori",
+    //     topic: "AJAX call Destination",
+    //     tag: "Connect Destination with Fiori UI5, AJAX call Destination"
+    // },
+    // {
+    //     title : "Consume oData V4 on UI5",
+    //     link : "/Blogs/Fiori/ConsumeODataV4",
+    //     topic: "Consume ODataV4",
+    //     tag: "Consume oData V4 on UI5, Consume ODataV4"
+    // },
+    // {
+    //     title : "Consume oData V2 on UI5",
+    //     link : "/Blogs/Fiori/ConsumeODataV2",
+    //     topic: "Consume ODataV2",
+    //     tag: "Consume oData V2 on UI5, Consume ODataV2"
+    // },
+    // {
+    //     title : "Formatter on Table",
+    //     link : "/Blogs/Fiori/FormatterOnTable",
+    //     topic: "Formatter",
+    //     tag: "Formatter, Table, Formatter on Table"
+    // },
+    // {
+    //     title : "Search and Sort on Table",
+    //     link : "/Blogs/Fiori/SearchAndSort",
+    //     topic: "Search & Sort",
+    //     tag: "Filterning, Search and Sort on Table, Search & Sort"
+    // }
 ] ;
 
 

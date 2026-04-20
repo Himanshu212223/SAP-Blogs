@@ -68,19 +68,21 @@ const SideBar = () => {
         />
 
         <div className="relative h-full py-3 overflow-y-scroll no-scrollbar">
+          
           <div className="flex flex-col gap-4 overflow-y-auto no-scrollbar h-full">
+            
             {/* Fiori Section */}
             {fioriItem && (
-              <p className="text-gray-400 text-sm">Section - Fiori</p>
+              <p className="text-gray-400 text-sm mt-3">Section - Fiori</p>
             )}
 
             {fioriItem &&
               fioriItem.map((element) => {
                 return (
                   <Link
-                    key={element.link}
+                    key={element.title}
                     href={element.link}
-                    className="text-gray-600 hover:text-black hover:border hover:border-gray-300 hover:bg-gray-100 hover:rounded-md px-5 py-2 cursor-pointer transition-all"
+                    className="text-gray-600 border border-transparent text-sm hover:text-black hover:border hover:border-gray-300 hover:bg-gray-100 hover:rounded-md px-5 py-2 cursor-pointer transition-all"
                   >
                     {element.topic}
                   </Link>
@@ -97,7 +99,7 @@ const SideBar = () => {
                 return (
                   <p
                     key={element.link}
-                    className="text-gray-600 hover:text-black hover:border hover:border-gray-300 hover:bg-gray-100 hover:rounded-md px-5 py-2 cursor-pointer transition-all"
+                    className="text-gray-600 border border-transparent text-sm hover:text-black hover:border hover:border-gray-300 hover:bg-gray-100 hover:rounded-md px-5 py-2 cursor-pointer transition-all"
                   >
                     {element.topic}
                   </p>

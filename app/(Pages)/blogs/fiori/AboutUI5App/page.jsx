@@ -5,7 +5,7 @@ import React from "react";
 const page = () => {
 
     // Page Code Snippets
-    const code1 = 
+const code1 = 
 `<Page>
 	<content>
     <Button text="This is an example Text Statement" press="onClick" />
@@ -28,8 +28,8 @@ const code2 = `{
 const code3 = 
 `{
     "employee" : {
-        name: "User1",
-        role: "Developer"
+        "name": "User1",
+        "role": "Developer"
     }
 }`;
 
@@ -37,16 +37,37 @@ const code4 =
 `{
     "employees" : [
         {
-            name: "User1",
-            role: "Developer"
+            "name": "User1",
+            "role": "Developer"
         },
         {
-            name: "User2",
-            role: "Admin"
+            "name": "User2",
+            "role": "Admin"
         },
         {
-            name: "User3",
-            role: "Viewer"
+            "name": "User3",
+            "role": "Viewer"
+        }
+    ]
+}`;
+
+const code5 = 
+`{
+    "employees" : [
+        {
+            "name": "User1",
+            "role": "Developer",
+            "rating": 3
+        },
+        {
+            "name": "User2",
+            "role": "Admin",
+            "rating": 4
+        },
+        {
+            "name": "User3",
+            "role": "Viewer",
+            "rating": 2
         }
     ]
 }`;
@@ -75,7 +96,7 @@ const code4 =
         
         <h2 className="text-4xl">Types of Data Model</h2>
         
-        <h3 className="text-2xl">1. Resource Model(sap.ui.model.resource.ResourceModel)</h3>
+        <h4 className="text-2xl">1. Resource Model(sap.ui.model.resource.ResourceModel)</h4>
         <ul className="list-disc ml-6">
             <li>The Resource Model is used in SAP Fiori UI5 to handle text translations (internationalization - i18n).</li>
             <li>Instead of hardcoding text in UI, we can store them in a properties file (i18n.properties), and UI dynamically loads the correct language.</li>
@@ -83,14 +104,14 @@ const code4 =
             <li>It is also called <span className="text-gray-950 font-semibold">Client Side Model</span> as data is stored in the browser (frontend).</li>
         </ul>
         
-        <h3 className="text-2xl">2. JSON Model (sap.ui.model.json.JSONModel)</h3>
+        <h4 className="text-2xl">2. JSON Model (sap.ui.model.json.JSONModel)</h4>
         <ul className="list-disc ml-6">
             <li>It is used to stores data in JSON format (key-value pairs) and is <span className="text-gray-950 font-semibold">mostly used</span>.</li>
             <li>It is fast, easy to use for small apps but Not suitable for large backend data.</li>
             <li>It is also called <span className="text-gray-950 font-semibold">Client Side Model</span> as data is stored in the browser (frontend).</li>
         </ul>
         
-        <h3 className="text-2xl">3. OData Model</h3>
+        <h4 className="text-2xl">3. OData Model</h4>
         <ul className="list-disc ml-6">
             <li>OData Service (Open Data Protocol Service) is a REST-based web service used to exchange data between client and server in a standardized way.</li>
             <li>An OData service allows applications (like SAP Fiori apps) to read, create, update, and delete data over HTTP using standard methods.</li>
@@ -98,7 +119,7 @@ const code4 =
             <li>It is also called <span className="text-gray-950 font-semibold">Server Side Model</span> as data comes from backend server via API/odata service.</li>
         </ul>
         
-        <h3 className="text-2xl">4. XML Model</h3>
+        <h4 className="text-2xl">4. XML Model</h4>
         <ul className="list-disc ml-6">
             <li>The XML Model is used to manage data in XML format inside a UI5 application.</li>
             <li>Data is structured using XML tags.</li>
@@ -113,37 +134,37 @@ const code4 =
 
         <h2 className="text-4xl">Architecture of Fiori UI5 View</h2>
 
-        <h3 className="text-2xl">1. Object (Root Class)</h3>
+        <h4 className="text-2xl">1. Object (Root Class)</h4>
         <ul className="list-disc ml-6">
             <li>Object is the root base class in SAP UI5 that provides object-oriented features like inheritance, lifecycle management, and class extension.</li>
             <li>All UI5 elements and controls ultimately inherit from this class.</li>
         </ul>
         
-        <h3 className="text-2xl">2. Element (Base Class)</h3>
+        <h4 className="text-2xl">2. Element (Base Class)</h4>
         <ul className="list-disc ml-6">
             <li>Element is the base class for most UI5 objects.</li>
             <li>It provides basic features like:- ID handling, Event handling, Data binding support, but does NOT render UI directly.</li>
         </ul>
 
-        <h3 className="text-2xl">3. Control (UI Component)</h3>
+        <h4 className="text-2xl">3. Control (UI Component)</h4>
         <ul className="list-disc ml-6">
             <li>Control <span className="text-gray-950 font-semibold">extends Element</span>(Base Class) and is responsible for UI rendering.</li>
             <li>It renders <span className="text-gray-950 font-semibold">visible UI</span>, has properties, aggregations, events and used inside XML Views.</li>
         </ul>
 
-        <h3 className="text-2xl">4. Aggregation (Aggregate)</h3>
+        <h4 className="text-2xl">4. Aggregation (Aggregate)</h4>
         <ul className="list-disc ml-6">
             <li>Aggregation defines parent-child relationship between controls.</li>
             <li>It renders <span className="text-gray-950 font-semibold">visible UI</span>, has properties, aggregations, events and used inside XML Views.</li>
         </ul>
 
-        <h3 className="text-2xl">5. Property</h3>
+        <h4 className="text-2xl">5. Property</h4>
         <ul className="list-disc ml-6">
             <li>A property is a value that defines the state or appearance of a <span className="text-gray-950 font-semibold">Control</span>.</li>
             <li>It is used to manage- Text content, Visibility, Color, size, etc..</li>
         </ul>
         
-        <h3 className="text-2xl">6. Event</h3>
+        <h4 className="text-2xl">6. Event</h4>
         <ul className="list-disc ml-6">
             <li>Event is a mechanism through which a <span className="text-gray-950 font-semibold">Control</span> notifies the application when a user interaction or action occurs.</li>
             <li>Event manages or handle:- User Click, Any Change, User Input, Selection, etc..</li>
@@ -171,14 +192,16 @@ const code4 =
 
 
 
-        <h1 className="text-4xl">What is Data Binding ..?</h1>
+        <h2 className="text-4xl">What is Data Binding ..?</h2>
         <ul className="list-disc ml-6">
             <li>
             Data Binding connects your UI (View) with data (Model). It keeps UI and data in sync automatically.
             </li>
         </ul>
 
-        <h2 className="list-decimal text-3xl">Types of Binding</h2>
+
+
+        <h3 className="list-decimal text-3xl">Types of Binding</h3>
 
         <h3 className="list-decimal text-2xl">1. Property Binding (One Value Binding)</h3>
         <ul className="list-disc ml-6">
@@ -221,6 +244,45 @@ const code4 =
             <CodeSnippet code={code4} title="model/Data.json" language="js" />
         </div>
         
+
+
+        <h3 className="list-decimal text-2xl">4. Expression Binding</h3>
+        <ul className="list-disc ml-6">
+            <li>Expression Binding is writing small logic (conditions or calculations) directly inside the XML view.</li>
+            <li>It changes UI dynamically based on data.</li>
+        </ul>
+        <p>For Example change the view based on rating value - </p>
+         <div>
+            <CodeSnippet code={code5} title="model/Data.json" language="js" />
+        </div>
+
+
+
+
+        <h3 className="text-3xl">Type of Data Binding based on Data Flow</h3>
+
+        <h4 className="text-2xl">1. One Time Binding</h4>
+        <ul className="list-disc ml-6">
+            <li>In this way of binding, data flows from model to UI only once.</li>
+            <li>Once data is set on UI, no further update happens.</li>
+            <li>Example - Binding Resource Model with UI</li>
+        </ul>
+        
+        <h4 className="text-2xl">2. One-Way Binding</h4>
+        <ul className="list-disc ml-6">
+            <li>In this way of binding, data flows only from Model to View.</li>
+            <li>UI gets updated when model changes.</li>
+            <li>User changes in UI do NOT update model.</li>
+            <li>Example - Display Data on Text, labels, read-only fields using Property, Element or Aggregation Binding.</li>
+        </ul>
+        
+        <h4 className="text-2xl">3. Two-Way Binding</h4>
+        <ul className="list-disc ml-6">
+            <li>In this way of binding, data flows from Model to View and from View to Model.</li>
+            <li>Model updates UI and UI updates Model.</li>
+            <li>User changes in UI updates model data.</li>
+            <li>Example - Display and Read Data from Forms or Input Fields using Property, Element or Aggregation Binding.</li>
+        </ul>
         
 
     </div>
