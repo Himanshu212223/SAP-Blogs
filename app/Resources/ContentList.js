@@ -5,6 +5,12 @@ export const fiori = [
         topic: "About UI5 App",
         tag : "About UI5 App, Data Binding, Model, Client Side Model, Server Side Model, Element, Aggregatation, Control, Property, Aggregation, One Way, One Time, Two Way"
     },
+    // {
+    //     title : "All About Fiori File Structure",
+    //     link : "/blogs/fiori/FileStructure",
+    //     topic: "File Structure",
+    //     tag : "File Structure"
+    // },
     {
         title : "Configure JSON Model with Fiori UI5 Application",
         link : "/blogs/fiori/DynamicJSONModel",
@@ -29,6 +35,12 @@ export const fiori = [
         topic: "Routing Navigation",
         tag : "Routing Navigation"
     },
+    {
+        title : "Search and Sort",
+        link : "/blogs/fiori/SearchSort",
+        topic: "Search and Sort",
+        tag : "Search and Sorting in Table"
+    }
     // {
     //     title : "Import JSON To Fiori",
     //     link : "/Blogs/Fiori/ImportJsonFile",
@@ -84,52 +96,58 @@ export const fiori = [
 
 export const capm = [
     {
-        title : "Create Event in Event Mesh using CAP App when Event Mesh instance is on different Space",
-        link : "/Blogs/CAPM/CreateEventUsingCAPemDestination",
-        topic : "Other Event Mesh instance",
-        tag: "Other Event Mesh instance, Event Mesh instance on different space, Create, Consume and Publish Event"
+        title : "cds Commands",
+        link : "/blogs/capm/CdsCommands",
+        topic: "cds Commands",
+        tag : "cds Commands"
     },
-    {
-        title : "Create Event using CAP App",
-        link : "/Blogs/CAPM/CreateEventUsingCAP",
-        topic: "Integrate Event Mesh",
-        tag: "Integrate Event Mesh, Create, Consume and Publish Event using CAP App"
-    },
-    {
-        title : "CAP File structure and Flow of Execution",
-        link : "/Blogs/CAPM/FlowOfExecution",
-        topic: "CAP File Structure",
-        tag: "CAP File Structure, CAP File structure and Flow of Execution"
-    },
-    {
-        title : "Create Destination through CAP App",
-        link : "/Blogs/CAPM/CreateDestinationThroughCAP",
-        topic: "CAP App Destination",
-        tag: "CAP App Destination, Create Destination through CAP App, using mtar, using mta"
-    },
-    {
-        title : "Sample CAP App",
-        link : "/Blogs/CAPM/CapProductManagementApp",
-        topic : "Sample CAP App",
-        tag: "CAP App" 
-    },
-    {
-        title : "CRUD Operation using actions",
-        link : "/Blogs/CAPM/CrudOperationUsingActions",
-        topic: "Actions",
-        tag: "CRUD Operation using actions"
+    // {
+    //     title : "Create Event in Event Mesh using CAP App when Event Mesh instance is on different Space",
+    //     link : "/Blogs/CAPM/CreateEventUsingCAPemDestination",
+    //     topic : "Other Event Mesh instance",
+    //     tag: "Other Event Mesh instance, Event Mesh instance on different space, Create, Consume and Publish Event"
+    // },
+    // {
+    //     title : "Create Event using CAP App",
+    //     link : "/Blogs/CAPM/CreateEventUsingCAP",
+    //     topic: "Integrate Event Mesh",
+    //     tag: "Integrate Event Mesh, Create, Consume and Publish Event using CAP App"
+    // },
+    // {
+    //     title : "CAP File structure and Flow of Execution",
+    //     link : "/Blogs/CAPM/FlowOfExecution",
+    //     topic: "CAP File Structure",
+    //     tag: "CAP File Structure, CAP File structure and Flow of Execution"
+    // },
+    // {
+    //     title : "Create Destination through CAP App",
+    //     link : "/Blogs/CAPM/CreateDestinationThroughCAP",
+    //     topic: "CAP App Destination",
+    //     tag: "CAP App Destination, Create Destination through CAP App, using mtar, using mta"
+    // },
+    // {
+    //     title : "Sample CAP App",
+    //     link : "/Blogs/CAPM/CapProductManagementApp",
+    //     topic : "Sample CAP App",
+    //     tag: "CAP App" 
+    // },
+    // {
+    //     title : "CRUD Operation using actions",
+    //     link : "/Blogs/CAPM/CrudOperationUsingActions",
+    //     topic: "Actions",
+    //     tag: "CRUD Operation using actions"
 
-    },
-    {
-        title : "CDS Commands to Create & Deploy App",
-        link : "/Blogs/CAPM/CDScommandsToCreateandDeployApp",
-        topic: "cds commands",
-        tag: "CDS Commands to Create & Deploy App"
-    },
-    {
-        title : "Create a Blank CAPM",
-        link : "/Blogs/CAPM/CreateBlankCAPM",
-        topic: "First CAP app",
-        tag: "Create a Blank CAPM, First CAP app"
-    }
+    // },
+    // {
+    //     title : "CDS Commands to Create & Deploy App",
+    //     link : "/Blogs/CAPM/CDScommandsToCreateandDeployApp",
+    //     topic: "cds commands",
+    //     tag: "CDS Commands to Create & Deploy App"
+    // },
+    // {
+    //     title : "Create a Blank CAPM",
+    //     link : "/Blogs/CAPM/CreateBlankCAPM",
+    //     topic: "First CAP app",
+    //     tag: "Create a Blank CAPM, First CAP app"
+    // }
 ] ;

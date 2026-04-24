@@ -97,12 +97,13 @@ const SideBar = () => {
             {capmItem &&
               capmItem.map((element) => {
                 return (
-                  <p
-                    key={element.link}
+                  <Link
+                    key={element.title}
+                    href={element.link}
                     className="text-gray-600 border border-transparent text-sm hover:text-black hover:border hover:border-gray-300 hover:bg-gray-100 hover:rounded-md px-5 py-2 cursor-pointer transition-all"
                   >
                     {element.topic}
-                  </p>
+                  </Link>
                 );
               })}
 
