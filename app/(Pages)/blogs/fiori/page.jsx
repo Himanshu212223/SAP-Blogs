@@ -43,6 +43,30 @@ const page = () => {
         <div>
             <CodeSnippet code={code1} language="xml" title="View1.view.xml" />
         </div>
+
+
+        <table className="border-collapse border border-gray-400">
+            <thead>
+                <tr>
+                <th className="border border-gray-300">State</th>
+                <th className="border border-gray-300">City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td className="border border-gray-300 px-3">Indiana</td>
+                <td className="border border-gray-300 px-3">Indianapolis</td>
+                </tr>
+                <tr>
+                <td className="border border-gray-300 px-3">Ohio</td>
+                <td className="border border-gray-300 px-3">Columbus</td>
+                </tr>
+                <tr>
+                <td className="border border-gray-300 px-3">Michigan</td>
+                <td className="border border-gray-300 px-3">Detroit</td>
+                </tr>
+            </tbody>
+        </table>
         
 
 

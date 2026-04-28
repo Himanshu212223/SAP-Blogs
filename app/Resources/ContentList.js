@@ -101,6 +101,12 @@ export const capm = [
         topic: "cds Commands",
         tag : "cds Commands"
     },
+    {
+        title : "Consume Event",
+        link : "/blogs/capm/ConsumeOtherEvent",
+        topic: "Consume Event",
+        tag : "Consume Event"
+    },
     // {
     //     title : "Create Event in Event Mesh using CAP App when Event Mesh instance is on different Space",
     //     link : "/Blogs/CAPM/CreateEventUsingCAPemDestination",
