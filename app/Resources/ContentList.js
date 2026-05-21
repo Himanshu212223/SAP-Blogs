@@ -5,12 +5,12 @@ export const fiori = [
         topic: "About UI5 App",
         tag : "About UI5 App, Data Binding, Model, Client Side Model, Server Side Model, Element, Aggregatation, Control, Property, Aggregation, One Way, One Time, Two Way"
     },
-    // {
-    //     title : "All About Fiori File Structure",
-    //     link : "/blogs/fiori/FileStructure",
-    //     topic: "File Structure",
-    //     tag : "File Structure"
-    // },
+    {
+        title : "All About Fiori File Structure",
+        link : "/blogs/fiori/FileStructure",
+        topic: "File Structure",
+        tag : "File Structure"
+    },
     {
         title : "Configure JSON Model with Fiori UI5 Application",
         link : "/blogs/fiori/DynamicJSONModel",

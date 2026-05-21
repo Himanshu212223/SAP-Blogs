@@ -29,7 +29,7 @@ const page = () => {
         </ul>
         
         <ul className="list-decimal ml-6">
-            <li>content list item 1</li>
+            <li>content list item 1</li>    
             <li>content list item 2</li>
             <li>content list item 3</li>
             <li>content list item 4</li>
@@ -48,22 +48,22 @@ const page = () => {
         <table className="border-collapse border border-gray-400">
             <thead>
                 <tr>
-                <th className="border border-gray-300">State</th>
-                <th className="border border-gray-300">City</th>
+                    <th className="border border-gray-300">State</th>
+                    <th className="border border-gray-300">City</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                <td className="border border-gray-300 px-3">Indiana</td>
-                <td className="border border-gray-300 px-3">Indianapolis</td>
+                    <td className="border border-gray-300 px-3">Indiana</td>
+                    <td className="border border-gray-300 px-3">Indianapolis</td>
                 </tr>
                 <tr>
-                <td className="border border-gray-300 px-3">Ohio</td>
-                <td className="border border-gray-300 px-3">Columbus</td>
+                    <td className="border border-gray-300 px-3">Ohio</td>
+                    <td className="border border-gray-300 px-3">Columbus</td>
                 </tr>
                 <tr>
-                <td className="border border-gray-300 px-3">Michigan</td>
-                <td className="border border-gray-300 px-3">Detroit</td>
+                    <td className="border border-gray-300 px-3">Michigan</td>
+                    <td className="border border-gray-300 px-3">Detroit</td>
                 </tr>
             </tbody>
         </table>
