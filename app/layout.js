@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
             {/* </aside> */}
 
             {/* right side section */}
-            <section className="h-full w-full p-2 md:px-30 md:py-10 md:w-[80%] z-10 overflow-y-scroll">
+            <section className="h-full w-screen p-2 md:px-30 md:py-10 md:w-[80%] z-10 overflow-y-scroll">
               {children}
             </section>
           </main>

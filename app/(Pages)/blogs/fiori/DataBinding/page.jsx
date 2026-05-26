@@ -184,7 +184,7 @@ const code16 =
   return (
     <div className="flex flex-col gap-5 text-gray-500 text-lg h-full">
 
-        <h1 className="text-5xl">Data Binding</h1>
+        <h1 className="text-5xl wrap-break-word">Data Binding</h1>
 
         <p>Data Binding connects your UI (View) with data (Model) to keeps UI and data in sync automatically.</p>
         <p>We will try to understand how to implement different types of Data Binding.</p>
@@ -194,7 +194,7 @@ const code16 =
         </div>
 
 
-        <h3 className="text-3xl">1. One Time Binding and Resource Binding</h3>
+        <h3 className="text-3xl wrap-break-word">1. One Time Binding and Resource Binding</h3>
 
         <ul className="list-disc ml-6">
             <li>One Time Binding means data is shown in UI only once and it will NOT update if the model changes later.</li>
@@ -218,13 +218,13 @@ const code16 =
 
 
 
-        <h3 className="text-3xl">2. Property Binding</h3>
+        <h3 className="text-3xl wrap-break-word">2. Property Binding</h3>
 
         <ul className="list-disc ml-6">
             <li>It is used to bind a single value <span className="text-gray-950 font-semibold">(like text, title, visibility, etc.)</span> in the form of Text, Input, etc.</li>
         </ul>
 
-        <h4 className="text-2xl">One-Way Binding with Property Binding</h4>
+        <h4 className="text-2xl wrap-break-word">One-Way Binding with Property Binding</h4>
         <p>We will try to bind the below data <span className="text-gray-950 font-semibold">from model</span> from json model - </p>
         <div>
             <CodeSnippet code={code3} language="json" title="model/MyModel.json" />
@@ -235,7 +235,7 @@ const code16 =
         </div>
 
 
-         <h4 className="text-2xl">Two-Way Binding with Property Binding</h4>
+         <h4 className="text-2xl wrap-break-word">Two-Way Binding with Property Binding</h4>
         <p>Two-way binding ensures that any changes made by the user update the JSON model, and those updates are automatically reflected in the UI.</p>
         <p>We will try to bind the below data <span className="text-gray-950 font-semibold">from json model</span> - </p>
         <div>
@@ -253,13 +253,13 @@ const code16 =
 
 
 
-        <h3 className="text-3xl">3. Element Binding</h3>
+        <h3 className="text-3xl wrap-break-word">3. Element Binding</h3>
 
         <ul className="list-disc ml-6">
             <li>It is used when we wants to bind an <span className="text-gray-950 font-semibold">object content</span> from the model data in Form, Details, etc.</li>
         </ul>
 
-        <h4 className="text-2xl">One-Way Binding with Element Binding</h4>
+        <h4 className="text-2xl wrap-break-word">One-Way Binding with Element Binding</h4>
         <p>We will try to bind the below <span className="text-gray-950 font-semibold">object data</span> from json model - </p>
         <div>
             <CodeSnippet code={code7} language="json" title="model/MyModel.json" />
@@ -269,7 +269,7 @@ const code16 =
             <CodeSnippet code={code8} language="xml" title="view/View1.view.xml" />
         </div>
 
-        <h4 className="text-2xl">Two-Way Binding with Element Binding</h4>
+        <h4 className="text-2xl wrap-break-word">Two-Way Binding with Element Binding</h4>
         <p>We will try to bind the below <span className="text-gray-950 font-semibold">object data</span> from json model - </p>
         <div>
             <CodeSnippet code={code9} language="json" title="model/MyModel.json" />
@@ -289,7 +289,7 @@ const code16 =
 
 
 
-        <h3 className="text-3xl">4. Aggregation Binding</h3>
+        <h3 className="text-3xl wrap-break-word">4. Aggregation Binding</h3>
 
         <ul className="list-disc ml-6">
             <li>It is used when we wants to bind <span className="text-gray-950 font-semibold">multiple records (array/list of objects)</span> from the model data in Table, List, etc.</li>
@@ -314,7 +314,7 @@ const code16 =
 
 
 
-        <h3 className="text-3xl">5. Expression Binding</h3>
+        <h3 className="text-3xl wrap-break-word">5. Expression Binding</h3>
 
         <ul className="list-disc ml-6">
             <li>Expression Binding is writing small logic (conditions or calculations) directly inside the XML view.</li>

@@ -102,6 +102,12 @@ export const capm = [
         tag : "cds Commands"
     },
     {
+        title : "File Structure",
+        link : "/blogs/capm/FileStructure",
+        topic: "File Structure",
+        tag : "CAP App, File Structure"
+    },
+    {
         title : "Consume Event",
         link : "/blogs/capm/ConsumeOtherEvent",
         topic: "Consume Event",
