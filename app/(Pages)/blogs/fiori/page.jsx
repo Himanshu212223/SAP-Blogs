@@ -19,20 +19,20 @@ const page = () => {
         <h4 className="text-2xl wrap-break-word">Heading 3</h4>
 
 
-        <span className="text-gray-950 font-semibold">Bold Content</span>
+        <span className="text-gray-950 font-semibold wrap-break-word">Bold Content</span>
 
         <ul className="list-disc ml-6">
-            <li>content list item 1</li>
-            <li>content list item 2</li>
-            <li>content list item 3</li>
-            <li>content list item 4</li>
+            <li className="wrap-break-word">content list item 1</li>
+            <li className="wrap-break-word">content list item 2</li>
+            <li className="wrap-break-word">content list item 3</li>
+            <li className="wrap-break-word">content list item 4</li>
         </ul>
         
         <ul className="list-decimal ml-6">
-            <li>content list item 1</li>    
-            <li>content list item 2</li>
-            <li>content list item 3</li>
-            <li>content list item 4</li>
+            <li className="wrap-break-word">content list item 1</li>    
+            <li className="wrap-break-word">content list item 2</li>
+            <li className="wrap-break-word">content list item 3</li>
+            <li className="wrap-break-word">content list item 4</li>
         </ul>
 
         {/* Redirect Button */}
@@ -45,29 +45,31 @@ const page = () => {
         </div>
 
 
-        <table className="border-collapse border border-gray-400">
+        <table className="border-collapse border border-gray-400 wrap-break-word">
             <thead>
                 <tr>
-                    <th className="border border-gray-300 ">State</th>
-                    <th className="border border-gray-300">City</th>
+                    <th className="border border-gray-300 wrap-break-word">State</th>
+                    <th className="border border-gray-300 wrap-break-word">City</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td className="border border-gray-300 px-3">Indiana</td>
-                    <td className="border border-gray-300 px-3">Indianapolis</td>
+                    <td className="border border-gray-300 px-3 wrap-break-word">Indiana</td>
+                    <td className="border border-gray-300 px-3 wrap-break-word">Indianapolis</td>
                 </tr>
                 <tr>
-                    <td className="border border-gray-300 px-3">Ohio</td>
-                    <td className="border border-gray-300 px-3">Columbus</td>
+                    <td className="border border-gray-300 px-3 wrap-break-word">Ohio</td>
+                    <td className="border border-gray-300 px-3 wrap-break-word">Columbus</td>
                 </tr>
                 <tr>
-                    <td className="border border-gray-300 px-3">Michigan</td>
-                    <td className="border border-gray-300 px-3">Detroit</td>
+                    <td className="border border-gray-300 px-3 wrap-break-word">Michigan</td>
+                    <td className="border border-gray-300 px-3 wrap-break-word">Detroit</td>
                 </tr>
             </tbody>
         </table>
         
+
+        <p className="text-1xl text-blue-600 wrap-break-word">!!! Its Done !!!</p>
 
 
         Filter, sort on table / List

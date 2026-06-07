@@ -108,6 +108,12 @@ export const capm = [
         tag : "CAP App, File Structure"
     },
     {
+        title : "Sample Cap App",
+        link : "/blogs/capm/SampleCapApp",
+        topic: "Sample CAP App",
+        tag : "Sample CAP Application"
+    },
+    {
         title : "Consume Event",
         link : "/blogs/capm/ConsumeOtherEvent",
         topic: "Consume Event",
