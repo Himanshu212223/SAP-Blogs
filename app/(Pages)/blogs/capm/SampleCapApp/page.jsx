@@ -146,6 +146,10 @@ const code15 = `cf deploy gen/mta.tar`;
             <li className="wrap-break-word">Hence, Multiple entities can have the same name as long as they belong to different namespaces.</li>
         </ul>
 
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-CAP-Application/blob/1-sample-cap-app/db/schema.cds" />
+        </div>
+
 
 
 
@@ -173,6 +177,13 @@ const code15 = `cf deploy gen/mta.tar`;
         <div>
             <CodeSnippet code={code7} language="md" title="db/data/cap.application.db.schema-Warehouse.csv" />
         </div>
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-CAP-Application/blob/1-sample-cap-app/db/data/cap.application.db.schema-Warehouse.csv" />
+        </div>
+
+
+        
 
 
 
@@ -220,6 +231,13 @@ const code15 = `cf deploy gen/mta.tar`;
             <CodeSnippet code={code9} language="javascript" title="srv/warehouse-service.cds" />
         </div>
 
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-CAP-Application/blob/1-sample-cap-app/srv/warehouse-service.cds" />
+        </div>
+
+
+
+
 
 
         <h3 className="text-3xl wrap-break-word">Run the application locally -</h3>
@@ -239,6 +257,10 @@ const code15 = `cf deploy gen/mta.tar`;
 
         <div>
             <CodeSnippet code={code11} language="javascript" title="test-api/warehouse.http" />
+        </div>
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-CAP-Application/blob/1-sample-cap-app/test-api/warehouse.http" />
         </div>
 
 
