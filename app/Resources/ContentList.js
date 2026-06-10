@@ -114,6 +114,12 @@ export const capm = [
         tag : "Sample CAP Application"
     },
     {
+        title : "CAP Handlers",
+        link : "/blogs/capm/CapHandlers",
+        topic: "Handlers in CAP",
+        tag : "Handlers in CAP"
+    },
+    {
         title : "Consume Event",
         link : "/blogs/capm/ConsumeOtherEvent",
         topic: "Consume Event",

@@ -293,7 +293,7 @@ const code15 = `cf deploy gen/mta.tar`;
 
         <h3 className="text-3xl wrap-break-word">Deploy the application -</h3>
 
-        <p>Use the below command to below command to Deploy the mtar file.</p>
+        <p>Use the below command to Deploy the mtar file.</p>
         <div>
             <CodeSnippet code={code15} language="cmd" title="terminal" />
         </div>
