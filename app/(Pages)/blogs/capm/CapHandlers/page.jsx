@@ -287,6 +287,12 @@ const wildcard =
             <CodeSnippet code={code1} language="javascript" title="srv/warehouse-service.js" />
         </div>
 
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-CAP-Application/blob/2-handlers/srv/warehouse-service.js" />
+        </div>
+
+
         <p>On the above code, we are defining Handlers for Warehouses because it is the entity exposed in the service definition in the CDS file, as shown below -</p>
 
         <div>
@@ -297,6 +303,10 @@ const wildcard =
 
         <div>
             <CodeSnippet code={code2b} language="javascript" title="test-api/warehouse.http" />
+        </div>
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-CAP-Application/blob/2-handlers/test-api/warehouse.http" />
         </div>
 
 
@@ -362,17 +372,39 @@ const wildcard =
             <CodeSnippet code={code3} language="javascript" title="srv/warehouse-service.cds" />
         </div>
 
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-CAP-Application/blob/2-handlers/srv/warehouse-service.cds" />
+        </div>
+        
+
         <p>Then, define its custom logic on service js file.</p>
 
         <div>
             <CodeSnippet code={code4} language="javascript" title="srv/warehouse-service.js" />
         </div>
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-CAP-Application/blob/2-handlers/srv/warehouse-service.js" />
+        </div>
+        
+        
+
+
         
         <p>We can test it locally by defining the GET endpoints for function and POST endpoint for action on .http file like - </p>
 
         <div>
             <CodeSnippet code={code4b} language="javascript" title="function-action/function-action.http" />
         </div>
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-CAP-Application/blob/2-handlers/test-api/function-action.http" />
+        </div>
+
+
+
+
+        
         
 
         <p className="text-1xl text-blue-600 wrap-break-word">!!! Its Done !!!</p>
