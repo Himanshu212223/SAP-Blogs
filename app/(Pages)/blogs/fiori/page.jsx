@@ -5,6 +5,9 @@ import React from "react";
 const page = () => {
   const code1 = `<Here comes the code>`;
 
+
+//   ############################## UI #######################################
+
   return (
     <div className="flex flex-col gap-5 text-gray-500 text-lg h-full">
 

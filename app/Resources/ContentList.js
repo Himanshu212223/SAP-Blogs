@@ -120,6 +120,12 @@ export const capm = [
         tag : "Handlers in CAP"
     },
     {
+        title : "oData Query and Paging",
+        link : "/blogs/capm/ODataQueryAndPaging",
+        topic: "Path, Query & Paging",
+        tag : "oData Query and Paging"
+    },
+    {
         title : "Consume Event",
         link : "/blogs/capm/ConsumeOtherEvent",
         topic: "Consume Event",
