@@ -35,12 +35,12 @@ export const fiori = [
         topic: "Routing Navigation",
         tag : "Routing Navigation"
     },
-    {
-        title : "Search and Sort",
-        link : "/blogs/fiori/SearchSort",
-        topic: "Search and Sort",
-        tag : "Search and Sorting in Table"
-    }
+    // {
+    //     title : "Search and Sort",
+    //     link : "/blogs/fiori/SearchSort",
+    //     topic: "Search and Sort",
+    //     tag : "Search and Sorting in Table"
+    // }
     // {
     //     title : "Import JSON To Fiori",
     //     link : "/Blogs/Fiori/ImportJsonFile",
@@ -126,6 +126,12 @@ export const capm = [
         tag : "oData Query and Paging"
     },
     {
+        title : "Entity Aspect",
+        link : "/blogs/capm/EntityAspect",
+        topic: "Entity Aspects",
+        tag : "CAP Entity Aspect UUID CUID managed temporal codelist custom"
+    },
+    {
         title : "Consume Event",
         link : "/blogs/capm/ConsumeOtherEvent",
         topic: "Consume Event",
@@ -181,3 +187,13 @@ export const capm = [
     //     tag: "Create a Blank CAPM, First CAP app"
     // }
 ] ;
+
+
+export const learning = [
+    {
+        title : "Employee Management Cap App",
+        link : "/blogs/practice/EmployeeManagement",
+        topic: "Manage Employee App",
+        tag : "Employee Management Cap application"
+    }
+]

@@ -1,8 +1,7 @@
 "use client";
 
-import { fiori, capm } from "@/app/Resources/ContentList";
+import { fiori, capm, learning} from "@/app/Resources/ContentList";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { useState, useContext } from "react";
 import { AppContext } from "@/context/AppContextProvider";
 import Link from "next/link";
@@ -11,7 +10,9 @@ const SideBar = () => {
   const [searchValue, setSearchValue] = useState("");
   const [fioriItem, setFioriItem] = useState(fiori);
   const [capmItem, setCapmItem] = useState(capm);
+  const [learningItem, setLearningItem] = useState(learning);
 
+  // Search bar logic
   const onHandleSearch = (event) => {
     setSearchValue(event.target.value);
 
@@ -25,6 +26,8 @@ const SideBar = () => {
     const fioriTopicList = [];
 
     const capmTopicList = [];
+
+    const learningTopicList = [];
 
     fiori.forEach((fioriElement) => {
       const topic = fioriElement.tag.toLowerCase();
@@ -42,8 +45,17 @@ const SideBar = () => {
       }
     });
 
+    learning.forEach((learningElement) => {
+      const topic = learningElement.tag.toLowerCase();
+      const searchedTopic = searchValue.toLocaleLowerCase();
+      if(topic.includes(searchedTopic)){
+        learningTopicList.push(learningElement);
+      }
+    });
+
     setFioriItem(fioriTopicList);
     setCapmItem(capmTopicList);
+    setLearningItem(learningTopicList);
   };
 
   //  Get the Hamburger details from AppContext
@@ -100,6 +112,25 @@ const SideBar = () => {
 
             {capmItem &&
               capmItem.map((element) => {
+                return (
+                  <Link
+                    key={element.title}
+                    href={element.link}
+                    className="text-gray-600 border border-transparent text-sm hover:text-black hover:border hover:border-gray-300 hover:bg-gray-100 hover:rounded-md px-5 py-2 cursor-pointer transition-all" onClick={toggleSideBar}
+                  >
+                    {element.topic}
+                  </Link>
+                );
+              })}
+
+
+            {/* Learning Section */}
+            {learning && (
+              <p className="text-gray-400 text-sm">Section - Practice</p>
+            )}
+
+            {learning &&
+              learning.map((element) => {
                 return (
                   <Link
                     key={element.title}
