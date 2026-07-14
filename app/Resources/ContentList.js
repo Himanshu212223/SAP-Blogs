@@ -132,6 +132,12 @@ export const capm = [
         tag : "CAP Entity Aspect UUID CUID managed temporal codelist custom"
     },
     {
+        title : "Entity Relationship",
+        link : "/blogs/capm/EntityRelationship",
+        topic: "Entity Relationship",
+        tag : "Entity Relationship Association Composition One Many"
+    },
+    {
         title : "Consume Event",
         link : "/blogs/capm/ConsumeOtherEvent",
         topic: "Consume Event",
