@@ -76,8 +76,8 @@ const page = () => {
         <div>
           <section className="rounded-t-lg bg-green-700 p-1 border-green-600  text-white">Note</section>
           <section className="p-3 border-b-2 border-l-2 border-r-2 border-green-700 rounded-b-lg">
-            <p className="wrap-break-word">{code5} - it gives Subaccout subdomain</p>
-            <p className="wrap-break-word">{code6} - it gives cf org details</p>
+            <p className="wrap-break-word">{code1} - it gives Subaccout subdomain</p>
+            <p className="wrap-break-word">{code1} - it gives cf org details</p>
           </section>
         </div>
 
