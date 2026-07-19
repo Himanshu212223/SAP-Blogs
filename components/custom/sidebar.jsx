@@ -19,6 +19,7 @@ const SideBar = () => {
     if (event.target.value === "") {
       setFioriItem(fiori);
       setCapmItem(capm);
+      setLearningItem(learning);
       console.log("it is empty");
       return;
     }
@@ -125,12 +126,12 @@ const SideBar = () => {
 
 
             {/* Learning Section */}
-            {learning && (
+            {learningItem && (
               <p className="text-gray-400 text-sm">Section - Practice</p>
             )}
 
-            {learning &&
-              learning.map((element) => {
+            {learningItem &&
+              learningItem.map((element) => {
                 return (
                   <Link
                     key={element.title}

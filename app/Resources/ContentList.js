@@ -143,6 +143,12 @@ export const capm = [
         topic: "Consume Event",
         tag : "Consume Event"
     },
+    {
+        title : "Destination using Mta",
+        link : "/blogs/capm/CreateDestinationUsingMta",
+        topic: "Destination using Mta",
+        tag : "Destination using Mta"
+    }
     // {
     //     title : "Create Event in Event Mesh using CAP App when Event Mesh instance is on different Space",
     //     link : "/Blogs/CAPM/CreateEventUsingCAPemDestination",
