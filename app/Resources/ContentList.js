@@ -148,56 +148,13 @@ export const capm = [
         link : "/blogs/capm/CreateDestinationUsingMta",
         topic: "Destination using Mta",
         tag : "Destination using Mta"
+    },
+    {
+        title : "Consume Destination",
+        link : "/blogs/capm/ConsumeDestinations",
+        topic: "Consume Destination",
+        tag : "Consume Destinations"
     }
-    // {
-    //     title : "Create Event in Event Mesh using CAP App when Event Mesh instance is on different Space",
-    //     link : "/Blogs/CAPM/CreateEventUsingCAPemDestination",
-    //     topic : "Other Event Mesh instance",
-    //     tag: "Other Event Mesh instance, Event Mesh instance on different space, Create, Consume and Publish Event"
-    // },
-    // {
-    //     title : "Create Event using CAP App",
-    //     link : "/Blogs/CAPM/CreateEventUsingCAP",
-    //     topic: "Integrate Event Mesh",
-    //     tag: "Integrate Event Mesh, Create, Consume and Publish Event using CAP App"
-    // },
-    // {
-    //     title : "CAP File structure and Flow of Execution",
-    //     link : "/Blogs/CAPM/FlowOfExecution",
-    //     topic: "CAP File Structure",
-    //     tag: "CAP File Structure, CAP File structure and Flow of Execution"
-    // },
-    // {
-    //     title : "Create Destination through CAP App",
-    //     link : "/Blogs/CAPM/CreateDestinationThroughCAP",
-    //     topic: "CAP App Destination",
-    //     tag: "CAP App Destination, Create Destination through CAP App, using mtar, using mta"
-    // },
-    // {
-    //     title : "Sample CAP App",
-    //     link : "/Blogs/CAPM/CapProductManagementApp",
-    //     topic : "Sample CAP App",
-    //     tag: "CAP App" 
-    // },
-    // {
-    //     title : "CRUD Operation using actions",
-    //     link : "/Blogs/CAPM/CrudOperationUsingActions",
-    //     topic: "Actions",
-    //     tag: "CRUD Operation using actions"
-
-    // },
-    // {
-    //     title : "CDS Commands to Create & Deploy App",
-    //     link : "/Blogs/CAPM/CDScommandsToCreateandDeployApp",
-    //     topic: "cds commands",
-    //     tag: "CDS Commands to Create & Deploy App"
-    // },
-    // {
-    //     title : "Create a Blank CAPM",
-    //     link : "/Blogs/CAPM/CreateBlankCAPM",
-    //     topic: "First CAP app",
-    //     tag: "Create a Blank CAPM, First CAP app"
-    // }
 ] ;
 
 

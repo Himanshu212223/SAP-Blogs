@@ -747,6 +747,11 @@ resources:
         </div>
 
 
+        {/* Redirect Button */}
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-CAP-Application/blob/6-mta-services-destinations/mta.yaml" />
+        </div>
+
 
 
         <p className="text-1xl text-blue-600 wrap-break-word">!!! Its Done !!!</p>
