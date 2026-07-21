@@ -154,6 +154,12 @@ export const capm = [
         link : "/blogs/capm/ConsumeDestinations",
         topic: "Consume Destination",
         tag : "Consume Destinations"
+    },
+    {
+        title : "Consume API",
+        link : "/blogs/capm/ConsumeApi",
+        topic: "Consume Api",
+        tag : "Consume Api Axios"
     }
 ] ;
 
