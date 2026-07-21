@@ -138,12 +138,6 @@ export const capm = [
         tag : "Entity Relationship Association Composition One Many"
     },
     {
-        title : "Consume Event",
-        link : "/blogs/capm/ConsumeOtherEvent",
-        topic: "Consume Event",
-        tag : "Consume Event"
-    },
-    {
         title : "Destination using Mta",
         link : "/blogs/capm/CreateDestinationUsingMta",
         topic: "Destination using Mta",
@@ -160,6 +154,18 @@ export const capm = [
         link : "/blogs/capm/ConsumeApi",
         topic: "Consume Api",
         tag : "Consume Api Axios"
+    },
+    {
+        title : "Configure Job Scheduler",
+        link : "/blogs/capm/JobScheduler",
+        topic: "Job Scheduler",
+        tag : "Job Scheduler"
+    },
+    {
+        title : "Consume Event",
+        link : "/blogs/capm/ConsumeOtherEvent",
+        topic: "Consume Event",
+        tag : "Consume Event"
     }
 ] ;
 
