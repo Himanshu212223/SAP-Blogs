@@ -10,6 +10,7 @@ const code3 = "${default-uri}";
 const code4 = "${org}-${space}";
 const code5 = "${org}" ;
 const code6 = "${default-domain}" ;
+const code6b = "${space}" ;
 const code7 = "${org}.${default-domain}";
 
 const code8 = "- name: cap-application-destination-service" ;
@@ -468,6 +469,8 @@ modules:
       - name: cap-application-destination-service
       # Declare SBPA Service Requirement below
       - name: cap-application-sbpa-service
+      # Declare Cloud Logging requirement below
+      - name: UPS_CLS
 
 
       
@@ -599,7 +602,15 @@ resources:
     parameters:
       service: process-automation-service
       service-plan: standard
-      service-name: cap-application-sbpa-service-instance`;
+      service-name: cap-application-sbpa-service-instance
+  
+  # Define Cloud Logging Resource detials
+  - name: UPS_CLS
+    type: org.cloudfoundry.existing-service
+    parameters:
+      service-tags:
+        - "cloud-logging"
+        - "Cloud Logging"`;
 
 
 
@@ -699,8 +710,11 @@ resources:
         <div>
           <section className="rounded-t-lg bg-green-700 p-1 border-green-600  text-white">Note:</section>
           <section className="p-3 border-b-2 border-l-2 border-r-2 border-green-700 rounded-b-lg">
-            <p className="wrap-break-word">{code5} - it gives Subaccout subdomain</p>
-            <p className="wrap-break-word">{code6} - it gives cf org details</p>
+            <ul className="list-disc ml-6">
+              <li className="wrap-break-word">{code5} - it gives Subaccout subdomain</li>
+              <li className="wrap-break-word">{code6b} - it gives space name</li>
+              <li className="wrap-break-word">{code6} - it gives cf org details</li>
+          </ul>
           </section>
         </div>
 

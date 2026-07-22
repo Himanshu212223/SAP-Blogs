@@ -162,6 +162,12 @@ export const capm = [
         tag : "Job Scheduler"
     },
     {
+        title : "Role based access",
+        link : "/blogs/capm/RoleBasedAccess",
+        topic: "Role based access",
+        tag : "Role based access"
+    },
+    {
         title : "Consume Event",
         link : "/blogs/capm/ConsumeOtherEvent",
         topic: "Consume Event",
