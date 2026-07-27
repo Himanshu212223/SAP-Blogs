@@ -189,40 +189,41 @@ const code12 =
 
 
 const code13 = 
-`- name: cap-application-cap-destinations-creator-module # Module to create Destination using Destination Service
-  type: com.sap.application.content
-  requires:
-    - name: cap-application-auth
-      parameters:
-        service-key:
-          name: cap-application-cap-auth-key
-    - name: srv-api
-    - name: cap-application-destination-service
-      parameters:
-        content-target: true
-  parameters:
-    content:
-      subaccount:
-        destinations:
-          # Destinations based on the CAP service and XSUAA service are created here.    
-          # Destination - 1 
-          - Name: cap_application_Testing_Destination #The destination to the CAP service. It is required by your UIs running in SAP Launchpad service to access your service.
-            Authentication: OAuth2UserTokenExchange
-            TokenServiceInstanceName: cap-application-auth
-            TokenServiceKeyName: cap-application-auth-key
-            URL: '~{srv-api/srv-url}'
-            sap.cloud.service: cap-application.service
-            
-          # Destination - 2
-          - Name: cap_application_Testing_Destination-auth #The destination to your XSUAA service instance. The SAP Launchpad service needs it to convert OAuth tokens for use with your CAP service.
-            Authentication: OAuth2UserTokenExchange
-            ServiceInstanceName: cap-application-auth
-            ServiceKeyName: cap-application-auth-key
-            sap.cloud.service: cap-application.service
-
-        existing_destinations_policy: update
-  build-parameters:
-    no-source: true`;
+`
+  - name: cap-application-cap-destinations-creator-module # Module to create Destination using Destination Service
+    type: com.sap.application.content
+    requires:
+      - name: cap-application-auth
+        parameters:
+          service-key:
+            name: cap-application-cap-auth-key
+      - name: srv-api
+      - name: cap-application-destination-service
+        parameters:
+          content-target: true
+    parameters:
+      content:
+        subaccount:
+          destinations:
+            # Destinations based on the CAP service and XSUAA service are created here.    
+            # Destination - 1 
+            - Name: cap_application_Testing_Destination # The destination to the CAP service.
+              Authentication: OAuth2UserTokenExchange
+              TokenServiceInstanceName: cap-application-auth
+              TokenServiceKeyName: cap-application-auth-key
+              URL: '~{srv-api/srv-url}'
+              sap.cloud.service: cap-application.service
+              
+            # Destination - 2
+            - Name: cap_application_Testing_Destination-auth # Auth Destination for Central Launchpad to convert oAuth Token
+              Authentication: OAuth2UserTokenExchange
+              ServiceInstanceName: cap-application-auth
+              ServiceKeyName: cap-application-auth-key
+              sap.cloud.service: cap-application.service
+          existing_destinations_policy: update
+    build-parameters:
+      no-source: true
+`;
 
 
 
@@ -306,7 +307,7 @@ modules:
           destinations:
             # Destinations based on the CAP service and XSUAA service are created here.    
             # Destination - 1 
-            - Name: cap_application_Testing_Destination #The destination to the CAP service. It is required by your UIs running in SAP Launchpad service to access your service.
+            - Name: cap_application_Testing_Destination # The destination to the CAP service.
               Authentication: OAuth2UserTokenExchange
               TokenServiceInstanceName: cap-application-auth
               TokenServiceKeyName: cap-application-auth-key
@@ -314,7 +315,7 @@ modules:
               sap.cloud.service: cap-application.service
               
             # Destination - 2
-            - Name: cap_application_Testing_Destination-auth #The destination to your XSUAA service instance. The SAP Launchpad service needs it to convert OAuth tokens for use with your CAP service.
+            - Name: cap_application_Testing_Destination-auth # Auth Destination for Central Launchpad to convert oAuth Token
               Authentication: OAuth2UserTokenExchange
               ServiceInstanceName: cap-application-auth
               ServiceKeyName: cap-application-auth-key
@@ -387,52 +388,53 @@ const code16 =
 
 
 const code17 =
-`# Destination Module
-- name: cap-application-cap-destinations-creator-module # Module to create Destination using Destination Service
-  type: com.sap.application.content
-  requires:
-    - name: cap-application-auth
-      parameters:
-        service-key:
-          name: cap-application-cap-auth-key
-    - name: srv-api
-    - name: cap-application-destination-service
-      parameters:
-        content-target: true
-    - name: cap-application-sbpa-service  # <-- Add SBPA resource details as requirement here
-      parameters:
-        service-key:
-          name: cap-application-sbpa-service-key
-  parameters:
-    content:
-      subaccount:
-        destinations:
-          # Destinations based on the CAP service and XSUAA service are created here.    
-          # Destination - 1 
-          - Name: cap_application_Testing_Destination #The destination to the CAP service. It is required by your UIs running in SAP Launchpad service to access your service.
-            Authentication: OAuth2UserTokenExchange
-            TokenServiceInstanceName: cap-application-auth
-            TokenServiceKeyName: cap-application-auth-key
-            URL: '~{srv-api/srv-url}'
-            sap.cloud.service: cap-application.service
-            
-          # Destination - 2
-          - Name: cap_application_Testing_Destination-auth #The destination to your XSUAA service instance. The SAP Launchpad service needs it to convert OAuth tokens for use with your CAP service.
-            Authentication: OAuth2UserTokenExchange
-            ServiceInstanceName: cap-application-auth
-            ServiceKeyName: cap-application-auth-key
-            sap.cloud.service: cap-application.service
+`
+  - name: cap-application-cap-destinations-creator-module # Module to create Destination using Destination Service
+    type: com.sap.application.content
+    requires:
+      - name: cap-application-auth
+        parameters:
+          service-key:
+            name: cap-application-cap-auth-key
+      - name: srv-api
+      - name: cap-application-destination-service
+        parameters:
+          content-target: true
+      - name: cap-application-sbpa-service  # <-- Add SBPA resource details as requirement here
+        parameters:
+          service-key:
+            name: cap-application-sbpa-service-key
+    parameters:
+      content:
+        subaccount:
+          destinations:
+            # Destinations based on the CAP service and XSUAA service are created here.    
+            # Destination - 1 
+            - Name: cap_application_Testing_Destination # The destination to the CAP service.
+              Authentication: OAuth2UserTokenExchange
+              TokenServiceInstanceName: cap-application-auth
+              TokenServiceKeyName: cap-application-auth-key
+              URL: '~{srv-api/srv-url}'
+              sap.cloud.service: cap-application.service
+              
+            # Destination - 2
+            - Name: cap_application_Testing_Destination-auth # Auth Destination for Central Launchpad to convert oAuth Token
+              Authentication: OAuth2UserTokenExchange
+              ServiceInstanceName: cap-application-auth
+              ServiceKeyName: cap-application-auth-key
+              sap.cloud.service: cap-application.service
 
-          # Destination - 3 - SBPA Destination
-          - Name: cap_application_Destination-sbpa
-            Authentication: OAuth2UserTokenExchange
-            ServiceInstanceName: cap-application-sbpa-service-instance  # <-- SBPA Service Instance Name
-            ServiceKeyName: cap-application-sbpa-service-key            # <-- SBPA Service Service Key
-            sap.cloud.service: cap-application.service
+            # Destination - 3 - SBPA Destination
+            - Name: cap_application_Destination-sbpa
+              Authentication: OAuth2UserTokenExchange
+              ServiceInstanceName: cap-application-sbpa-service-instance  # <-- SBPA Service Instance Name
+              ServiceKeyName: cap-application-sbpa-service-key            # <-- SBPA Service Service Key
+              sap.cloud.service: cap-application.service
 
-        existing_destinations_policy: update
-  build-parameters:
-    no-source: true`;
+          existing_destinations_policy: update
+    build-parameters:
+      no-source: true
+`;
 
 
 
@@ -524,7 +526,7 @@ modules:
           destinations:
             # Destinations based on the CAP service and XSUAA service are created here.    
             # Destination - 1 
-            - Name: cap_application_Testing_Destination #The destination to the CAP service. It is required by your UIs running in SAP Launchpad service to access your service.
+            - Name: cap_application_Testing_Destination # The destination to the CAP service.
               Authentication: OAuth2UserTokenExchange
               TokenServiceInstanceName: cap-application-auth
               TokenServiceKeyName: cap-application-auth-key
@@ -532,7 +534,7 @@ modules:
               sap.cloud.service: cap-application.service
               
             # Destination - 2
-            - Name: cap_application_Testing_Destination-auth #The destination to your XSUAA service instance. The SAP Launchpad service needs it to convert OAuth tokens for use with your CAP service.
+            - Name: cap_application_Testing_Destination-auth # Auth Destination for Central Launchpad to convert oAuth Token
               Authentication: OAuth2UserTokenExchange
               ServiceInstanceName: cap-application-auth
               ServiceKeyName: cap-application-auth-key
