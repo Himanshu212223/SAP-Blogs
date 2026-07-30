@@ -48,125 +48,402 @@ const code5 =
 const code6 = `items="{WarehouseModel>/Warehouses}"`;
 
 const code7 =
-`<mvc:View controllerName="warehouse.project3.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
-    xmlns:f="sap.f"
-	xmlns:l="sap.ui.layout"
-	xmlns:form="sap.ui.layout.form"
-    >
-    	<!-- Show Details Panel -->
-        <Panel class="m-tb-10">
-            <Table id="idWarehouseTable" items="{WarehouseModel>/Warehouses}" headerText="Warehouse Details">
-                <headerToolbar>
-                    <OverflowToolbar>
-                        <content>
-                            <Title text="Warehouses" level="H2"/>
-                            <ToolbarSpacer />
-                        </content>
-                    </OverflowToolbar>
-                </headerToolbar>
-		
-                <columns>
-                    <Column>
-                        <Text text="ID" />
-                    </Column>
-                    <Column>
-                        <Text text="Registered Name" />
-                    </Column>
-                    <Column>
-                        <Text text="Owner" />
-                    </Column>
-                    <Column>
-                        <Text text="Location" />
-                    </Column>
-                </columns>
+`<!-- Show Table Details -->
+<Table id="idWarehouseTable" items="{WarehouseModel>/Warehouses}" headerText="Warehouse Details">
+    <headerToolbar>
+        <OverflowToolbar>
+            <content>
+                <Title text="Warehouses" level="H2"/>
+                <ToolbarSpacer />
+            </content>
+        </OverflowToolbar>
+    </headerToolbar>
 
-                <items>
-                    <ColumnListItem vAlign="Middle">
-                        <cells>
-                            <Text text="{WarehouseModel>ID}" />
-                            <Text text="{WarehouseModel>name}" />
-                            <Text text="{WarehouseModel>owner}" />
-                            <Text text="{WarehouseModel>location}" />
-                        </cells>
-                    </ColumnListItem>
-                </items>
+    <columns>
+        <Column>
+            <Text text="ID" />
+        </Column>
+        <Column>
+            <Text text="Registered Name" />
+        </Column>
+        <Column>
+            <Text text="Owner" />
+        </Column>
+        <Column>
+            <Text text="Location" />
+        </Column>
+    </columns>
 
-            </Table>
-        </Panel>
+    <items>
+        <ColumnListItem vAlign="Middle">
+            <cells>
+                <Text text="{WarehouseModel>ID}" />
+                <Text text="{WarehouseModel>name}" />
+                <Text text="{WarehouseModel>owner}" />
+                <Text text="{WarehouseModel>location}" />
+            </cells>
+        </ColumnListItem>
+    </items>
 
-    </Page>
-</mvc:View>
+</Table>`;
+
+const code8 = `<Table id="idWarehouseTable" items="{WarehouseModel>/Warehouses}" headerText="Warehouse Details" mode="SingleSelectMaster" selectionChange="selectedRow">` ;
+
+const code9 = 
+`//  Method to get selected Table row details and route to another view.
+selectedRow: function (oEvent) {
+    const selectedID = oEvent.getParameter("listItem").getBindingContext("WarehouseModel").getObject().ID;
+    debugger
+    console.log("row pressed");
+
+    // Route to View2 with ID on path
+    const router = UIComponent.getRouterFor(this);
+    router.navTo("DetailView", {
+        id: selectedID
+    });
+}`;
+
+const code10 =
+`"routes": [
+    {
+        "name": "RouteView1",
+        "pattern": ":?query:",
+        "target": [
+        "TargetView1"
+        ]
+    },
+    {
+        "name" : "DetailView",
+        "pattern" : "Warehouse/{id}",
+        "target" : "WarehouseDetails"
+    }
+]
 `;
 
 
-const code8 =
-`<Panel class="m-tb-10">
-    <VBox class="sapUiSmallMargin">
-        <form:SimpleForm id="SimpleFormDisplay354"
-            editable="true"
-            layout="ResponsiveGridLayout"
-            title="Register Warehouse"
-            labelSpanXL="3"
-            labelSpanL="3"
-            labelSpanM="3"
-            labelSpanS="12"
-            adjustLabelSpan="false"
-            emptySpanXL="4"
-            emptySpanL="4"
-            emptySpanM="4"
-            emptySpanS="0"
-            columnsXL="1"
-            columnsL="1"
-            columnsM="1"
-            singleContainerFullSize="false" >
-            <form:content>
-                <Label text="Name" />
-                <Input id="name" placeholder="Warehouse Name" />
+const code11 =
+`"targets": {
+    "TargetView1": {
+        "id": "View1",
+        "name": "View1"
+    },
+    "WarehouseDetails" : {
+        "id" : "View2",
+        "name" : "View2"
+    }
+}`;
+
+
+const code12 = 
+`onInit() {
+    //  Extract the details from the Router path.
+    const oRouter = UIComponent.getRouterFor(this);
+    oRouter.getRoute("DetailView").attachPatternMatched(this._onObjectMatched, this);
+},
+
+// method to Bind the selected model data with UI.
+_onObjectMatched(oEvent) {
+    const id = oEvent.getParameter("arguments").id;
+
+    // Bind the view to the selected entity
+    this.getView().bindElement({
+        path: "/Warehouses('" + id + "')",
+        model: "WarehouseModel"
+    });
+
+    MessageToast.show('Details for Warehouse - ' + id);
+}`;
+
+
+const code13 = 
+`<mvc:View
+    controllerName="manage.warehouse.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page id="page2" title="Warehouse Details" showNavButton="true" navButtonPress="onNavBack">
+
+        <!-- ************************ Page Header ************************  -->
+        <ObjectHeader
+            title="Warehouse ID - {WarehouseModel>ID}"
+            class="sapUiResponsivePadding--header" >
+            <statuses>
+                <ObjectStatus
+                    text="Active"
+                    state="Success" />
+            </statuses>
+
+        </ObjectHeader>
+
+        <Panel>
+
+            <!-- ************************ Edit / Save / Cancel Buttons ************************ -->
+            <HBox justifyContent="End">
+                <Button text="Edit" type="Emphasized" visible="{View2Model>/editVisible}" press="onPressEdit" />
+                <Button class="sapUiTinyMarginBegin" type="Accept" text="Save" visible="{View2Model>/saveVisible}" press="onPressSave" />
+                <Button class="sapUiTinyMarginBegin" type="Reject" text="Cancel" visible="{View2Model>/cancelVisible}" press="onPressCancel" />
+            </HBox>
+            
+            <!-- ************************ Binding Data with UI ************************ -->
+            <VBox>
+                <Label text="Warehouse Name" />
+                <Input id="warehouseNameInput" value="{WarehouseModel>name}" editable="{View2Model>/inputEditable}" />
+
                 <Label text="Owner" />
-                <Input id="owner" placeholder="Owner Name" />
+                <Input id="warehouseOwnerInput" value="{WarehouseModel>owner}" editable="{View2Model>/inputEditable}" />
+
                 <Label text="Location" />
-                <Input id="location" placeholder="Complete Address" />
-                <Label text="" />
-                <Button text="Register" type="Emphasized" press="registerWarehouse" />
-            </form:content>
-        </form:SimpleForm>
-    </VBox>
-</Panel>`;
+                <Input id="warehouseLocationInput" value="{WarehouseModel>location}" editable="{View2Model>/inputEditable}" />
+            </VBox>
+        </Panel>
+
+    </Page>
+</mvc:View>`;
 
 
-const code9 = 
-`registerWarehouse: function () {
-    const name = this.getView().byId('name').getValue();
-    const owner = this.getView().byId('owner').getValue();
-    const location = this.getView().byId('location').getValue();
+const code14 = 
+`sap.ui.define([
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/core/UIComponent",
+    "sap/m/MessageToast"
 
-    if (name.length == 0 || owner.length == 0 || location.length == 0) {
-        MessageToast.show('Please fill all the fields');
+], (Controller, UIComponent, MessageToast) => {
+    "use strict";
+
+    return Controller.extend("manage.warehouse.controller.View2", {
+
+        onInit() {
+            //  Extract the details from the Router path.
+            const oRouter = UIComponent.getRouterFor(this);
+            oRouter.getRoute("DetailView").attachPatternMatched(this._onObjectMatched, this);
+        },
+
+        // method to extract the value from route and Bind the selected data with UI.
+        _onObjectMatched(oEvent) {
+            const id = oEvent.getParameter("arguments").id;
+
+            // Bind the view to the selected entity
+            this.getView().bindElement({
+                path: "/Warehouses('" + id + "')",
+                model: "WarehouseModel"
+            });
+
+            MessageToast.show('Details for Warehouse - ' + id);
+        },
+
+        //  Method to Navigate back to View1
+        onNavBack: async function () {
+            const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRouter.navTo('RouteView1');
+        },
+
+        /*
+            Below method will do the following -
+            1. Make the Save and Cancel button visible.
+            2. Disappear the Edit Button.
+            3. Make Input field editable.
+        */
+        onPressEdit: function (oEvent) {
+            this.getView().getModel('View2Model').setProperty('/inputEditable', true);
+            this.getView().getModel('View2Model').setProperty('/inputEditable', true);
+            this.getView().getModel('View2Model').setProperty('/inputEditable', true);
+
+            this.getView().getModel('View2Model').setProperty('/editVisible', false);
+            this.getView().getModel('View2Model').setProperty('/saveVisible', true);
+            this.getView().getModel('View2Model').setProperty('/cancelVisible', true);
+
+            MessageToast.show('Edit Enabled');
+        },
+
+        /*
+            Below method will do the following -
+            1. Make the Save and Cancel button disappear.
+            2. Visible the Edit Button.
+            3. Make Input field non-editable.
+        */
+        onPressCancel: function (oEvent) {
+            this.getView().getModel('View2Model').setProperty('/inputEditable', false);
+            this.getView().getModel('View2Model').setProperty('/inputEditable', false);
+            this.getView().getModel('View2Model').setProperty('/inputEditable', false);
+
+            this.getView().getModel('View2Model').setProperty('/editVisible', true);
+            this.getView().getModel('View2Model').setProperty('/saveVisible', false);
+            this.getView().getModel('View2Model').setProperty('/cancelVisible', false);
+
+            MessageToast.show('No changes Saved');
+        },
+
+        /*
+            This method will do the following -
+            1. Get the data of input fields.
+            2. Update the data on the backend.
+            3. Make Input field editable.
+            4. Make the Save and Cancel button disappear.
+            5. Visible the Edit Button.
+            6. Make Input field non-editable.
+        */
+        onPressSave: async function (oEvent) {
+            const name = this.getView().byId('warehouseNameInput').getValue();
+            const owner = this.getView().byId('warehouseOwnerInput').getValue();
+            const location = this.getView().byId('warehouseLocationInput').getValue();
+
+            //  Update the data on the backend using odata v4 service model
+            const oContext = this.getView().getBindingContext('WarehouseModel');
+            oContext.setProperty("name", name);
+            oContext.setProperty("owner", owner);
+            oContext.setProperty("location", location);
+
+            await this.getView().getModel('WarehouseModel').submitBatch('$auto');
+
+            this.getView().getModel('View2Model').setProperty('/inputEditable', false);
+            this.getView().getModel('View2Model').setProperty('/inputEditable', false);
+            this.getView().getModel('View2Model').setProperty('/inputEditable', false);
+
+            this.getView().getModel('View2Model').setProperty('/editVisible', true);
+            this.getView().getModel('View2Model').setProperty('/saveVisible', false);
+            this.getView().getModel('View2Model').setProperty('/cancelVisible', false);
+
+            MessageToast.show('Successfully updated the details');
+        }
+
+    });
+});`;
+
+
+
+const code15 = 
+`onInit() {
+    const oRouter = UIComponent.getRouterFor(this);
+    oRouter.getRoute("RouteView1").attachPatternMatched(this._onPatternMatched, this);
+},
+
+//  Method to update/refresh the binding data with Table as well if User updated the Table row details.
+_onPatternMatched: function () {
+    const oBinding = this.byId("idWarehouseTable").getBinding("items");
+    oBinding.refresh();
+},`;
+
+
+const code16 =
+`<!-- ********** Create new Warehouse Entry ********** -->
+<HBox justifyContent="End">
+    <Button text="New" type="Emphasized" icon="sap-icon://add" press="onPressCreate" />
+</HBox>
+`;
+
+const code17 =
+`onPressCreate : function(){
+    const router = UIComponent.getRouterFor(this);
+    router.navTo("NewWarehouseView");
+}`;
+
+const code18 = 
+`"routes": [
+    {
+        "name": "RouteView1",
+        "pattern": ":?query:",
+        "target": [
+        "TargetView1"
+        ]
+    },
+    {
+        "name" : "NewWarehouseView",
+        "pattern" : "NewWarehouse",
+        "target" : "NewWarehouseTarget"
+    },
+    {
+        "name" : "DetailView",
+        "pattern" : "Warehouse/{id}",
+        "target" : "WarehouseDetails"
+    }
+]`;
+
+
+const code19 = 
+`"targets": {
+    "TargetView1": {
+        "id": "View1",
+        "name": "View1"
+    },
+    "NewWarehouseTarget" : {
+        "id": "NewWarehouse",
+        "name" : "NewWarehouse"
+    },
+    "WarehouseDetails" : {
+        "id" : "View2",
+        "name" : "View2"
+    }
+}`;
+
+
+
+const code20 = 
+`<Label text="Name" />
+<Input id="name" placeholder="Warehouse Name" />
+<Label text="Owner" />
+<Input id="owner" placeholder="Warehouse Owner" />
+<Label text="Location" />
+<Input id="location" placeholder="Warehouse Location" />
+<Label text="" />
+<Button text="Register" type="Emphasized" press="onRegister" />
+<Label text="" />
+<Button text="Cancel" type="Reject" press="onCancel" />`;
+
+
+const code21 = 
+`
+//  Cancel Button logic will Navigate back to View1
+onCancel: function () {
+    const router = UIComponent.getRouterFor(this);
+    router.navTo("RouteView1");
+},
+
+/*
+    Below method will do the following -
+    1. Get the data of Input Fields.
+    2. Validate the data.
+    3. Get the oData Model details and its binding.
+    4. Push the data to db using the odata Model.
+    5. Set the Input fields to empty.
+    6. Navigate back to View1.
+*/
+onRegister: async function () {
+    const wName = this.getView().byId("name").getValue();
+    const wOwner = this.getView().byId("owner").getValue();
+    const wLocation = this.getView().byId("location").getValue();
+
+    if (wName.length == 0 || wOwner.length == 0 || wLocation.length == 0) {
+        MessageToast.show("Please fill all the details.");
         return;
     }
 
-    // Get Table and its binding
-    const oTable = this.byId("idWarehouseTable");
-    const oBinding = oTable.getBinding("items");
+    const oModel = this.getView().getModel("WarehouseModel");
 
-    //  Insert Data using Binding
-    const oContext = oBinding.create({
-        name: name,
-        owner: owner,
-        location: location
+    const oListBinding = oModel.bindList("/Warehouses");
+
+    oListBinding.create({
+        name: this.byId("name").getValue(),
+        owner: this.byId("owner").getValue(),
+        location: this.byId("location").getValue()
     });
 
-    oContext.created()
-        .then(() => {
-            MessageToast.show("Warehouse created successfully!");
-        })
-        .catch((oError) => {
-            MessageToast.show("Error creating warehouse: " + oError.message);
-        });
-}`;
+    try {
+        await oModel.submitBatch("$auto");
 
+        sap.m.MessageToast.show("Warehouse created successfully");
+
+        this.getView().byId("name").setValue("");
+        this.getView().byId("owner").setValue("");
+        this.getView().byId("location").setValue("");
+        
+        //  Navigate back to View1
+        this.getOwnerComponent().getRouter().navTo("RouteView1");
+    } catch (err) {
+        sap.m.MessageBox.error("Failed to create warehouse");
+        console.error(err);
+    }
+}
+`;
 
 
 //   ############################## UI #######################################
@@ -314,145 +591,213 @@ const code9 =
 
         <p className="wrap-break-word">In our case, the model is defined with the name <span className="text-gray-950 font-semibold wrap-break-word">WarehouseModel</span>.</p>
 
-        <p className="text-green-600 font-semibold wrap-break-word">Its done, now we can use the odata model and bind it with table.</p>
-
-
-
-
-        
-        <h3 className="text-3xl wrap-break-word">Bind oData Model with Table</h3>
-
-        <p className="wrap-break-word">Lets define a table in the <span className="text-gray-950 font-semibold wrap-break-word">View1.view.xml</span> file and bind its items aggregation to the OData model.</p>
-        
-        <p className="wrap-break-word">We will define the binding with item like -</p>
-
-        <div>
-            <CodeSnippet code={code6} language="javascript" title="table" />
-        </div>
-
-
-        <p className="wrap-break-word">so the complete code will look like -</p>
-
-        <div>
-            <CodeSnippet code={code7} language="xml" title="webapp/view/View1.view.xml" />
-        </div>
+        <p className="text-green-600 font-semibold wrap-break-word">Its done, now we can use the odata model in your UI5 Application.</p>
 
 
 
 
 
 
-        <h3 className="text-3xl wrap-break-word">Create new Record</h3>
-
-        <p>We can define custom logic to create a new record and persist it through the OData model.</p>
-
-        <p>Lets define a UI for User input like-</p>
-
-        <div>
-            <CodeSnippet code={code8} language="xml" title="webapp/view/View1.view.xml" />
-        </div>
-
-        <p>And then on button press, we can trigger custom logic like - </p>
-
-        <div>
-            <CodeSnippet code={code9} language="javascript" title="webapp/controller/View1.controller.js" />
-        </div>
-
-
-        
 
 
 
 
 
 
-        
 
-        
-        
-        
-        
+        <h2 className="text-4xl text-sky-600 wrap-break-word">CRUD Operation with oData v4 model</h2>
 
-        <h1 className="text-5xl wrap-break-word">Heading 1</h1>
+        <h3 className="text-3xl wrap-break-word">Objective-</h3>
 
-        <h2 className="text-4xl wrap-break-word">Heading 2</h2>
+        <p className="wrap-break-word">In this application, we will create a SAP UI5 application that addresses the following use case-</p>
 
-        <h3 className="text-3xl wrap-break-word">Heading 3</h3>
-
-        <h4 className="text-2xl wrap-break-word">Heading 3</h4>
-
-
-        <span className="text-gray-950 font-semibold wrap-break-word">Bold Content</span>
-
-        <ul className="list-disc ml-6">
-            <li className="wrap-break-word">content list item 1</li>
-            <li className="wrap-break-word">content list item 2</li>
-            <li className="wrap-break-word">content list item 3</li>
-            <li className="wrap-break-word">content list item 4</li>
-        </ul>
-        
         <ul className="list-decimal ml-6">
-            <li className="wrap-break-word">content list item 1</li>    
-            <li className="wrap-break-word">content list item 2</li>
-            <li className="wrap-break-word">content list item 3</li>
-            <li className="wrap-break-word">content list item 4</li>
+            <li className="wrap-break-word">The first view <span className="text-gray-950 font-semibold wrap-break-word">displays all warehouse details</span> retrieved from the CAP application OData V4 service. The service is <span className="text-gray-950 font-semibold wrap-break-word">consumed as an OData model</span>, which is then bound to a table.</li>    
+            <li className="wrap-break-word">Users can <span className="text-gray-950 font-semibold wrap-break-word">click any row in the table to navigate to View2</span>, where they <span className="text-gray-950 font-semibold wrap-break-word">can edit and update the selected warehouse record.</span></li>
+            <li className="wrap-break-word">View1 includes an Add New Record button, Clicking this button navigates the user to the <span className="text-gray-950 font-semibold wrap-break-word">NewWarehouse view, where a new warehouse record can be created</span>. Once the record is successfully created, the application automatically redirects the user back to View1.</li>
         </ul>
 
-        {/* Redirect Button */}
-        <div>
-            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-Fiori-UI5-Application/blob/1-manage-multi-language-using-i18n/README.md" />
-        </div>
+
+
+
+        <h3 className="text-3xl wrap-break-word">Implementation - </h3>
+
+        <h4 className="text-2xl text-pink-600 wrap-break-word">Use Case - 1</h4>
+
+        <p className="wrap-break-word">We will displays all warehouse details retrieved from the CAP application OData V4 service. The service is consumed as an OData model, which is then bound to a table on View1.</p>
+
+        <p className="wrap-break-word">Since we have already configured the OData V4 service as an <span className="text-gray-950 font-semibold wrap-break-word">OData model named WarehouseModel</span>, we can bind it to the <span className="text-gray-950 font-semibold wrap-break-word">table in View1.view.xml</span>, as shown below -</p>
 
         <div>
-            <CodeSnippet code={code1} language="xml" title="View1.view.xml" />
-        </div>
-
-
-        <table className="border-collapse border border-gray-400 wrap-break-word">
-            <thead>
-                <tr>
-                    <th className="border border-gray-300 wrap-break-word">State</th>
-                    <th className="border border-gray-300 wrap-break-word">City</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td className="border border-gray-300 px-3 wrap-break-word">Indiana</td>
-                    <td className="border border-gray-300 px-3 wrap-break-word">Indianapolis</td>
-                </tr>
-                <tr>
-                    <td className="border border-gray-300 px-3 wrap-break-word">Ohio</td>
-                    <td className="border border-gray-300 px-3 wrap-break-word">Columbus</td>
-                </tr>
-                <tr>
-                    <td className="border border-gray-300 px-3 wrap-break-word">Michigan</td>
-                    <td className="border border-gray-300 px-3 wrap-break-word">Detroit</td>
-                </tr>
-            </tbody>
-        </table>
-
-
-
-        <div>
-          <section className="rounded-t-lg bg-green-700 p-1 border-green-600  text-white">Note</section>
-          <section className="p-3 border-b-2 border-l-2 border-r-2 border-green-700 rounded-b-lg">
-            <p className="wrap-break-word">{code1} - it gives Subaccout subdomain</p>
-            <p className="wrap-break-word">{code1} - it gives cf org details</p>
-          </section>
+            <CodeSnippet code={code6} language="javascript" title="View1.view.xml" />
         </div>
 
 
+        <p className="wrap-break-word">So the <span className="text-gray-950 font-semibold wrap-break-word">View1 Table</span> looks like-</p>
+        
+        <div>
+            <CodeSnippet code={code7} language="xml" title="View1.view.xml" />
+        </div>
+
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-Fiori-UI5-Application/blob/6-oData-v4-service-model/webapp/view/View1.view.xml" />
+        </div>
+
+
+
+
+
+
+
+
+
+        <h4 className="text-2xl text-pink-600 wrap-break-word">Use Case - 2</h4>
+
+        <p className="wrap-break-word">Users can <span className="text-gray-950 font-semibold wrap-break-word">click any row in the table to navigate to View2</span>, which <span className="text-gray-950 font-semibold wrap-break-word">displays the selected warehouse details</span>. View2 allows users to <span className="text-gray-950 font-semibold wrap-break-word">edit and save the changes to the backend through the OData service</span>, and also provides an option to <span className="text-gray-950 font-semibold wrap-break-word">navigate back to View1.</span></p>
+
+        <p className="wrap-break-word">To make the table <span className="text-gray-950 font-semibold wrap-break-word">rows selectable</span> and <span className="text-gray-950 font-semibold wrap-break-word">invoke the selectRow method</span> when a row is selected, define the attributes on <span className="text-gray-950 font-semibold wrap-break-word">View1 Table</span> as follows-</p>
+
+        <div>
+            <CodeSnippet code={code8} language="xml" title="View1.view.xml" />
+        </div>
+
+        <p className="wrap-break-word">Next, <span className="text-gray-950 font-semibold wrap-break-word">define the selectRow method in View1.controller.js</span> to retrieve the selected warehouse record and <span className="text-gray-950 font-semibold wrap-break-word">navigate to View2</span> using parameterized routing, as shown below-</p>
+
+        <div>
+            <CodeSnippet code={code9} language="javascript" title="View1.controller.js" />
+        </div>
+
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-Fiori-UI5-Application/blob/6-oData-v4-service-model/webapp/controller/View1.controller.js" />
+        </div>
+
+
+        <p className="wrap-break-word">Next, <span className="text-gray-950 font-semibold wrap-break-word">create View2.view.xml</span> in view folder and <span className="text-gray-950 font-semibold wrap-break-word">View2.controller.js</span> in controller folder to implement the UI and its corresponding logic. Then, <span className="text-gray-950 font-semibold wrap-break-word">configure the route and target for View2 in manifest.json</span> like-</p>
+
+        <div>
+            <CodeSnippet code={code10} language="json" title="manifest.json" />
+        </div>
+
+        <div>
+            <CodeSnippet code={code11} language="json" title="manifest.json" />
+        </div>
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-Fiori-UI5-Application/blob/6-oData-v4-service-model/webapp/manifest.json" />
+        </div>
+
+
+        <p className="wrap-break-word">Next, implement the logic in <span className="text-gray-950 font-semibold wrap-break-word">View2.controller.js</span> to <span className="text-gray-950 font-semibold wrap-break-word">retrieve the selected warehouse ID</span> from the <span className="text-gray-950 font-semibold wrap-break-word">route parameters.</span></p>
+        <p className="wrap-break-word">Once the <span className="text-gray-950 font-semibold wrap-break-word">ID is obtained, bind the corresponding warehouse record</span> to the view using element binding. This ensures that the UI automatically displays the details of the selected warehouse, as shown below-</p>
+
+        <div>
+            <CodeSnippet code={code12} language="javascript" title="View2.controller.js" />
+        </div>
+
+        
+
+
+
+        <p className="wrap-break-word">And we can then bind the UI with the element in <span className="text-gray-950 font-semibold wrap-break-word">View2</span> and the <span className="text-gray-950 font-semibold wrap-break-word">navigation back button</span> at page like-</p>
+
+        <div>
+            <CodeSnippet code={code13} language="xml" title="View2.view.xml" />
+        </div>
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-Fiori-UI5-Application/blob/6-oData-v4-service-model/webapp/view/View2.view.xml" />
+        </div>
+
+        <p className="wrap-break-word">And since we also defined the Edit, Save and Cancel button, we can then define their logics like-</p>
+
+        <div>
+            <CodeSnippet code={code14} language="javascript" title="View2.controller.js" />
+        </div>
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-Fiori-UI5-Application/blob/6-oData-v4-service-model/webapp/controller/View2.controller.js" />
+        </div>
+
+        <p className="wrap-break-word">When the user <span className="text-gray-950 font-semibold wrap-break-word">navigates back to View1</span> after updating a warehouse record, the <span className="text-gray-950 font-semibold wrap-break-word">latest changes may not be reflected in the table automatically</span>. To ensure the table displays the updated data, <span className="text-gray-950 font-semibold wrap-break-word">refresh the table's binding whenever the View1 route is matched</span>, as shown below-</p>
+
+        <div>
+            <CodeSnippet code={code15} language="javascript" title="View1.controller.js" />
+        </div>
+
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-Fiori-UI5-Application/blob/6-oData-v4-service-model/webapp/controller/View1.controller.js" />
+        </div>
+
+
+
+
+
+
+
+
+
+        <h4 className="text-2xl text-pink-600 wrap-break-word">Use Case - 3</h4>
+
+        <p className="wrap-break-word"><span className="text-gray-950 font-semibold wrap-break-word">View1 includes an Add New Record button</span>, Clicking this button navigates the user to the <span className="text-gray-950 font-semibold wrap-break-word">NewWarehouse view</span>, where a new warehouse record can be created. Once the record is successfully created, the application automatically redirects the user back to View1.</p>
+
+        <p className="wrap-break-word">Define the Button on <span className="text-gray-950 font-semibold wrap-break-word">View1.view.xml</span> to create new Warehouse Record clicking on which will navigate to NewWarehouse View Page.</p>
+
+        <div>
+            <CodeSnippet code={code16} language="xml" title="View1.view.xml" />
+        </div>
+
+        <p className="wrap-break-word">and its logic like-</p>
+        
+        <div>
+            <CodeSnippet code={code17} language="javascript" title="View1.controller.js" />
+        </div>
+
+        <p className="wrap-break-word">Now, create <span className="text-gray-950 font-semibold wrap-break-word">NewWarehouse.view.xml</span> file in view folder and <span className="text-gray-950 font-semibold wrap-break-word">NewWarehouse.controller.js</span> file in controller folder and define the <span className="text-gray-950 font-semibold wrap-break-word">Route and Target</span> on <span className="text-gray-950 font-semibold wrap-break-word">manifest.json</span> file like-</p>
+
+        <div>
+            <CodeSnippet code={code18} language="javascript" title="manifest.json" />
+        </div>
+
+        <p className="wrap-break-word">And its target like-</p>
+
+        <div>
+            <CodeSnippet code={code19} language="javascript" title="manifest.json" />
+        </div>
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-Fiori-UI5-Application/blob/6-oData-v4-service-model/webapp/manifest.json" />
+        </div>
+
+
+        <p className="wrap-break-word">We can define the Input fields in NewWarehouse View like -</p>
+
+        <div>
+            <CodeSnippet code={code20} language="xml" title="NewWarehouse.view.xml" />
+        </div>
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-Fiori-UI5-Application/blob/6-oData-v4-service-model/webapp/view/NewWarehouse.view.xml" />
+        </div>
+
+
+
+        <p className="wrap-break-word">And will define its logic in <span className="text-gray-950 font-semibold wrap-break-word">NewWarehouse.controller.js</span> file like -</p>
+
+        <div>
+            <CodeSnippet code={code21} language="javascript" title="NewWarehouse.controller.js" />
+        </div>
+
+        <div>
+            <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-Fiori-UI5-Application/blob/6-oData-v4-service-model/webapp/controller/NewWarehouse.controller.js" />
+        </div>
 
 
         <p className="text-1xl text-blue-600 wrap-break-word">!!! Its Done !!!</p>
+        
 
-
-        Filter, sort on table / List
-        Routing Navigation
-        Page, Pannel, Shell, App Controls
-        Formatter, Dialog, Fragment, Nested View
-        Custom Control
-        oData model
     </div>
   );
 };
