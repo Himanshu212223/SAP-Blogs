@@ -41,6 +41,12 @@ export const fiori = [
         topic: "oData v4 Service as Model",
         tag : "oData V4 Model Consume"
     },
+    {
+        title : "oData v2 Service as Model",
+        link : "/blogs/fiori/oDataV2Model",
+        topic: "oData v2 Service as Model",
+        tag : "oData v2 Model Consume"
+    },
     // {
     //     title : "Search and Sort",
     //     link : "/blogs/fiori/SearchSort",
