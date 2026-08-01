@@ -465,6 +465,58 @@ onRegister: async function () {
 }`;
 
 
+const code22 = 
+`POST http://localhost:4004/odata/v4/custom-service/CustomWarehouse
+Content-Type: application/json
+
+{
+    "name" : "South Distribution Center"
+}`;
+
+
+
+const code23 = 
+`onActionCalled: function (oEvent) {
+    const oModel = this.getView().getModel("WarehouseModel");
+
+    const oPayload = {
+        name : "South Distribution Center"
+    };
+
+    oModel.create("/CustomWarehouse", oPayload, {
+        success: function (oData) {
+            console.log("Success", oData);
+        },
+        error: function (oError) {
+            console.log("Error", oError);
+        }
+    });
+}`;
+
+
+const code24 = 
+`GET /odata/v2/custom-service/GetWarehouse?location='New York'`;
+
+
+const code25 = 
+`onFunctionCalled: function () {
+    const oModel = this.getView().getModel("WarehouseModel");
+    
+    oModel.callFunction("/GetWarehouse", {
+        method: "GET",
+        urlParameters: {
+            location: "Norway Supplier"
+        },
+        success: function (oData) {
+            console.log(oData);
+        }
+    });
+}`;
+
+
+
+
+
 //   ############################## UI #######################################
 
   return (
@@ -818,6 +870,44 @@ onRegister: async function () {
         <div>
             <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-Fiori-UI5-Application/blob/7-odata-v2-service-model/webapp/controller/NewWarehouse.controller.js" />
         </div>
+
+
+
+
+
+
+
+
+
+        <h3 className="text-3xl wrap-break-word">How to call an action using oData Model ?</h3>
+
+        <p className="wrap-break-word">Suppose the action endpoint is - </p>
+
+        <div>
+            <CodeSnippet code={code22} language="javascript" title="http" />
+        </div>
+        
+        <p className="wrap-break-word">So we can call the action from UI like-</p>
+
+        <div>
+            <CodeSnippet code={code23} language="javascript" title="controller.js" />
+        </div>
+
+
+
+        <h3 className="text-3xl wrap-break-word">How to call a function using oData Model ?</h3>
+
+        <p className="wrap-break-word">similarly, we can call the functions like-</p>
+
+        <div>
+            <CodeSnippet code={code24} language="javascript" title="http" />
+        </div>
+        
+        <div>
+            <CodeSnippet code={code25} language="javascript" title="controller.js" />
+        </div>
+
+
 
 
         <p className="text-1xl text-blue-600 wrap-break-word">!!! Its Done !!!</p>
