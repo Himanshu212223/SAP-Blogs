@@ -191,7 +191,7 @@ _loadUserAuthorization : async function () {
             <p className="text-1xl wrap-break-word">We can define the logic to check the access of Logged-in User.</p>
 
             <div>
-                <CodeSnippet code={code4} language="javascript" title="xs-app.json" />
+                <CodeSnippet code={code4} language="javascript" title="Component.js" />
             </div>
 
             <p className="text-1xl wrap-break-word">We will get the User roles on the response scope and can store the same on the json model based on which can control the visibility of UI elements.</p>
