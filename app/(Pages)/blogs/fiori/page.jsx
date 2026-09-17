@@ -11,15 +11,19 @@ const page = () => {
   return (
     <div className="flex flex-col gap-5 text-gray-500 text-lg h-full">
 
-        <h1 className="text-5xl wrap-break-word">Template File</h1>
+        <h1 className="text-5xl text-black wrap-break-word">Template File</h1>
 
         <h1 className="text-5xl wrap-break-word">Heading 1</h1>
 
-        <h2 className="text-4xl wrap-break-word">Heading 2</h2>
+        <h2 className="text-4xl text-black wrap-break-word">Heading 2</h2>
 
-        <h3 className="text-3xl wrap-break-word">Heading 3</h3>
+        <h2 className="text-4xl text-sky-500 wrap-break-word">Objective</h2>
+        
+        <h2 className="text-4xl text-pink-500 wrap-break-word">Heading 2</h2>
 
-        <h4 className="text-2xl wrap-break-word">Heading 3</h4>
+        <h3 className="text-3xl text-black wrap-break-word">Heading 3</h3>
+
+        <h4 className="text-2xl text-black wrap-break-word">Heading 3</h4>
 
 
         <span className="text-gray-950 font-semibold wrap-break-word">Bold Content</span>

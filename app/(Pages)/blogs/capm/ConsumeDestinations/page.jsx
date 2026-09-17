@@ -63,9 +63,13 @@ const data = destinationResponse.data;`;
   return (
     <div className="flex flex-col gap-5 text-gray-500 text-lg h-full">
 
-        <h1 className="text-5xl wrap-break-word">Consume Destination</h1>
+        <h1 className="text-5xl text-black wrap-break-word">Consume Destination</h1>
+
+        <h2 className="text-4xl text-sky-500 wrap-break-word">Objective -</h2>
 
         <p className="text-1xl wrap-break-word">In this example, we will fetch data from any API by configuring it as a Destination in SAP BTP and then consuming it through a CAP application.</p>
+
+        <h2 className="text-4xl text-pink-500 wrap-break-word">Steps -</h2>
 
         <p className="text-1xl wrap-break-word">To achieve this, we will follow these steps-</p>
 
@@ -82,7 +86,7 @@ const data = destinationResponse.data;`;
 
 
 
-        <h2 className="text-4xl wrap-break-word">Step 1 - Create Destination on BTP Cockpit</h2>
+        <h2 className="text-4xl text-black wrap-break-word">Step 1 - Create Destination on BTP Cockpit</h2>
 
         <p className="text-1xl wrap-break-word">Create a Destination in the SAP BTP subaccount where your application will be deployed. Configure the Destination based on the requirements of the API, including the necessary endpoint, authentication details, and any other credentials required to establish the connection.</p>
 
@@ -135,7 +139,7 @@ const data = destinationResponse.data;`;
 
 
 
-        <h2 className="text-4xl wrap-break-word">Step 2 - Create Service Binding on CAP application</h2>
+        <h2 className="text-4xl text-black wrap-break-word">Step 2 - Create Service Binding on CAP application</h2>
 
         <p className="text-1xl wrap-break-word">Service binding gives your CAP application permission and the credentials to access the Destination service itself.</p>
 
@@ -164,7 +168,7 @@ const data = destinationResponse.data;`;
 
 
 
-        <h2 className="text-4xl wrap-break-word">Step 3 - Install Dependencies</h2>
+        <h2 className="text-4xl text-black wrap-break-word">Step 3 - Install Dependencies</h2>
 
         <p className="text-1xl wrap-break-word">We need connectivity and http-client dependencies from sap-cloud-sdk and can install using below command -</p>
 
@@ -176,7 +180,7 @@ const data = destinationResponse.data;`;
 
 
 
-        <h2 className="text-4xl wrap-break-word">Step 4 - Consume Destination</h2>
+        <h2 className="text-4xl text-black wrap-break-word">Step 4 - Consume Destination</h2>
 
         <p className="text-1xl wrap-break-word">Now, we can consume the destination through custom logic.</p>
 

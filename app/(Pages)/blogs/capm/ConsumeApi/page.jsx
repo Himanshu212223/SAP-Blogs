@@ -52,15 +52,19 @@ const data = apiResponse.data ;`;
   return (
     <div className="flex flex-col gap-5 text-gray-500 text-lg h-full">
 
-        <h1 className="text-5xl wrap-break-word">Consume API</h1>
+        <h1 className="text-5xl text-black wrap-break-word">Consume API</h1>
         
+        <h2 className="text-4xl text-sky-500 wrap-break-word">Objective -</h2>
+
         <p className="text-1xl wrap-break-word">In this example, we will try to fetch data from any api using axios.</p>
+
+        <h2 className="text-4xl text-pink-500 wrap-break-word">Steps -</h2>
         
         <p className="text-1xl wrap-break-word">It is a straightforward process where we first install the Axios dependency and then use it to call the API and retrieve the response data.</p>
 
         <p className="text-1xl wrap-break-word">In our case, the API is secured using OAuth 2.0 Client Credentials authentication. Therefore, we first make an Axios request to obtain an access token. Once the token is generated, we use it in a second Axios request to authenticate and consume the API.</p>
 
-        <h4 className="text-2xl wrap-break-word">Install axios</h4>
+        <h4 className="text-2xl text-black wrap-break-word">Install axios</h4>
 
         <div>
             <CodeSnippet code={code1} language="text" title="terminal" />
@@ -68,7 +72,7 @@ const data = apiResponse.data ;`;
 
 
 
-        <h4 className="text-2xl wrap-break-word">Sample Code logic</h4>
+        <h4 className="text-2xl text-black wrap-break-word">Sample Code logic</h4>
 
         <div>
             <CodeSnippet code={code4} language="javascript" title="custom-logic.js" />

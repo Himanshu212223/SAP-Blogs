@@ -47,6 +47,12 @@ export const fiori = [
         topic: "oData v2 Service as Model",
         tag : "oData v2 Model Consume"
     },
+    {
+        title : "Role Based Access",
+        link : "/blogs/fiori/ui5-role-based-access",
+        topic: "Role Based Access",
+        tag : "ui5RoleBasedAccess"
+    }
     // {
     //     title : "Search and Sort",
     //     link : "/blogs/fiori/SearchSort",
@@ -189,10 +195,10 @@ export const capm = [
 
 
 export const learning = [
-    {
-        title : "Employee Management Cap App",
-        link : "/blogs/practice/EmployeeManagement",
-        topic: "Manage Employee App",
-        tag : "Employee Management Cap application"
-    }
+    // {
+    //     title : "Employee Management Cap App",
+    //     link : "/blogs/practice/EmployeeManagement",
+    //     topic: "Manage Employee App",
+    //     tag : "Employee Management Cap application"
+    // }
 ]

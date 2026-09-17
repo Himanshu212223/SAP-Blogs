@@ -3,7 +3,7 @@ import RedirectButton from "@/components/ui/redirectButton";
 import React from "react";
 
 const page = () => {
-const code1 = `cds init <Project_Name>`;
+const code1 = `cds init <Project_Name> --nodejs`;
 const code2 = 
 `cd <Project_Name>
 npm install`;

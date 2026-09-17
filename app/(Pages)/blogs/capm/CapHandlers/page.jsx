@@ -230,7 +230,7 @@ const wildcard =
   return (
     <div className="flex flex-col gap-5 text-gray-500 text-lg h-full">
 
-        <h1 className="text-5xl wrap-break-word">Handlers in CAP</h1>
+        <h1 className="text-5xl text-black wrap-break-word">Handlers in CAP</h1>
 
         <p className="wrap-break-word">Handlers are used to add custom logic to service operations (like CRUD or custom actions/functions). They are typically <span className="text-gray-950 font-semibold wrap-break-word">implemented in JavaScript (Node.js) or Java</span> and are registered on service events.</p>
 
@@ -249,9 +249,9 @@ const wildcard =
 
 
         
-        <h2 className="text-4xl wrap-break-word">Main Types of Handlers in SAP CAP</h2>
+        <h2 className="text-4xl text-black wrap-break-word">Main Types of Handlers in SAP CAP</h2>
 
-        <h3 className="text-3xl wrap-break-word">1. Before Handlers (before)</h3>
+        <h3 className="text-3xl text-black wrap-break-word">1. Before Handlers (before)</h3>
 
         <ul className="list-disc ml-6">
             <li className="wrap-break-word">It gets executed <span className="text-gray-950 font-semibold wrap-break-word">before the actual operation</span> is performed.</li>
@@ -260,7 +260,7 @@ const wildcard =
         </ul>
 
 
-        <h3 className="text-3xl wrap-break-word">2. On Handlers (on)</h3>
+        <h3 className="text-3xl text-black wrap-break-word">2. On Handlers (on)</h3>
 
         <ul className="list-disc ml-6">
             <li className="wrap-break-word">It <span className="text-gray-950 font-semibold wrap-break-word">Replace or fully handle the core processing logic</span>.</li>
@@ -268,7 +268,7 @@ const wildcard =
         </ul>
 
 
-        <h3 className="text-3xl wrap-break-word">3. After Handlers (after)</h3>
+        <h3 className="text-3xl text-black wrap-break-word">3. After Handlers (after)</h3>
 
         <ul className="list-disc ml-6">
             <li className="wrap-break-word">It gets <span className="text-gray-950 font-semibold wrap-break-word">executed after the operation has finished</span>.</li>
@@ -277,7 +277,7 @@ const wildcard =
         </ul>
 
 
-        <h4 className="text-2xl wrap-break-word">For Example -</h4>
+        <h4 className="text-2xl text-black wrap-break-word">For Example -</h4>
 
         <p>Lets implement custom logic that validates the incoming payload before creating a new record. Once the payload is validated, we can apply any modification on the request data.</p>
         <p>Once the custom processing is completed, the record will be created in the corresponding entity/database. Finally, the created record will be returned as the response.</p>
@@ -314,9 +314,9 @@ const wildcard =
 
 
 
-        <h2 className="text-4xl wrap-break-word">Functions and Actions</h2>
+        <h2 className="text-4xl text-black wrap-break-word">Functions and Actions</h2>
 
-        <h3 className="text-3xl wrap-break-word">1. Functions</h3>
+        <h3 className="text-3xl text-black wrap-break-word">1. Functions</h3>
 
         <ul className="list-disc ml-6">
             <li className="wrap-break-word">A function in SAP CAP is a <span className="text-gray-950 font-semibold wrap-break-word">read-only operation</span> defined in CDS that retrieves or computes data <span className="text-gray-950 font-semibold wrap-break-word">without causing any side effects</span> or modifying the database.</li>
@@ -324,7 +324,7 @@ const wildcard =
         </ul>
 
 
-        <h3 className="text-3xl wrap-break-word">2. Actions</h3>
+        <h3 className="text-3xl text-black wrap-break-word">2. Actions</h3>
 
         <ul className="list-disc ml-6">
             <li className="wrap-break-word">An action in SAP CAP is an operation defined in CDS that <span className="text-gray-950 font-semibold wrap-break-word">performs business logic</span> and can modify data or cause side effects in the system.</li>
@@ -336,9 +336,9 @@ const wildcard =
 
 
 
-        <h2 className="text-4xl wrap-break-word">Additional Handler Variants</h2>
+        <h2 className="text-4xl text-black wrap-break-word">Additional Handler Variants</h2>
 
-        <h3 className="text-3xl wrap-break-word">1. Event-Specific Handlers</h3>
+        <h3 className="text-3xl text-black wrap-break-word">1. Event-Specific Handlers</h3>
 
         <ul className="list-disc ml-6">
             <li className="wrap-break-word">It work with - Standard events like: CREATE, READ, UPDATE, DELETE and Custom events like: myAction, myFunction</li>
@@ -349,7 +349,7 @@ const wildcard =
         </div>
 
 
-        <h3 className="text-3xl wrap-break-word">2. Wildcard Handlers</h3>
+        <h3 className="text-3xl text-black wrap-break-word">2. Wildcard Handlers</h3>
 
         <ul className="list-disc ml-6">
             <li className="wrap-break-word">It is used to attach handler to multiple or all entities/events.</li>
@@ -361,7 +361,7 @@ const wildcard =
 
 
 
-        <h4 className="text-2xl wrap-break-word">For Example -</h4>
+        <h4 className="text-2xl text-black wrap-break-word">For Example -</h4>
 
         <p>Lets define and implement a function and an action.</p>
         <p>The function will return the total number of warehouse records, while the action will update the owner details of a warehouse.</p>
