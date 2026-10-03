@@ -42,6 +42,16 @@ const page = () => {
             <li className="wrap-break-word">content list item 4</li>
         </ul>
 
+        <p className="text-1xl wrap-break-word">We will be following below steps -</p>
+
+        <ul className="list-decimal ml-6">
+            <li className="wrap-break-word text-blue-400"><a href="#step1">--text--</a></li>
+            <li className="wrap-break-word text-blue-400"><a href="#step1">--text--</a></li>
+            <li className="wrap-break-word text-blue-400"><a href="#step1">--text--</a></li>
+            <li className="wrap-break-word text-blue-400"><a href="#step1">--text--</a></li>
+        </ul>
+
+
         {/* Redirect Button */}
         <div>
             <RedirectButton text="Github Repo" link="https://github.com/HimanshuSap124/SAP-Fiori-UI5-Application/blob/1-manage-multi-language-using-i18n/README.md" />
@@ -85,6 +95,8 @@ const page = () => {
           </section>
         </div>
 
+
+        <p className="text-1xl wrap-break-word">normal text</p>
 
 
 

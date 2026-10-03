@@ -180,6 +180,12 @@ export const capm = [
         tag : "Job Scheduler"
     },
     {
+        title : "Configure PostgreSQL",
+        link : "/blogs/capm/PostgreSQL",
+        topic: "CAPM with PostgreSQL",
+        tag : "CAPM PostgreSQL Database"
+    },
+    {
         title : "Role based access",
         link : "/blogs/capm/RoleBasedAccess",
         topic: "Role based access",
