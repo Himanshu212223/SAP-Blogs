@@ -4,7 +4,7 @@ import React from "react";
 
 const page = () => {
 const code1 = 
-`cds init cap-application`;
+`cds init cap-application --nodejs`;
 const code2 = 
 `cd cap-application`;
 const code3 = 

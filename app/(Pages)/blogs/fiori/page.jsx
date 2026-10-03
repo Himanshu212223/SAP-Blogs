@@ -92,11 +92,10 @@ const page = () => {
 
 
         Filter, sort on table / List
-        Routing Navigation
         Page, Pannel, Shell, App Controls
         Formatter, Dialog, Fragment, Nested View
         Custom Control
-        oData model
+        
     </div>
   );
 };
